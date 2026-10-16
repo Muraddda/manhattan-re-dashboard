@@ -1,12 +1,17 @@
-name = "skyline-rentals-api-demo"
+name = "rental-poc-preview"
+workers_dev = true
 main = "src/index.ts"
 compatibility_date = "2024-09-23"
 
-# Local-only demo. database_id is a placeholder: nothing is created in any Cloudflare account.
+# Preview deploy (rental-poc-preview). Deploy only with: npx wrangler deploy -c wrangler.toml
+[assets]
+directory = "../dashboard/dist"
+binding = "ASSETS"
+
 [[d1_databases]]
 binding = "DB"
-database_name = "skyline-demo"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_name = "rental-poc-preview-db"
+database_id = "b067e99c-0183-43c4-aa7a-c2bfdd795c4e"
 migrations_dir = "migrations"
 
 [vars]
