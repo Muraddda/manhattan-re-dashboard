@@ -1,4 +1,4 @@
-// Map markers for deck.gl IconLayer: a white disc with a soft shadow, a coloured core and a Lucide glyph (ISC).
+// Map markers (MapLibre symbol images): a white disc with a soft shadow, a coloured core and a Lucide glyph (ISC).
 // The UI uses the same icons through lucide-react, so map and panels speak one icon language.
 const GLYPHS = {
   grocery: '<path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18"/><path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"/><circle cx="18" cy="20" r="2"/><circle cx="8" cy="20" r="2"/>',
@@ -10,11 +10,11 @@ const GLYPHS = {
 export type IconKey = keyof typeof GLYPHS;
 export const COLORS: Record<IconKey, string> = { grocery: '#e8890c', schools: '#0d9488', parks: '#16a34a', subway: '#2563eb', development: '#7c3aed' };
 
-const S = 96; // atlas px; drawn at ~28 px so it stays crisp on 3x screens
+const S = 96; // image px; drawn at ~28 px so it stays crisp on 3x screens
 const marker = (k: IconKey) => 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">
 <defs><filter id="s" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0b1220" flood-opacity=".28"/></filter></defs>
 <circle cx="48" cy="46" r="38" fill="#fff" filter="url(#s)"/><circle cx="48" cy="46" r="31" fill="${COLORS[k]}"/>
 <g transform="translate(30 28) scale(1.5)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">${GLYPHS[k]}</g></svg>`);
-const URLS = Object.fromEntries(Object.keys(GLYPHS).map(k => [k, marker(k as IconKey)])) as Record<IconKey, string>;
-export const iconSpec = (k: IconKey) => ({ url: URLS[k], width: S, height: S, anchorY: S / 2, id: k });
+/** Marker images (data URLs) keyed by icon, registered with map.addImage at pixelRatio 2 (96 px -> 48 px). */
+export const MARKERS = Object.fromEntries(Object.keys(GLYPHS).map(k => [k, marker(k as IconKey)])) as Record<IconKey, string>;
