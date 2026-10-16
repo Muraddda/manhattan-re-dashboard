@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+const b = await chromium.launch({ executablePath: process.env.CHROME || '/usr/bin/google-chrome', args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
 const p = await b.newPage({ viewport: { width: 1600, height: 950 } });
 p.on('pageerror', e => console.log('ERR', e.message)); p.on('console', m => m.type()==='error' && console.log('CE', m.text().slice(0,300)));
 await p.goto('http://localhost:5173/?static', { waitUntil: 'networkidle' }); await p.waitForTimeout(9000);

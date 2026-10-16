@@ -7,13 +7,14 @@
     "dev": "vite --host 0.0.0.0 --port 5173",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "fetch-osm": "node scripts/fetch-osm.mjs && node scripts/process-osm.mjs"
+    "fetch-osm": "node scripts/fetch-osm.mjs"
   },
   "dependencies": {
     "@deck.gl/core": "^9.4.0",
     "@deck.gl/layers": "^9.4.0",
     "@deck.gl/mapbox": "^9.4.0",
     "@deck.gl/react": "^9.4.0",
+    "lucide-react": "^1.57.0",
     "maplibre-gl": "^6.14.0",
     "papaparse": "^5.7.0",
     "react": "^19.3.1",

@@ -1,8 +1,12 @@
 import Papa from 'papaparse';
 import type { Amenities, Amenity, Building, Development, Listing, LngLat } from './types';
 
+/** fetch that throws on HTTP errors instead of handing an error page to the parser. */
+async function get(url: string) { const r = await fetch(url); if (!r.ok) throw new Error(`${r.status} ${url}`); return r; }
+const getJson = async (url: string) => (await get(url)).json();
+
 export async function loadListings(url = '/listings.csv'): Promise<Listing[]> {
-  const text = await (await fetch(url)).text();
+  const text = await (await get(url)).text();
   const { data } = Papa.parse<Record<string, string>>(text, { header: true, skipEmptyLines: true });
   return data.map(r => ({
     id: r.id, address: r.address, neighborhood: r.neighborhood, lat: +r.lat, lon: +r.lon,
@@ -10,18 +14,18 @@ export async function loadListings(url = '/listings.csv'): Promise<Listing[]> {
     sample: String(r.sample).toLowerCase() !== 'false',
   }));
 }
-export async function loadBuildings(): Promise<Building[]> { return (await (await fetch('/data/buildings.json')).json()).buildings; }
+export async function loadBuildings(): Promise<Building[]> { return (await getJson('/data/buildings.json')).buildings; }
 /** Simplified city: one feature per street block + individual landmarks/listing buildings (scripts/make-blocks.py). */
 export async function loadBlocks(): Promise<{ items: Building[]; buildingToBlock: Record<string, string> }> {
-  const j = await (await fetch('/data/blocks.json')).json();
+  const j = await getJson('/data/blocks.json');
   const items: Building[] = j.items.map((it: Building & { parts: LngLat[][][] }) => ({ ...it, polys: it.parts, parts: it.parts.map(p => p[0]), colour: null }));
   return { items, buildingToBlock: j.buildingToBlock };
 }
 export async function loadAmenities(): Promise<Amenities> {
-  const j = await (await fetch('/data/amenities.json')).json();
+  const j = await getJson('/data/amenities.json');
   return { grocery: j.grocery, schools: j.schools, parks: j.parks, subway: j.subway };
 }
-export async function loadDevelopments(): Promise<Development[]> { return (await (await fetch('/data/developments.json')).json()).developments; }
+export async function loadDevelopments(): Promise<Development[]> { return (await getJson('/data/developments.json')).developments; }
 
 export function distanceMeters(a: LngLat, b: LngLat) {
   const R = 6371000, toR = Math.PI / 180;
@@ -54,4 +58,4 @@ export function matchBuilding(p: LngLat, buildings: Building[]): string | undefi
   }
   return best?.id;
 }
-export const fmtPrice = (n: number) => n >= 1e6 ? `$${(n / 1e6).toFixed(2)}M` : `$${Math.round(n / 1000)}K`;
+export const fmtPrice = (n: number) => n >= 999500 ? `$${(n / 1e6).toFixed(2)}M` : `$${Math.round(n / 1000)}K`;
