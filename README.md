@@ -30,6 +30,9 @@ Live: https://manhattan-re-dashboard.aerkin.workers.dev
 - **Area:**
   - Reported felonies and 311 noise near the home against the Manhattan average.
   - FEMA flood zone, parks and playgrounds, and live Citi Bike docks.
+- **Climate & environment** (Mireye Earth API): elevation and distance to the shoreline (flags low-lying homes near
+  the water for storm-surge checks), the current FEMA flood zone, tree canopy, distance to the nearest major road
+  (traffic noise) and the nearest airport. Each value shows its underlying source and confidence.
 
 **For a seller:**
 - **Value:**
@@ -74,6 +77,7 @@ An IDX or RLS feed can be added later as another data source.
 | Michelin stars | Wikipedia list (2025 guide) → `dining.json` | weekly |
 | Lot facts, building sales, crime, noise | PLUTO, `w2pb-icbu`, NYPD `5uac-w243`, 311 `erm2-nwe9` | live per click |
 | Citi Bike | GBFS (proxied by the Worker) | live |
+| Elevation, shoreline, current FEMA flood zone, tree canopy, major roads, airports | [Mireye Earth API](https://api.mireye.com) `/v1/fetch` (USGS 3DEP, NOAA CUSP, FEMA NFHL, USFS NLCD, Overture, FAA) via the Worker's `/api/env` | per click, cached 30 days per location |
 
 Known limits:
 - DOF records no bedrooms and no co-op unit sizes, so co-ops are valued on price only.
@@ -94,6 +98,12 @@ Known limits:
 - `worker/`: Cloudflare Worker. It serves the static build, `/api/data/:key` from KV (filled on first request,
   refreshed daily by cron `23 9 * * *`; upstream bytes are streamed into KV unparsed, so CPU stays tiny) and
   `/api/citibike/*`. Its config is in `wrangler.jsonc`, with KV namespace `manhattan-re-dashboard-data`.
+  - `/api/env` (`worker/env.ts`) calls Mireye with the Worker secret `MIREYE_API_TOKEN`, so the token never
+    reaches the browser.
+    - Only points around Manhattan are accepted, rounded to about 10 m.
+    - Each location is cached in KV for 30 days, and fresh lookups are capped at 400 a day to protect the account's credits.
+    - Set the token with `npx wrangler secret put MIREYE_API_TOKEN`. For local `npm run worker`, put `MIREYE_API_TOKEN=...`
+      in a git-ignored `.dev.vars` file. Without a token the panel simply does not appear.
 - `scripts/build-*.mjs`: static data builders. `.github/workflows/refresh-static.yml` runs them weekly and commits the results.
   The MTA timetable expires every few months, which this refresh covers.
 

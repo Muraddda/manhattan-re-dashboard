@@ -96,3 +96,18 @@ export async function citiBike(p: LngLat, n = 3) {
     .map(s => ({ name: s.name, lon: s.lon, lat: s.lat, m: distanceMeters(p, [s.lon, s.lat]), ...st.get(s.station_id) }))
     .sort((a, b) => a.m - b.m).slice(0, n);
 }
+
+export interface EnvField { value: unknown; unit: string | null; source: string; url: string; confidence: string; vintage: string | null; notes: string | null }
+export interface Environment { fetched: string; fields: Partial<Record<'elevation' | 'coast_distance_m' | 'within_floodplain_polygon' | 'tree_canopy_pct' | 'nearest_major_road_distance_m' | 'nearest_major_road_name' | 'nearest_airport_name' | 'nearest_airport_distance_m', EnvField>> }
+const envCache = new Map<string, Promise<Environment>>();
+/** Climate & environment facts for a point (Mireye Earth API through the Worker's /api/env; cached 30 days server-side). */
+export function environment(p: LngLat): Promise<Environment> {
+  const k = `${p[1].toFixed(4)},${p[0].toFixed(4)}`;
+  if (!envCache.has(k)) envCache.set(k, fetch(`/api/env?lat=${p[1].toFixed(4)}&lng=${p[0].toFixed(4)}`).then(async r => {
+    if (!r.ok || !(r.headers.get('content-type') ?? '').includes('json')) throw new Error(r.status === 429 ? 'Daily lookup limit reached' : 'Unavailable');
+    return r.json();
+  }).catch(e => { envCache.delete(k); throw e; }));
+  return envCache.get(k)!;
+}
+/** FEMA flood zone from Mireye's NFHL note, e.g. 'Zone X; AREA OF MINIMAL FLOOD HAZARD' -> 'X'. */
+export const femaZone = (notes?: string | null) => notes?.match(/Zone ([A-Z0-9]+)/)?.[1];

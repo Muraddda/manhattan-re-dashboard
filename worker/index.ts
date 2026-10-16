@@ -1,11 +1,13 @@
 // Cloudflare Worker: serves the static app (assets) plus daily data snapshots.
 //   GET /api/data/:key  -> latest snapshot from KV (refreshed by the cron; fetched on demand if missing)
 //   GET /api/citibike/* -> live Citi Bike station feeds (CORS proxy)
+//   GET /api/env        -> climate & environment facts for a point (Mireye Earth API, see env.ts)
 //   cron (daily)        -> re-fetch every dataset in DATASETS and store it in KV
 // Snapshots are stored as the upstream response bytes (streamed, never parsed) so the job stays within tiny CPU budgets.
 import { DATASETS } from './datasets';
+import { environment } from './env';
 
-interface Env { DATA: KVNamespace; ASSETS: Fetcher; SODA_APP_TOKEN?: string }
+interface Env { DATA: KVNamespace; ASSETS: Fetcher; SODA_APP_TOKEN?: string; MIREYE_API_TOKEN?: string }
 
 const NO_STORE = { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' };
 const HEADERS = { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=3600, stale-while-revalidate=86400' };
@@ -19,7 +21,8 @@ async function refresh(env: Env, key: string) {
 
 export default {
   async fetch(req: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    const { pathname } = new URL(req.url);
+    const url = new URL(req.url), { pathname } = url;
+    if (pathname === '/api/env') return environment(url, env);
     const bike = pathname.match(/^\/api\/citibike\/(station_information|station_status)$/);
     if (bike) { // live Citi Bike GBFS has no CORS headers; pass it through with a short cache
       const r = await fetch(`https://gbfs.lyft.com/gbfs/2.3/bkn/en/${bike[1]}.json`, { cf: { cacheTtl: 60 } });

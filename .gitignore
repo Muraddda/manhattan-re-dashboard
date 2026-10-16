@@ -7,3 +7,5 @@ public/data/buildings.json
 public/data/blocks.json
 # local Worker state (wrangler dev)
 .wrangler
+# local Worker secrets
+.dev.vars

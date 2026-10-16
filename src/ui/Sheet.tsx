@@ -6,7 +6,7 @@ import type { Diet, LngLat, Property } from '../model';
 import { useApp, TYPE_LABEL, valueDelta, type Persona } from '../state';
 import { Bullet, Note, RangeBar, Section, Skel, Spark, Stat, ValueBadge, fmtDate, fmtMin, fmtNum, fmtPpsf, fmtPrice, title } from './common';
 import { valuate, marketTrend } from '../lib/value';
-import { buildingSales, citiBike, lotFacts, noise, safety, type LotFacts } from '../lib/area';
+import { buildingSales, citiBike, environment, femaZone, lotFacts, noise, safety, type LotFacts } from '../lib/area';
 import { zonedSchools, nearbySchools, districtSchools, schoolScore, scoreLabel } from '../lib/schools';
 import { DIETS, GROCERY_KINDS, cuisineLabel } from '../lib/places';
 import { suggest, type GeoHit } from '../lib/geosearch';
@@ -277,6 +277,8 @@ function Area({ s }: { s: Subject }) {
   const nz = useAsync(() => noise(s.p), [s.p[0], s.p[1]]);
   const lot = useAsync(() => s.bbl ? lotFacts(s.bbl) : null, [s.bbl]);
   const bikes = useAsync(() => citiBike(s.p, 2), [s.p[0], s.p[1]]);
+  const env = useAsync(() => environment(s.p), [s.p[0], s.p[1]]);
+  const E = env.v?.fields;
   const park = P?.nearestOf(s.p, 'park'), play = P?.countWithin(s.p, 'playground', 10), gyms = P?.countWithin(s.p, 'gym', 10);
   const rel = (r?: number) => r == null ? '' : r < 0.7 ? 'well below' : r < 0.9 ? 'below' : r <= 1.1 ? 'about' : r <= 1.5 ? 'above' : 'well above';
   return (
@@ -286,16 +288,43 @@ function Area({ s }: { s: Subject }) {
           v={sf.v && `${fmtNum(sf.v.felonies)} felonies`} sub={sf.v && `${rel(sf.v.ratio)} Manhattan average (${sf.v.ratio.toFixed(1)}×) · 800 m square, last 12 months of reports`} tone={sf.v && (sf.v.ratio > 1.5 ? 'bad' : sf.v.ratio < 0.9 ? 'good' : '')} />
         <AreaTile icon={<Volume2 size={15} />} k="Noise complaints" loading={nz.loading} err={nz.err}
           v={nz.v && `${fmtNum(nz.v.complaints)} / yr`} sub={nz.v && `${rel(nz.v.ratio)} average · mostly ${nz.v.top[0]?.type.toLowerCase() ?? '–'}`} tone={nz.v && (nz.v.ratio > 1.5 ? 'bad' : nz.v.ratio < 0.9 ? 'good' : '')} />
-        <AreaTile icon={<Waves size={15} />} k="Flood zone" loading={lot.loading && !!s.bbl} v={lot.v ? (lot.v.flood100 ? '100-year floodplain' : 'Outside 100-yr floodplain') : s.bbl ? undefined : 'Unknown'} sub="FEMA 2015 preliminary map (PLUTO)" tone={lot.v?.flood100 ? 'bad' : lot.v ? 'good' : ''} />
+        {E?.within_floodplain_polygon ? <FloodTile f={E.within_floodplain_polygon} />
+          : <AreaTile icon={<Waves size={15} />} k="Flood zone" loading={(lot.loading && !!s.bbl) || env.loading} v={lot.v ? (lot.v.flood100 ? '100-year floodplain' : 'Outside 100-yr floodplain') : s.bbl ? undefined : 'Unknown'} sub="FEMA 2015 preliminary map (PLUTO)" tone={lot.v?.flood100 ? 'bad' : lot.v ? 'good' : ''} />}
         <AreaTile icon={<Trees size={15} />} k="Parks & play" v={park ? `${title(park.place.name)}` : '–'} sub={park ? `${park.min} min · ${play} playgrounds, ${gyms} gyms within 10 min` : undefined} />
         <AreaTile icon={<Bus size={15} />} k="Citi Bike" loading={bikes.loading} err={bikes.err ? 'Live data unavailable' : undefined}
           v={bikes.v?.[0] && `${walkMinutes(bikes.v[0].m)} min to a dock`} sub={bikes.v?.[0] && `${bikes.v[0].num_bikes_available ?? '–'} bikes · ${bikes.v[0].num_docks_available ?? '–'} docks free now`} />
       </div>
+      <Climate env={env} />
       <Note>Crime: NYPD complaints reported {sf.v?.period ?? 'over the latest 12 months'} (historic + year-to-date sets), felonies per area vs all of Manhattan. Busy commercial blocks score high because of daytime crowds.</Note>
     </Section>);
 }
 function AreaTile({ icon, k, v, sub, loading, err, tone }: { icon: ReactNode; k: string; v?: ReactNode; sub?: ReactNode; loading?: boolean; err?: string; tone?: string | false | undefined }) {
   return <div className={`atile ${tone || ''}`}><small>{icon}{k}</small>{loading ? <Skel w="70%" /> : err ? <em className="muted">{err}</em> : <><b>{v ?? '–'}</b>{sub && <em>{sub}</em>}</>}</div>;
+}
+
+/** Climate & environment from the Mireye Earth API: elevation and shoreline (storm-surge exposure), tree canopy, traffic, airport. */
+function Climate({ env }: { env: { v?: import('../lib/area').Environment; err?: string; loading: boolean } }) {
+  const E = env.v?.fields; if (env.err && !E) return null;
+  const n = (f?: { value: unknown }) => typeof f?.value === 'number' ? f.value : undefined;
+  const elev = n(E?.elevation), coast = n(E?.coast_distance_m), canopy = n(E?.tree_canopy_pct), road = n(E?.nearest_major_road_distance_m), air = n(E?.nearest_airport_distance_m);
+  const lowLying = elev != null && coast != null && elev < 10 && coast < 5000;
+  const src = (...fs: (import('../lib/area').EnvField | undefined)[]) => [...new Set(fs.filter(Boolean).map(f => `${f!.source.replace(/_/g, ' ')}${f!.confidence !== 'high' ? ` (${f!.confidence} confidence)` : ''}`))].join(', ');
+  return (<>
+    <h4>Climate & environment <small>Mireye Earth API</small></h4>
+    <div className="area-grid">
+      <AreaTile icon={<Waves size={15} />} k="Elevation & shoreline" loading={env.loading} v={elev != null ? `${Math.round(elev * 3.281)} ft above sea level` : undefined}
+        sub={coast != null ? `${coast < 1000 ? `${Math.round(coast)} m` : `${(coast / 1000).toFixed(1)} km`} to the shoreline${lowLying ? ' · low-lying near the water: check storm-surge maps' : ''} · ${src(E?.elevation, E?.coast_distance_m)}` : undefined} tone={lowLying ? 'bad' : elev != null ? 'good' : ''} />
+      <AreaTile icon={<Trees size={15} />} k="Tree canopy" loading={env.loading} v={canopy != null ? `${Math.round(canopy)}% of the block` : undefined} sub={canopy != null ? `${canopy >= 20 ? 'Leafy' : canopy >= 5 ? 'Some trees' : 'Little shade'} · ${src(E?.tree_canopy_pct)}` : undefined} tone={canopy != null && canopy >= 20 ? 'good' : ''} />
+      <AreaTile icon={<Bus size={15} />} k="Traffic" loading={env.loading} v={road != null ? `${Math.round(road)} m to ${E?.nearest_major_road_name?.value ?? 'a major road'}` : undefined} sub={road != null ? `${road < 60 ? 'On a major road: expect traffic noise' : road < 150 ? 'Close to a major road' : 'Set back from major roads'} · ${src(E?.nearest_major_road_distance_m)}` : undefined} tone={road != null && road < 60 ? 'bad' : ''} />
+      <AreaTile icon={<MapPin size={15} />} k="Nearest airport" loading={env.loading} v={air != null ? `${title(String(E?.nearest_airport_name?.value ?? 'Airport'))}` : undefined} sub={air != null ? `${(air / 1609).toFixed(1)} mi straight line · ${src(E?.nearest_airport_distance_m)}` : undefined} />
+    </div>
+  </>);
+}
+function FloodTile({ f }: { f: import('../lib/area').EnvField }) {
+  const zone = femaZone(f.notes), inside = f.value === true;
+  const moderate = !inside && /0\.2 PCT|500[- ]YEAR|SHADED/i.test(f.notes ?? '');
+  const v = inside ? `100-year floodplain${zone ? ` (zone ${zone})` : ''}` : moderate ? `Zone ${zone ?? 'X'}: 500-year floodplain` : `Zone ${zone ?? 'X'}: minimal flood hazard`;
+  return <AreaTile icon={<Waves size={15} />} k="Flood zone" v={v} sub={`Current FEMA flood map (NFHL) via Mireye${f.vintage ? ` · ${f.vintage}` : ''}`} tone={inside ? 'bad' : moderate ? '' : 'good'} />;
 }
 
 // ---------- Building / lot
