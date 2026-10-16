@@ -2,13 +2,14 @@
 //   GET /api/data/:key  -> latest snapshot from KV (refreshed by the cron; fetched on demand if missing)
 //   GET /api/citibike/* -> live Citi Bike station feeds (CORS proxy)
 //   GET /api/env        -> climate & environment facts for a point (Mireye Earth API, see env.ts)
-//   cron (daily)        -> re-fetch every dataset in DATASETS and store it in KV
+//   refresh             -> a snapshot over 24 h old is refetched in the background on the next request (no cron needed)
 // Snapshots are stored as the upstream response bytes (streamed, never parsed) so the job stays within tiny CPU budgets.
 import { DATASETS } from './datasets';
 import { environment } from './env';
 
 interface Env { DATA: KVNamespace; ASSETS: Fetcher; SODA_APP_TOKEN?: string; MIREYE_API_TOKEN?: string }
 
+const STALE_MS = 24 * 3600 * 1000;
 const NO_STORE = { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' };
 const HEADERS = { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=3600, stale-while-revalidate=86400' };
 
@@ -36,8 +37,15 @@ export default {
       try { await refresh(env, key); } catch (e) { return new Response(JSON.stringify({ error: String(e) }), { status: 502, headers: NO_STORE }); }
       hit = await env.DATA.getWithMetadata<{ updated: string }>(key, 'stream');
     }
+    // Daily freshness without a cron trigger (the Workers Free plan allows only 5 per account): serve what we have and,
+    // when it is over a day old, refresh it in the background. A short-lived lock stops parallel visitors refetching too.
+    const age = Date.now() - Date.parse(hit.metadata?.updated ?? '');
+    if (!(age < STALE_MS) && !(await env.DATA.get(`lock:${key}`))) {
+      ctx.waitUntil(env.DATA.put(`lock:${key}`, '1', { expirationTtl: 300 }).then(() => refresh(env, key)).catch(e => console.error('refresh failed', key, e)));
+    }
     return new Response(hit.value, { headers: { ...HEADERS, 'x-data-updated': hit.metadata?.updated ?? '' } });
   },
+  // Optional: add `"triggers": { "crons": ["23 9 * * *"] }` to wrangler.jsonc on a paid plan to refresh everything on a schedule too.
   async scheduled(_: ScheduledController, env: Env, ctx: ExecutionContext) {
     ctx.waitUntil(Promise.allSettled(Object.keys(DATASETS).map(k => refresh(env, k))).then(rs => {
       rs.forEach((r, i) => r.status === 'rejected' && console.error('refresh failed', Object.keys(DATASETS)[i], r.reason));
