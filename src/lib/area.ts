@@ -1,6 +1,7 @@
 // Live, per-home lookups against NYC Open Data (CORS-enabled, no key): lot facts (PLUTO), the building's past sales,
 // crime and 311 noise near the home compared with the Manhattan average. Results are cached per session.
 import type { LngLat } from '../model';
+import { distanceMeters } from './grid';
 
 const SODA = 'https://data.cityofnewyork.us/resource';
 const cache = new Map<string, Promise<unknown>>();
@@ -91,7 +92,6 @@ export async function citiBike(p: LngLat, n = 3) {
     fetch('/api/citibike/station_status').then(r => r.json()),
   ]);
   const st = new Map<string, { num_bikes_available: number; num_docks_available: number; num_ebikes_available?: number }>(status.data.stations.map((s: { station_id: string }) => [s.station_id, s]));
-  const { distanceMeters } = await import('./grid');
   return (info.data.stations as { station_id: string; name: string; lat: number; lon: number }[])
     .map(s => ({ name: s.name, lon: s.lon, lat: s.lat, m: distanceMeters(p, [s.lon, s.lat]), ...st.get(s.station_id) }))
     .sort((a, b) => a.m - b.m).slice(0, n);

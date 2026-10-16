@@ -65,7 +65,7 @@ An IDX or RLS feed can be added later as another data source.
 ## Data
 | Data | Source | Refresh |
 |---|---|---|
-| Sales (12 months) | DOF Rolling Sales `usep-8jbt` | daily by the Worker cron (DOF publishes monthly) |
+| Sales (12 months) | DOF Rolling Sales `usep-8jbt` | daily (DOF publishes monthly) |
 | 10-year price trend | DOF Annualized Sales `w2pb-icbu` | daily |
 | New developments | DCP Housing Database `br6q-ssj3` | daily |
 | Restaurants + grades | DOHMH inspections `43nn-pn8j` | daily |
@@ -96,7 +96,8 @@ Known limits:
   - `src/ui/`: panels.
   - `src/map/scene.ts`: map layers.
 - `worker/`: Cloudflare Worker. It serves the static build, `/api/data/:key` from KV (filled on first request,
-  refreshed daily by cron `23 9 * * *`; upstream bytes are streamed into KV unparsed, so CPU stays tiny) and
+  refreshed when a request finds it over 24 h old, served stale while the background refresh runs; no cron, which the
+  Workers Free plan limits to 5 per account; upstream bytes are streamed into KV unparsed, so CPU stays tiny) and
   `/api/citibike/*`. Its config is in `wrangler.jsonc`, with KV namespace `manhattan-re-dashboard-data`.
   - `/api/env` (`worker/env.ts`) calls Mireye with the Worker secret `MIREYE_API_TOKEN`, so the token never
     reaches the browser.
