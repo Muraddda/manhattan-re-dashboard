@@ -10,7 +10,7 @@
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*"]
   },
-  "kv_namespaces": [{ "binding": "DATA", "id": "c68bbf424d9e4ed78442726ab0ac1750" }],
+  "kv_namespaces": [{ "binding": "DATA", "id": "7aa20cdccd6a41ae9cc75d5f784c06ce" }],
   // No cron trigger: the Workers Free plan allows 5 per account. Snapshots refresh on the first request after they turn
   // 24 h old (see worker/index.ts). On a paid plan you can add: "triggers": { "crons": ["23 9 * * *"] }
   "observability": { "enabled": true }
