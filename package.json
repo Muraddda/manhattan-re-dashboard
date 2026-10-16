@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0 --port 5173",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "fetch-osm": "node scripts/fetch-osm.mjs && node scripts/process-osm.mjs"
+    "fetch-osm": "node scripts/fetch-osm.mjs"
   },
   "dependencies": {
     "@deck.gl/core": "^9.4.0",

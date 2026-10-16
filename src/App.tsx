@@ -66,12 +66,15 @@ export default function App() {
   const [catMode, setCatMode] = useState<Record<AmenityCategory, CatMode>>({ grocery: 'nearby', schools: 'nearby', parks: 'nearby', subway: 'nearby' });
   const [popStart, setPopStart] = useState(0);
   const [t, setT] = useState(0);
-  const [hud, setHud] = useState<string>('');
+  const [hud, setHud] = useState<string>('Loading city…');
 
   // data
   useEffect(() => {
-    const city = DETAIL ? loadBuildings() : loadBlocks().then(r => r.items);
-    Promise.all([city, loadListings(), loadDevelopments(), loadAmenities()]).then(([b, l, d, a]) => {
+    // Each source fails on its own: the big city files are not in git (see README), and their absence must not blank the dashboard.
+    const soft = <T,>(p: Promise<T>, fallback: T, what: string) => p.catch(e => { console.error(`Failed to load ${what}:`, e); return fallback; });
+    const city = soft(DETAIL ? loadBuildings() : loadBlocks().then(r => r.items).catch(() => loadBuildings()), [] as Building[], 'city geometry');
+    Promise.all([city, soft(loadListings(), [], 'listings'), soft(loadDevelopments(), [], 'developments'), soft(loadAmenities(), null, 'amenities')]).then(([b, l, d, a]) => {
+      if (!b.length) setHud('City geometry missing: generate public/data/blocks.json (see README)');
       const byListing = new Map<string, string>(); for (const x of b) for (const lid of x.listings ?? []) byListing.set(lid, x.id);
       const ls = l.map(x => ({ ...x, buildingId: byListing.get(x.id) ?? matchBuilding([x.lon, x.lat], b) }));
       const st: BuildingStore = {};
@@ -115,9 +118,8 @@ export default function App() {
   const listingLift = useMemo(() => new Map(buildings.filter(b => b.blockId).map(b => [b.id, (blockHeight.get(b.blockId!) ?? 0) + 4])), [buildings, blockHeight]);
   const parts = useMemo(() => showListingBld ? allParts.filter(p => !listingBuildings.has(p.id)) : allParts, [allParts, listingBuildings, showListingBld]);
   const listingParts = useMemo(() => showListingBld ? allParts.filter(p => listingBuildings.has(p.id)) : [], [allParts, listingBuildings, showListingBld]);
-  const listingByBuilding = useMemo(() => new Map(listings.filter(l => l.buildingId).map(l => [l.buildingId!, l])), [listings]);
   const buildingLayer = useMemo(() => new SolidPolygonLayer<BuildingPart>({
-    id: 'buildings', data: parts, visible: on.buildings, extruded: true, pickable: true,
+    id: 'buildings', data: parts, visible: on.buildings && parts.length > 0, extruded: true, pickable: true,
     getPolygon: d => d.polygon, getElevation: d => Math.max(d.height, 4), getFillColor: d =>
       d.id === selBuildingId ? GOLD : d.id === hoverId ? GOLD_HOVER : buildingBlue(d.id, d.height),
     material: { ambient: 0.55, diffuse: 0.5, shininess: 12, specularColor: [40, 40, 40] },
@@ -154,7 +156,7 @@ export default function App() {
   const layers = [
     buildingLayer,
     new ScatterplotLayer<[number, number]>({ id: 'nearby-ring', data: anchor ? [anchor] : [], getPosition: d => [d[0], d[1], 0.5], radiusUnits: 'meters',
-      getRadius: NEARBY_RADIUS_M * (STATIC ? 1 : Math.min(1, easeOutBack(Math.min(1, (t - popStart) / 0.6)))), updateTriggers: { getRadius: [t, popStart] },
+      getRadius: NEARBY_RADIUS_M * (STATIC ? 1 : Math.min(1, easeOutBack(Math.min(1, Math.max(0, (t - popStart) / 0.6))))), updateTriggers: { getRadius: [t, popStart] },
       filled: true, getFillColor: [47, 107, 255, 26], stroked: true, getLineColor: [47, 107, 255, 220], lineWidthUnits: 'pixels', getLineWidth: 2.5,
       parameters: { depthWriteEnabled: false } }),
     ...(['grocery', 'schools', 'parks', 'subway'] as AmenityCategory[]).map(c => new IconLayer({
@@ -166,15 +168,16 @@ export default function App() {
     new IconLayer<Development>({ id: 'devs', data: devs, visible: on.developments, pickable: true, getIcon: () => iconSpec('development'), getPosition: d => [d.lon, d.lat], getSize: 44, sizeUnits: 'pixels', parameters: { depthCompare: 'always', depthWriteEnabled: false },
       onClick: i => { if (i.object) { setSel({ kind: 'development', id: i.object.id }); flyTo(i.object.lon, i.object.lat); } } }),
     // Listing buildings: separate small layer so only these 16 recolour every frame (gentle coral pulse).
-    new SolidPolygonLayer<BuildingPart>({ id: 'listing-buildings', data: listingParts, extruded: true, pickable: true,
+    new SolidPolygonLayer<BuildingPart>({ id: 'listing-buildings', data: listingParts, visible: listingParts.length > 0, extruded: true, pickable: true,
       getPolygon: d => d.polygon, getElevation: d => Math.max(d.height, 6, listingLift.get(d.id) ?? 0),
       getFillColor: d => d.id === selBuildingId ? GOLD : d.id === hoverId ? GOLD_HOVER : [255, 110 + 30 * pulse(hash(d.id)), 80 + 25 * pulse(hash(d.id)), 255],
       material: { ambient: 0.7, diffuse: 0.45, shininess: 12, specularColor: [60, 40, 30] }, updateTriggers: { getFillColor: [t, selBuildingId, hoverId] },
       onHover: i => setHoverId(i.object?.id ?? null),
-      onClick: i => { const l = i.object && listingByBuilding.get(i.object.id); if (l) { setSel({ kind: 'listing', id: l.id }); flyTo(l.lon, l.lat); } } }),
+      onClick: i => { if (!i.object) return; const ids = store[i.object.id]?.listings ?? []; const l = ids.length === 1 && listings.find(x => x.id === ids[0]);
+        if (l) { setSel({ kind: 'listing', id: l.id }); flyTo(l.lon, l.lat); } else setSel({ kind: 'building', id: i.object.id }); } }),
   ];
   useEffect(() => { overlayRef.current?.setProps({ layers, onClick: (i: { object?: unknown }) => { if (!i.object) setSel(null); }, getCursor: ({ isHovering }) => (isHovering ? 'pointer' : 'grab') }); });
-  useEffect(() => { setHud(buildings.length ? `${buildings.length.toLocaleString()} buildings` : 'Loading city…'); }, [buildings]);
+  useEffect(() => { if (buildings.length) setHud(`${buildings.length.toLocaleString()} ${DETAIL ? 'buildings' : 'blocks & buildings'}`); }, [buildings]);
 
   // stats
   const active = listings.filter(l => l.status === 'Active');

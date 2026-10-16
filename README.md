@@ -11,7 +11,7 @@ Area: Manhattan south of 59th St / Central Park (coarse polygon in `scripts/area
     npm install
     npm run dev        # http://localhost:5173
     npm run build
-    node scripts/screenshot.mjs "http://localhost:5173/?static"   # -> screenshot.png
+    node scripts/screenshot.mjs "http://localhost:5173/?static"   # -> screenshot.png (CHROME=/path/to/chrome to override)
 Amenities: hidden on load; they pop up within `NEARBY_RADIUS_M` (400 m, `src/App.tsx`) of the selected listing/building with a ring. Toolbar amenity buttons cycle nearby-only (default) → show all → off. Esc or empty click clears.
 URL flags: `?static` stops the pulse animation (for headless/software GL), `?shadows` enables experimental deck.gl shadow maps.
 
@@ -45,7 +45,7 @@ Default view loads `public/data/blocks.json` (≈3.7k features) built by `script
 (`node scripts/extract-streets.mjs && .venv/bin/python scripts/make-blocks.py`; needs `pip install shapely numpy`).
 - Blocks = Manhattan-south polygon minus buffered OSM street centerlines (from the tiles). One extruded footprint per block at the
   area-weighted average height of its buildings; id `blk-<lat5>-<|lon|5>`. Blocks with <35% building coverage (parks, plazas) keep individual buildings.
-- Landmarks stay detailed: height >200 m, or >2.5× block average and >120 m, or footprint contains a curated famous-building point
+- Landmarks stay detailed: height >250 m, or footprint contains a curated famous-building point
   (Empire State, One WTC, Chrysler, Flatiron, 432 Park, Woolworth, One Vanderbilt, …; tile data has no name/tourism/historic tags).
 - Listing buildings are cut out of their block and drawn individually in pulsing coral (raised to block roof +4 m so they stay visible).
 - Each block lists its `buildingIds`, and `buildingToBlock` maps detailed ids → block ids, so the per-building `BuildingStore` still works.
