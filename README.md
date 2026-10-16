@@ -117,3 +117,5 @@ Known limits:
     npm run data       # rebuild every static dataset (needs network; ~2 min)
 URL flags: `?static` skips the intro flight (screenshots), `?lite` / `?hq` force the render tier.
 `SOCRATA_APP_TOKEN` (env var for the scripts) or the Worker secret `SODA_APP_TOKEN` raises NYC Open Data rate limits.
+
+<!-- auto-deploy test 2026-10-16 -->
