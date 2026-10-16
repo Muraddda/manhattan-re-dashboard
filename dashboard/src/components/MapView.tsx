@@ -12,11 +12,13 @@ export function MapView({ data, destinations, selected, onSelect }: { data: Matc
   const ready = useRef(false); const pending = useRef<() => void>(() => {});
 
   useEffect(() => {
-    const m = new maplibregl.Map({ container: el.current!, style: STYLE, center: [-73.995, 40.738], zoom: 11.6, pitch: 0, maxPitch: 0, dragRotate: false, attributionControl: false });
+    const m = new maplibregl.Map({ container: el.current!, style: { version: 8, sources: {}, layers: [] }, center: [-73.995, 40.738], zoom: 11.6, pitch: 0, maxPitch: 0, dragRotate: false, attributionControl: false });
+    m.setStyle(STYLE, { diff: false, transformStyle: (_prev, next) => guardNullNumbers(next) }); // guarded copy of the OpenFreeMap style
     m.touchZoomRotate.disableRotation();
     m.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a>' }), 'bottom-right');
     m.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
-    m.on('load', () => {
+    m.on('style.load', () => {
+      if (!m.getSource('openmaptiles') || m.getSource('area')) return; // skip the empty placeholder style; run once
       // Muted pastel wash: tint water & land toward the palette.
       for (const l of m.getStyle().layers ?? []) {
         if (l.type === 'fill' && /water/.test(l.id)) m.setPaintProperty(l.id, 'fill-color', '#d9e4f2');
@@ -75,3 +77,26 @@ export function MapView({ data, destinations, selected, onSelect }: { data: Matc
 }
 function fitPad() { const mobile = window.matchMedia('(max-width: 820px)').matches;
   return mobile ? { top: 60, bottom: window.innerHeight * 0.5, left: 30, right: 30 } : { top: 70, bottom: 70, left: 520, right: 70 }; }
+
+/**
+ * OpenFreeMap Positron filters compare optional tile properties to numbers, e.g. boundary_3 [">=", ["get","admin_level"], 3],
+ * label_country_3 [">=", ["get","rank"], 3], road/highway shields ["<=", ["get","ref_length"], 6]. When a feature lacks the
+ * property, MapLibre logs "Expected value to be of type number, but found null instead." We wrap those gets in coalesce with a
+ * sentinel that keeps the comparison false (same result as before, no warning).
+ */
+type Expr = unknown;
+const CMP = new Set(['<', '<=', '>', '>=']);
+function guardExpr(e: Expr): Expr {
+  if (!Array.isArray(e)) return e;
+  if (CMP.has(e[0] as string) && e.length === 3) {
+    const [op, a, b] = e as [string, Expr, Expr];
+    const isGet = (x: Expr) => Array.isArray(x) && x[0] === 'get';
+    const low = op === '<' || op === '<=';
+    if (isGet(a) && typeof b === 'number') return [op, ['coalesce', a, low ? 1e9 : -1e9], b];
+    if (isGet(b) && typeof a === 'number') return [op, a, ['coalesce', b, low ? -1e9 : 1e9]];
+  }
+  return e.map(guardExpr);
+}
+function guardNullNumbers(style: maplibregl.StyleSpecification): maplibregl.StyleSpecification {
+  return { ...style, layers: style.layers.map((l) => ('filter' in l && l.filter ? { ...l, filter: guardExpr(l.filter) as maplibregl.FilterSpecification } : l)) };
+}

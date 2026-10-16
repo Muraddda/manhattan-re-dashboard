@@ -4,6 +4,7 @@ import type { Feature, FeatureCollection } from 'geojson';
 import raw from './listings.json';
 import type { BentRule, ChecklistItem, Listing, MatchItem, MatchRequest, MatchResponse, Pets, PetsPolicy, RuleName } from '../types';
 import { estMinutes, hull } from '../lib/geo';
+import { budgetPrice, grossOf } from '../lib/format';
 
 export const LISTINGS = raw as Listing[];
 const LIMITS = { budgetPct: 10, beds: 2, baths: 1, early: 30, late: 10, staleDays: 7 };
@@ -51,7 +52,7 @@ export function mockMatch(req: MatchRequest): MatchResponse {
 
     // budget
     // contract: budget is checked on gross_rent ?? rent
-    const price = l.gross_rent ?? l.rent; const lbl = `${usd(price)}${l.gross_rent != null ? ' gross' : ''}`;
+    const price = budgetPrice(l); const lbl = `${usd(price)}${grossOf(l) != null ? ' gross' : ''}`;
     const pct = ((price - h.budget_max) / h.budget_max) * 100;
     if (pct <= 0) add('budget', 'satisfied', `${lbl} within ${usd(h.budget_max)}`);
     else add('budget', pct <= LIMITS.budgetPct ? 'adjusted' : 'not_satisfied', `${lbl} vs budget ${usd(h.budget_max)} (+${pct.toFixed(1)}%)`);
@@ -101,7 +102,7 @@ export function mockMatch(req: MatchRequest): MatchResponse {
 
 /** Ranking only. Preferences never filter. */
 function score(l: Listing, budget: number, travel: { minutes: number | null }[], dests: { max_minutes: number }[], tags: string[], nBends: number) {
-  let s = 60 + Math.max(0, (budget - (l.gross_rent ?? l.rent)) / budget) * 20;
+  let s = 60 + Math.max(0, (budget - budgetPrice(l)) / budget) * 20;
   travel.forEach((t, i) => (s += (1 - (t.minutes ?? dests[i].max_minutes) / dests[i].max_minutes) * 10));
   const eastVillage = l.lng! > -73.985 && l.lat! < 40.737, midtown = l.lat! > 40.738;
   if (tags.includes('eats_out') && (midtown || eastVillage)) s += 4;
