@@ -19,7 +19,7 @@ export const isStale = (l: Listing, ref = today()) => l.stale || days(ref, l.che
 
 function petsOk(p: Pets, pol: PetsPolicy): boolean | null {
   if (p === 'none') return true;
-  if (pol === 'unknown') return null;          // ruling: include, show "unknown"
+  if (pol === 'unknown') return true;          // contract: blank policy = allowed (pets_assumed)
   if (pol === 'allowed') return true;
   if (pol === 'none') return false;
   return p === 'cat' ? pol === 'cats' : p === 'dog' ? pol === 'dogs' : false;
@@ -42,7 +42,7 @@ export function mockMatch(req: MatchRequest): MatchResponse {
     const po = petsOk(h.pets, l.pets_policy);
     if (po === false) { ex.locked_rule++; continue; }
     const aa = h.assistance_animal ? ' · assistance animal is an accommodation, never excludes' : '';
-    add('pets', po ? 'satisfied' : 'unknown', (h.pets === 'none' ? 'No pets' : po ? `Policy "${l.pets_policy}" fits ${h.pets.replace(/_/g, ' ')}` : 'Pet policy unknown, verify with building') + aa);
+    add('pets', po ? 'satisfied' : 'unknown', (h.pets === 'none' ? 'No pets' : l.pets_assumed ? 'Yes (assumed): pet policy not listed, treated as allowed' : `Policy "${l.pets_policy}" fits ${h.pets.replace(/_/g, ' ')}`) + aa);
 
     // destination (LOCKED)
     const travel = destinations.map((d) => ({ label: d.label, minutes: estMinutes([l.lng!, l.lat!], [d.lng, d.lat]) as number | null }));

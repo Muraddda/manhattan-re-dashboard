@@ -10,10 +10,11 @@ export type Listing = {
   source_url: string; checked_at: string; needs_verification: boolean; stale: boolean;
   available_now: boolean;          // "Now"/"Immediate" -> available_date = checked_at; blank date stays null
   rent_basis: RentBasis;
-  unverified: boolean;
+  pets_assumed: boolean;            // pet policy not listed -> treated as allowed; Pets line shows "Yes (assumed)"
+  unverified: boolean;              // broker must verify (generic flag)
   gross_rent: number | null;        // set when the source states gross; budget is checked on gross_rent ?? rent
   source_flags: string[];           // e.g. ["owner_opposes_scraping"], agent-only
-  geocode_source: 'nyc_geosearch' | 'census' | 'override' | null;             // explicit "Unverified" label, e.g. Parkside West #2412
+  geocode_source: 'nyc_geosearch' | 'census' | 'override' | null;
 };
 export type RentBasis = 'listed' | 'lowest_term' | 'base_before_fees' | 'twelve_month' | 'net_effective';
 export type Pets = 'none' | 'cat' | 'dog' | 'cat_and_dog';

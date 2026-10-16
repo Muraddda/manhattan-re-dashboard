@@ -19,7 +19,7 @@ export function PropertyCard({ m, selected, onSelect, tier }: { m: MatchItem; se
         <span className="chip">{beds(l.beds)}</span><span className="chip">{l.baths} ba</span>
         {l.sqft && <span className="chip">{l.sqft} ft²</span>}
         {l.available_now ? <span className="chip now">Available now</span> : l.available_date && <span className="chip">Avail. {l.available_date}</span>}
-        {l.unverified && <span className="chip subtle" title="Broker must verify details (e.g. pet policy) before showing">Unverified</span>}
+        {l.unverified && <span className="chip subtle" title="Broker must verify details before showing">Unverified</span>}
         {l.source_flags?.includes('owner_opposes_scraping') && <span className="chip subtle agent-flag" title="Agent only: owner's terms oppose scraping. Remove first if the owner objects.">Owner opposes scraping · agent only</span>}
         {l.source_flags?.filter((f) => f !== 'owner_opposes_scraping').map((f) => <span key={f} className="chip subtle agent-flag" title="Agent-only source flag">{f.replace(/_/g, ' ')} · agent only</span>)}
         <span className="chip score" title="Ranking score (0–100)">Score {Math.round(m.score)}</span>
@@ -30,7 +30,7 @@ export function PropertyCard({ m, selected, onSelect, tier }: { m: MatchItem; se
             <span className="ico" aria-hidden="true">{ICON[c.status]}</span>
             <span className="rule">{RULE_LABEL[c.rule] ?? c.rule}</span>
             <span className="sr-only">{WORD[c.status]}:</span>
-            <span className="det">{c.detail}</span>
+            <span className="det">{petsDetail(c, l.pets_assumed)}</span>
           </li>
         ))}
       </ul>
@@ -43,4 +43,10 @@ export function PropertyCard({ m, selected, onSelect, tier }: { m: MatchItem; se
       </p>
     </article>
   );
+}
+
+/** Bill's ruling: where pets_assumed, the Pets line reads "Yes (assumed)" (styled satisfied) as a reminder to confirm with the building. */
+function petsDetail(c: { rule: string; status: string; detail: string }, assumed: boolean) {
+  if (c.rule !== 'pets' || !assumed || c.status !== 'satisfied' || /^Yes \(assumed\)/.test(c.detail)) return c.detail;
+  return `Yes (assumed): ${c.detail}`;
 }

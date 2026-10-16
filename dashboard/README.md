@@ -24,7 +24,7 @@ npm run mocks               # regenerate src/mocks/listings.json from all Data A
 - Accessibility: labelled controls, skip link, keyboard tabs (arrow keys), visible focus, AA text contrast, reduced-motion.
 
 ## Sample-layer rules (contract v1 + Bill, Oct 16)
-- Pets/commute locked; unknown pet policy is included with status `unknown`.
+- Pets/commute locked; blank pet policy = allowed (`pets_assumed`, "Yes (assumed)").
 - Move-in: available on/before move-in up to 30 days early = exact; up to 10 days late = stretch; blank date = `unknown` (not available now). "Now" → `available_date = checked_at`, `available_now: true`.
 - Beds: more than asked = exact if within budget; fewer by ≤2 = stretch. Baths fewer by ≤1 = stretch. Beds and baths can both bend; each is listed.
 - Budget ≤ +10% = stretch. Stale = checked_at older than 7 days (exactly 7 still matches).
@@ -33,7 +33,8 @@ npm run mocks               # regenerate src/mocks/listings.json from all Data A
 
 ## Rent labels and flags
 - `rent_basis`: listed · lowest_term ("From $X") · base_before_fees · twelve_month · net_effective ("$G gross · $N net effective (after free months)", or a prominent "NET EFFECTIVE, gross not shown").
-- `unverified` (subtle badge; now also set for unknown pet policy, so the checklist "Pets: unknown" is the main signal), `source_flags` (e.g. `owner_opposes_scraping`, subtle agent-only badge).
+- `pets_assumed`: blank pet policy is treated as allowed; the Pets checklist line reads "Yes (assumed)" (satisfied). No extra badge.
+- `unverified` (subtle badge, generic flag), `source_flags` (e.g. `owner_opposes_scraping`, subtle agent-only badge).
 - Glenwood rows have no unit numbers; the listing ID stands in (`ID 5210`).
 
 ## Mock coordinates

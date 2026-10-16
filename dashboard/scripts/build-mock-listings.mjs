@@ -10,7 +10,9 @@ const all = FILES.flatMap(read);
 // Glenwood shows listing IDs instead of unit numbers.
 for (const r of all) if (!r.unit) { const m = (r.notes || '').match(/listing ID (\w+)/i); if (m) r.unit = `ID ${m[1]}`; }
 const byKey = new Map(); for (const r of all) byKey.set(`${r.building_name}|${r.address}|${r.unit}`.toLowerCase(), r);
-const rows = [...byKey.values()];
+// Removed per Max (Oct 16): unit confirmed unavailable.
+const REMOVED = new Set(['parkside west (newport rentals)|40 newport parkway|2412']);
+const rows = [...byKey.entries()].filter(([k]) => !REMOVED.has(k)).map(([, r]) => r);
 
 const UDR = ['View 34', '10 Hanover Square', '95 Wall', '21 Chelsea'];
 function rentBasis(r) {
@@ -47,7 +49,8 @@ const out = rows.map((r, i) => {
     rent_basis: rentBasis(r), gross_rent: gross(r.notes), pets_policy: pp,
     fee_info: r.fee_info || null, leasing_contact: r.leasing_contact || null, source_url: r.source_url, checked_at: r.checked_at,
     needs_verification: true, stale: false,
-    unverified: pp === 'unknown' || (r.building_name.startsWith('Parkside West') && r.unit === '2412'),
+    pets_assumed: pp === 'unknown',   // blank policy -> treated as allowed
+    unverified: false,                 // generic flag; no manual cases in mocks now
     source_flags: /owner opposes scraping/i.test(r.notes || '') ? ['owner_opposes_scraping'] : [],
     geocode_source: g ? g.source : null };
 });
