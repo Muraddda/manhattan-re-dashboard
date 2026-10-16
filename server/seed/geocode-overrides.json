@@ -1,0 +1,36 @@
+{
+  "_comment": "Verified pinned points (supplied by the team, Oct 16). Overrides win over every geocoder. Keyed by the CSV street address.",
+  "6 Stuyvesant Oval": {
+    "lat": 40.730857,
+    "lng": -73.976744,
+    "source": "team-verified (Oct 16)"
+  },
+  "15 Stuyvesant Oval": {
+    "lat": 40.732661,
+    "lng": -73.978939,
+    "source": "team-verified (Oct 16)"
+  },
+  "16 Stuyvesant Oval": {
+    "lat": 40.731529,
+    "lng": -73.976257,
+    "source": "team-verified (Oct 16)"
+  },
+  "110 River Drive": {
+    "lat": 40.729947,
+    "lng": -74.031614,
+    "source": "OpenStreetMap",
+    "building": "Aquablu (Newport Rentals), Jersey City NJ"
+  },
+  "30 Park Lane North": {
+    "lat": 40.73218,
+    "lng": -74.032106,
+    "source": "OpenStreetMap",
+    "building": "Bisby"
+  },
+  "65 & 75 Dupont St": {
+    "lat": 40.73596,
+    "lng": -73.95802,
+    "source": "NYC GeoSearch (65 Dupont)",
+    "building": "Greenpoint Central"
+  }
+}

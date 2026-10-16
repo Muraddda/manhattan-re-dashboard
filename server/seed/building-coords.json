@@ -1,0 +1,6 @@
+{
+  "_comment": "Fallback only: used when a CSV address fails the Census geocoder. Addresses are the buildings' public addresses (newportrentals.com); coordinates come from the Census geocoder, never hand-entered.",
+  "Parkside West (Newport Rentals)": "40 Newport Parkway, Jersey City, NJ 07310",
+  "Ellipse (Newport Rentals)": "25 Park Lane South, Jersey City, NJ 07310",
+  "Bisby (Newport Rentals)": "30 Park Lane North, Jersey City, NJ 07310"
+}

@@ -1,0 +1,71 @@
+BUD-01	PASS	
+BUD-02	PASS	
+BUD-03	PASS	
+BUD-04	PASS	
+BUD-05	PASS	
+BED-01	PASS	
+BED-02	PASS	
+BED-03	PASS	
+BTH-01	PASS	
+BTH-02	PASS	
+BTH-03	PASS	
+DATE-01	PASS	
+DATE-02	FAIL	exact ['PW-3007'] != []; stretch [] != ['PW-3007']; bent_rules [] != [('move_in', ['PW-3007'])]; PW-3007 checklist got/exp {'move_in': ('satisfied', 'adjusted')}
+DATE-03	FAIL	exact ['PW-3007'] != []; stretch [] != ['PW-3007']; bent_rules [] != [('move_in', ['PW-3007'])]; PW-3007 checklist got/exp {'move_in': ('satisfied', 'adjusted')}
+DATE-04	PASS	
+DATE-05	PASS	
+DATE-06	PASS	
+DATE-07	PASS	
+DATE-08	FAIL	exact ['PW-1515'] != []
+CMB-01	FAIL	bent_rules [('baths', ['PW-3007']), ('beds', ['PW-3007']), ('budget', ['PW-3007'])] != [('baths', ['PW-3007']), ('beds', ['PW-3007']), ('budget', ['PW-3007']), ('move_in', ['PW-3007'])]; PW-3007 checklist got/exp {'move_in': ('satisfied', 'adjusted')}
+CMB-02	PASS	
+CMB-03	FAIL	exact ['PW-3007'] != []; stretch ['PW-1106'] != ['PW-1106', 'PW-3007']; bent_rules [('budget', ['PW-1106'])] != [('budget', ['PW-1106']), ('move_in', ['PW-1106', 'PW-3007'])]; PW-3007 checklist got/exp {'move_in': ('satisfied', 'adjusted')}; PW-1106 checklist got/exp {'move_in': ('satisfied', 'adjusted')}
+CMB-04	PASS	
+PET-01	PASS	
+PET-02	FAIL	exact ['SYN-PET-allowed', 'SYN-PET-cats', 'SYN-PET-unknown'] != ['SYN-PET-allowed', 'SYN-PET-cats']
+PET-03	FAIL	exact ['SYN-PET-allowed', 'SYN-PET-dogs', 'SYN-PET-unknown'] != ['SYN-PET-allowed', 'SYN-PET-dogs']
+PET-04	FAIL	exact ['SYN-PET-allowed', 'SYN-PET-unknown'] != ['SYN-PET-allowed']
+PET-05	PASS	
+PET-06	PASS	
+PET-07	PASS	
+PET-08	PASS	
+COM-01	PASS	
+COM-02	PASS	
+COM-03	PASS	
+COM-04	PASS	
+STL-01	FAIL	exact ['SYN-AGE-6', 'SYN-AGE-7'] != ['SYN-AGE-6']; SYN-AGE-7 should be excluded; excluded_count.stale=1 (QA expects 2)
+STL-02	PASS	
+STL-03	PASS	
+STL-04	PASS	
+EMP-01	PASS	
+EMP-02	PASS	
+INV-01	PASS	
+INV-02	PASS	
+INV-03	PASS	
+INV-04	PASS	
+INV-05	PASS	
+INV-06	PASS	
+INV-07	PASS	
+INV-08	PASS	
+INV-09	PASS	
+INV-10	PASS	
+INV-11	PASS	
+INV-12	PASS	
+INV-13	NOT RUN	static/descriptive case, not an endpoint call
+INV-14	PASS	got 200 (accepts 200 or 400)
+RNK-01	PASS	
+RNK-02	PASS	
+FH-01	PASS	
+FH-02	NOT RUN	static/descriptive case, not an endpoint call
+FH-03	NOT RUN	static/descriptive case, not an endpoint call
+FH-04	NOT RUN	static/descriptive case, not an endpoint call
+FH-05	NOT RUN	static/descriptive case, not an endpoint call
+SHP-01	PASS	
+SHP-02	PASS	
+SHP-03	PASS	
+SHP-04	NOT RUN	static/descriptive case, not an endpoint call
+SHP-05	PASS	
+PER-01	FAIL	exact 7 vs 0; stretch 6 vs 14; missing ['Bisby (Newport Rentals) #226', 'Parkside West (Newport Rentals) #1515', 'Parkside West (Newport Rentals) #1908', 'Parkside West (Newport Rentals) #2115'] extra []
+PER-02	FAIL	exact 4 vs 0; stretch 59 vs 72; missing ['Bisby (Newport Rentals) #226', 'Bisby (Newport Rentals) #316', 'Bisby (Newport Rentals) #409', 'Bisby (Newport Rentals) #502'] extra []
+PER-03	FAIL	got exact 9 stretch 25, QA expects 0/0 (Q1 'exclude unknown' proposal)
+Counter({'PASS': 52, 'FAIL': 12, 'NOT RUN': 6})

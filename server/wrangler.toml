@@ -1,0 +1,17 @@
+name = "skyline-rentals-api-demo"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+# Local-only demo. database_id is a placeholder: nothing is created in any Cloudflare account.
+[[d1_databases]]
+binding = "DB"
+database_name = "skyline-demo"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[vars]
+VERSION = "v1-demo"
+BROKERAGE_ID = "brk_demo"
+# "true" = verify Turnstile tokens against Cloudflare; anything else = stub (any non-empty token accepted).
+TURNSTILE_ENABLED = "false"
+# TURNSTILE_SECRET goes in .dev.vars (gitignored), never in this file.

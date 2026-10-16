@@ -1,0 +1,826 @@
+{
+  "625 West 57th Street, New York, NY 10019": {
+    "lat": 40.77060898428,
+    "lng": -73.991950499452,
+    "matched": "625 W 57TH ST, NEW YORK, NY, 10019",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:42.006Z"
+  },
+  "25 Park Lane South, Jersey City, NJ 07310": {
+    "lat": 40.731177305481,
+    "lng": -74.031540725597,
+    "matched": "25 PARK LN S, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:42.405Z"
+  },
+  "95 Wall Street, New York, NY 10005": {
+    "lat": 40.705101978144,
+    "lng": -74.00738992582,
+    "matched": "95 WALL ST, NEW YORK, NY, 10005",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:42.570Z"
+  },
+  "10 Hanover Square, New York, NY 10005": {
+    "lat": 40.704935398402,
+    "lng": -74.008996602089,
+    "matched": "10 HANOVER ST, NEW YORK, NY, 10005",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:42.731Z"
+  },
+  "30 Park Lane North, Jersey City, NJ 07310": {
+    "lat": 40.731324513021,
+    "lng": -74.032077320262,
+    "matched": "30 PARK LN S, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:42.895Z"
+  },
+  "40 Newport Parkway, Jersey City, NJ 07310": {
+    "lat": 40.729162409183,
+    "lng": -74.032571574484,
+    "matched": "40 NEWPORT PKWY, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:43.074Z"
+  },
+  "120 W. 21st Street, New York, NY 10011": {
+    "lat": 40.74182699882,
+    "lng": -73.994394623121,
+    "matched": "120 W 21ST ST, NEW YORK, NY, 10011",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:43.237Z"
+  },
+  "401 E 34th St, New York, NY 10016": {
+    "lat": 40.743804650766,
+    "lng": -73.973409301606,
+    "matched": "401 E 34TH ST, NEW YORK, NY, 10016",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:43.418Z"
+  },
+  "2 Gold St, New York, NY 10038": {
+    "lat": 40.707216071781,
+    "lng": -74.007352193689,
+    "matched": "2 GOLD ST, NEW YORK, NY, 10038",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:43.596Z"
+  },
+  "16 Stuyvesant Oval, New York, NY": {
+    "lat": 40.729853806389,
+    "lng": -73.988831175253,
+    "matched": "16 STUYVESANT ST, NEW YORK, NY, 10003",
+    "matches": 4,
+    "geocoded_at": "2026-10-16T23:02:43.757Z"
+  },
+  "601 E 20th St, New York, NY": {
+    "lat": 40.733028355003,
+    "lng": -73.975317645122,
+    "matched": "601 E 20TH ST, NEW YORK, NY, 10010",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:43.945Z"
+  },
+  "281 Avenue C, New York, NY": {
+    "lat": 40.730065137734,
+    "lng": -73.974679873055,
+    "matched": "281 AVE C, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:44.106Z"
+  },
+  "7 Peter Cooper Rd, New York, NY": {
+    "lat": 40.735132334766,
+    "lng": -73.976681581399,
+    "matched": "7 PETER COOPER RD, NEW YORK, NY, 10010",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:44.280Z"
+  },
+  "6 Stuyvesant Oval, New York, NY": {
+    "lat": 40.729833042193,
+    "lng": -73.989335920092,
+    "matched": "6 STUYVESANT ST, NEW YORK, NY, 10003",
+    "matches": 4,
+    "geocoded_at": "2026-10-16T23:02:44.439Z"
+  },
+  "610 E 20th St, New York, NY": {
+    "lat": 40.732894269453,
+    "lng": -73.975307799611,
+    "matched": "610 E 20TH ST, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:44.628Z"
+  },
+  "605 E 14th St, New York, NY": {
+    "lat": 40.729415107256,
+    "lng": -73.97780972893,
+    "matched": "605 E 14TH ST, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:44.814Z"
+  },
+  "315 Avenue C, New York, NY": {
+    "lat": 40.730894175321,
+    "lng": -73.974122469775,
+    "matched": "315 AVE C, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:44.975Z"
+  },
+  "8 Peter Cooper Rd, New York, NY": {
+    "lat": 40.735042550062,
+    "lng": -73.976574553121,
+    "matched": "8 PETER COOPER RD, NEW YORK, NY, 10010",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:45.148Z"
+  },
+  "370 First Ave, New York, NY": {
+    "lat": 40.736086230262,
+    "lng": -73.978879014813,
+    "matched": "370 1ST AVE, NEW YORK, NY, 10010",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:45.309Z"
+  },
+  "531 E 20th St, New York, NY": {
+    "lat": 40.733752184991,
+    "lng": -73.976880167528,
+    "matched": "531 E 20TH ST, NEW YORK, NY, 10010",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:45.498Z"
+  },
+  "645 E 14th St, New York, NY": {
+    "lat": 40.729048143904,
+    "lng": -73.976923071652,
+    "matched": "645 E 14TH ST, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:45.687Z"
+  },
+  "635 E 14th St, New York, NY": {
+    "lat": 40.729139884742,
+    "lng": -73.977144735971,
+    "matched": "635 E 14TH ST, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:45.870Z"
+  },
+  "649 E 14th St, New York, NY": {
+    "lat": 40.729011447569,
+    "lng": -73.976834405924,
+    "matched": "649 E 14TH ST, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:46.058Z"
+  },
+  "541 E 20th St, New York, NY": {
+    "lat": 40.733400524074,
+    "lng": -73.976060071498,
+    "matched": "541 E 20TH ST, NEW YORK, NY, 10010",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:46.251Z"
+  },
+  "3 Peter Cooper Rd, New York, NY": {
+    "lat": 40.735072416695,
+    "lng": -73.97682597472,
+    "matched": "3 PETER COOPER RD, NEW YORK, NY, 10010",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:46.425Z"
+  },
+  "624 E 20th St, New York, NY": {
+    "lat": 40.732847877312,
+    "lng": -73.975193828267,
+    "matched": "624 E 20TH ST, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:46.609Z"
+  },
+  "540 E 20th St, New York, NY": {
+    "lat": 40.733251290901,
+    "lng": -73.976038311126,
+    "matched": "540 E 20TH ST, NEW YORK, NY, 10009",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:02:46.827Z"
+  },
+  "15 Stuyvesant Oval, New York, NY": {
+    "lat": 40.729981008614,
+    "lng": -73.988643620244,
+    "matched": "15 STUYVESANT ST, NEW YORK, NY, 10003",
+    "matches": 4,
+    "geocoded_at": "2026-10-16T23:02:46.990Z"
+  },
+  "geosearch|625 West 57th Street, New York, NY 10019": {
+    "lat": 40.771472,
+    "lng": -73.993015,
+    "matched": "625 WEST 57 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:30.849Z"
+  },
+  "geosearch|95 Wall Street, New York, NY 10005": {
+    "lat": 40.704658,
+    "lng": -74.007602,
+    "matched": "95 WALL STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:31.300Z"
+  },
+  "geosearch|10 Hanover Square, New York, NY 10005": {
+    "lat": 40.704599,
+    "lng": -74.008822,
+    "matched": "10 HANOVER SQUARE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:31.458Z"
+  },
+  "geosearch|120 W. 21st Street, New York, NY 10011": {
+    "lat": 40.74187,
+    "lng": -73.994892,
+    "matched": "120 WEST 21 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:31.626Z"
+  },
+  "geosearch|401 E 34th St, New York, NY 10016": {
+    "lat": 40.743763,
+    "lng": -73.972365,
+    "matched": "401 EAST 34 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:31.778Z"
+  },
+  "geosearch|2 Gold St, New York, NY 10038": {
+    "lat": 40.707321,
+    "lng": -74.006984,
+    "matched": "2 GOLD STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:31.995Z"
+  },
+  "geosearch|601 E 20th St, New York, NY": {
+    "lat": 40.733279,
+    "lng": -73.974954,
+    "matched": "601 EAST 20 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:32.167Z"
+  },
+  "geosearch|281 Avenue C, New York, NY": {
+    "lat": 40.73079,
+    "lng": -73.975597,
+    "matched": "281 AVENUE C, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:32.330Z"
+  },
+  "geosearch|7 Peter Cooper Rd, New York, NY": {
+    "lat": 40.734525,
+    "lng": -73.975274,
+    "matched": "7 PETER COOPER ROAD, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:32.466Z"
+  },
+  "geosearch|610 E 20th St, New York, NY": {
+    "lat": 40.732568,
+    "lng": -73.974988,
+    "matched": "610 EAST 20 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:32.630Z"
+  },
+  "geosearch|605 E 14th St, New York, NY": {
+    "lat": 40.729493,
+    "lng": -73.977147,
+    "matched": "605 EAST 14 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:32.787Z"
+  },
+  "geosearch|315 Avenue C, New York, NY": {
+    "lat": 40.731812,
+    "lng": -73.974556,
+    "matched": "315 AVENUE C, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:32.942Z"
+  },
+  "geosearch|8 Peter Cooper Rd, New York, NY": {
+    "lat": 40.733902,
+    "lng": -73.975115,
+    "matched": "8 PETER COOPER ROAD, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:33.080Z"
+  },
+  "geosearch|370 First Ave, New York, NY": {
+    "lat": 40.735643,
+    "lng": -73.978185,
+    "matched": "370 FIRST AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:33.242Z"
+  },
+  "geosearch|531 E 20th St, New York, NY": {
+    "lat": 40.733913,
+    "lng": -73.976455,
+    "matched": "531 EAST 20 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:33.385Z"
+  },
+  "geosearch|645 E 14th St, New York, NY": {
+    "lat": 40.728947,
+    "lng": -73.975934,
+    "matched": "645 EAST 14 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:33.539Z"
+  },
+  "geosearch|635 E 14th St, New York, NY": {
+    "lat": 40.728947,
+    "lng": -73.975934,
+    "matched": "635 EAST 14 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:33.696Z"
+  },
+  "geosearch|649 E 14th St, New York, NY": {
+    "lat": 40.730124,
+    "lng": -73.976573,
+    "matched": "649 EAST 14 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:33.860Z"
+  },
+  "geosearch|541 E 20th St, New York, NY": {
+    "lat": 40.733607,
+    "lng": -73.975727,
+    "matched": "541 EAST 20 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:34.019Z"
+  },
+  "geosearch|3 Peter Cooper Rd, New York, NY": {
+    "lat": 40.735264,
+    "lng": -73.977287,
+    "matched": "3 PETER COOPER ROAD, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:34.163Z"
+  },
+  "geosearch|624 E 20th St, New York, NY": {
+    "lat": 40.732004,
+    "lng": -73.975792,
+    "matched": "624 EAST 20 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:34.355Z"
+  },
+  "geosearch|540 E 20th St, New York, NY": {
+    "lat": 40.733002,
+    "lng": -73.976016,
+    "matched": "540 EAST 20 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:05:34.527Z"
+  },
+  "110 River Drive, Jersey City, NJ 07310": {
+    "lat": 40.715366106827,
+    "lng": -74.047945324261,
+    "matched": "110 RIVER ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:24.761Z"
+  },
+  "31 River Court, Jersey City, NJ 07310": {
+    "lat": 40.727240474006,
+    "lng": -74.031126269376,
+    "matched": "31 RIVER CT, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:25.157Z"
+  },
+  "180 River Drive, Jersey City, NJ 07310": {
+    "lat": 40.72974482803,
+    "lng": -74.03193354444,
+    "matched": "180 RIVER DR S, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:25.319Z"
+  },
+  "30 River Court, Jersey City, NJ 07310": {
+    "lat": 40.727038802813,
+    "lng": -74.031903817472,
+    "matched": "30 RIVER CT, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:25.479Z"
+  },
+  "45 Park Lane South, Jersey City, NJ 07310": {
+    "lat": 40.731157667455,
+    "lng": -74.03141686755,
+    "matched": "45 PARK LN S, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:25.639Z"
+  },
+  "204 Tenth Street, Jersey City, NJ": {
+    "lat": 40.728870786156,
+    "lng": -74.041822069248,
+    "matched": "204 10TH ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:25.796Z"
+  },
+  "25 River Drive, Jersey City, NJ 07310": {
+    "lat": 40.727212748876,
+    "lng": -74.032167874625,
+    "matched": "25 RIVER DR S, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:25.959Z"
+  },
+  "30 Newport Parkway, Jersey City, NJ 07310": {
+    "lat": 40.729205254827,
+    "lng": -74.032691693203,
+    "matched": "30 NEWPORT PKWY, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:26.130Z"
+  },
+  "1 River Court, Jersey City, NJ 07310": {
+    "lat": 40.72722505854,
+    "lng": -74.031192531266,
+    "matched": "1 RIVER CT, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:26.294Z"
+  },
+  "180 Tenth Street, Jersey City, NJ": {
+    "lat": 40.728824777878,
+    "lng": -74.041197878582,
+    "matched": "180 10TH ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:26.453Z"
+  },
+  "20 River Court, Jersey City, NJ 07310": {
+    "lat": 40.727003143638,
+    "lng": -74.031979207551,
+    "matched": "20 RIVER CT, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:26.614Z"
+  },
+  "55 River Drive South, Jersey City, NJ 07310": {
+    "lat": 40.728384939076,
+    "lng": -74.032006899121,
+    "matched": "55 RIVER DR S, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:26.799Z"
+  },
+  "35 River Drive South, Jersey City, NJ 07310": {
+    "lat": 40.727587700811,
+    "lng": -74.032118228954,
+    "matched": "35 RIVER DR S, JERSEY CITY, NJ, 07310",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:26.961Z"
+  },
+  "geosearch|808 Columbus Ave, New York, NY 10025": {
+    "lat": 40.794739,
+    "lng": -73.966632,
+    "matched": "808 COLUMBUS AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:27.478Z"
+  },
+  "geosearch|10 Liberty Street, New York, NY": {
+    "lat": 40.707414,
+    "lng": -74.008187,
+    "matched": "10 LIBERTY STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:27.975Z"
+  },
+  "geosearch|240 East 39th Street, New York, NY": {
+    "lat": 40.747941,
+    "lng": -73.974803,
+    "matched": "240 EAST 39 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:28.141Z"
+  },
+  "geosearch|333 East 56th Street, New York, NY": {
+    "lat": 40.758194,
+    "lng": -73.964161,
+    "matched": "333 EAST 56 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:28.291Z"
+  },
+  "geosearch|320 East 46th Street, New York, NY": {
+    "lat": 40.75179,
+    "lng": -73.969488,
+    "matched": "320 EAST 46 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:28.452Z"
+  },
+  "geosearch|300 East 56th Street, New York, NY": {
+    "lat": 40.757933,
+    "lng": -73.965344,
+    "matched": "300 EAST 56 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:28.598Z"
+  },
+  "geosearch|320 West 38th Street, New York, NY": {
+    "lat": 40.754975,
+    "lng": -73.993195,
+    "matched": "320 WEST 38 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:28.750Z"
+  },
+  "geosearch|1930 Broadway, New York, NY": {
+    "lat": null,
+    "lng": null,
+    "matched": "1930 B'WAY, New York, NY, USA",
+    "matches": 0,
+    "geocoded_at": "2026-10-16T23:09:28.905Z"
+  },
+  "1930 Broadway, New York, NY": {
+    "lat": 40.772423713997,
+    "lng": -73.982110544821,
+    "matched": "1930 BROADWAY, NEW YORK, NY, 10023",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:09:29.067Z"
+  },
+  "geosearch|1755 York Avenue, New York, NY": {
+    "lat": 40.779442,
+    "lng": -73.944877,
+    "matched": "1755 YORK AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:29.236Z"
+  },
+  "geosearch|1775 York Avenue, New York, NY": {
+    "lat": 40.780325,
+    "lng": -73.94456,
+    "matched": "1775 YORK AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:29.388Z"
+  },
+  "geosearch|500 East 85th Street, New York, NY": {
+    "lat": 40.774794,
+    "lng": -73.947509,
+    "matched": "500 EAST 85 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:29.544Z"
+  },
+  "geosearch|300 East 75th Street, New York, NY": {
+    "lat": 40.770216,
+    "lng": -73.956724,
+    "matched": "300 EAST 75 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:29.697Z"
+  },
+  "geosearch|500 East 77th Street, New York, NY": {
+    "lat": 40.769614,
+    "lng": -73.951331,
+    "matched": "500 EAST 77 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:29.853Z"
+  },
+  "geosearch|1365 York Avenue, New York, NY": {
+    "lat": 40.767403,
+    "lng": -73.953926,
+    "matched": "1365 YORK AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:30.026Z"
+  },
+  "geosearch|29-59 Northern Boulevard, Long Island City, NY": {
+    "lat": 40.750265,
+    "lng": -73.936217,
+    "matched": "29-59 NORTHERN BOULEVARD, Long Island City, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:30.183Z"
+  },
+  "geosearch|10 Halletts Point, Astoria, NY 11102": {
+    "lat": 40.776474,
+    "lng": -73.935127,
+    "matched": "10 HALLETTS POINT, Astoria, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:30.330Z"
+  },
+  "geosearch|20 Halletts Point, Astoria, NY 11102": {
+    "lat": 40.77641,
+    "lng": -73.93625,
+    "matched": "20 HALLETTS POINT, Astoria, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:30.473Z"
+  },
+  "geosearch|30 Halletts Point, Astoria, NY 11102": {
+    "lat": 40.77641,
+    "lng": -73.93625,
+    "matched": "30 HALLETTS POINT, Astoria, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:09:30.620Z"
+  },
+  "geosearch|283 Flatbush Avenue Extension, Brooklyn, NY 11201": {
+    "lat": null,
+    "lng": null,
+    "matched": "40 FLATBUSH AVENUE EXTENSION, Brooklyn, NY, USA",
+    "matches": 0,
+    "geocoded_at": "2026-10-16T23:17:04.147Z"
+  },
+  "283 Flatbush Avenue Extension, Brooklyn, NY 11201": {
+    "lat": 40.6920163651,
+    "lng": -73.982354821077,
+    "matched": "283 FLATBUSH AVE EXN, BROOKLYN, NY, 11201",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:17:04.605Z"
+  },
+  "geosearch|101 Bedford Ave, Brooklyn, NY 11211": {
+    "lat": 40.720016,
+    "lng": -73.954543,
+    "matched": "101 BEDFORD AVENUE, Brooklyn, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:17:04.871Z"
+  },
+  "geosearch|65 & 75 Dupont St, Brooklyn, NY 11222": {
+    "lat": null,
+    "lng": null,
+    "matched": "75 DUPONT STREET, Brooklyn, NY, USA",
+    "matches": 0,
+    "geocoded_at": "2026-10-16T23:17:05.309Z"
+  },
+  "65 & 75 Dupont St, Brooklyn, NY 11222": {
+    "lat": 40.735804976188,
+    "lng": -73.956461568461,
+    "matched": "75 DUPONT ST, BROOKLYN, NY, 11222",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:17:05.462Z"
+  },
+  "geosearch|11 Ocean Parkway, Brooklyn, NY 11218": {
+    "lat": 40.65017,
+    "lng": -73.97264,
+    "matched": "11 OCEAN PARKWAY, Brooklyn, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:17:05.663Z"
+  },
+  "30 Regent Street, Jersey City, NJ 07302": {
+    "lat": 40.715270608903,
+    "lng": -74.047149121671,
+    "matched": "30 REGENT ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:17:05.814Z"
+  },
+  "9 Regent Street, Jersey City, NJ 07302": {
+    "lat": 40.715230151131,
+    "lng": -74.04614890096,
+    "matched": "9 REGENT ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:17:06.208Z"
+  },
+  "333 Grand Street, Jersey City, NJ 07302": {
+    "lat": 40.716467462501,
+    "lng": -74.048656653902,
+    "matched": "333 GRAND ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:17:06.361Z"
+  },
+  "50 Regent Street, Jersey City, NJ 07302": {
+    "lat": 40.715263806978,
+    "lng": -74.047380368946,
+    "matched": "50 REGENT ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:17:06.519Z"
+  },
+  "88 Regent Street, Jersey City, NJ 07302": {
+    "lat": 40.715250883321,
+    "lng": -74.047819738768,
+    "matched": "88 REGENT ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:17:06.671Z"
+  },
+  "204 Tenth Street, Jersey City, NJ 07302": {
+    "lat": 40.728870786156,
+    "lng": -74.041822069248,
+    "matched": "204 10TH ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:25:31.609Z"
+  },
+  "180 Tenth Street, Jersey City, NJ 07302": {
+    "lat": 40.728824777878,
+    "lng": -74.041197878582,
+    "matched": "180 10TH ST, JERSEY CITY, NJ, 07302",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:25:32.001Z"
+  },
+  "geosearch|10 Liberty Street, New York, NY 10005": {
+    "lat": 40.707414,
+    "lng": -74.008187,
+    "matched": "10 LIBERTY STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:32.378Z"
+  },
+  "geosearch|240 East 39th Street, New York, NY 10016": {
+    "lat": 40.747941,
+    "lng": -73.974803,
+    "matched": "240 EAST 39 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:32.793Z"
+  },
+  "geosearch|333 East 56th Street, New York, NY 10022": {
+    "lat": 40.758194,
+    "lng": -73.964161,
+    "matched": "333 EAST 56 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:32.950Z"
+  },
+  "geosearch|320 East 46th Street, New York, NY 10017": {
+    "lat": 40.75179,
+    "lng": -73.969488,
+    "matched": "320 EAST 46 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:33.105Z"
+  },
+  "geosearch|300 East 56th Street, New York, NY 10022": {
+    "lat": 40.757933,
+    "lng": -73.965344,
+    "matched": "300 EAST 56 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:33.253Z"
+  },
+  "geosearch|320 West 38th Street, New York, NY 10018": {
+    "lat": 40.754975,
+    "lng": -73.993195,
+    "matched": "320 WEST 38 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:33.428Z"
+  },
+  "geosearch|1930 Broadway, New York, NY 10023": {
+    "lat": null,
+    "lng": null,
+    "matched": "1930 B'WAY, New York, NY, USA",
+    "matches": 0,
+    "geocoded_at": "2026-10-16T23:25:33.597Z"
+  },
+  "1930 Broadway, New York, NY 10023": {
+    "lat": 40.772423713997,
+    "lng": -73.982110544821,
+    "matched": "1930 BROADWAY, NEW YORK, NY, 10023",
+    "matches": 1,
+    "geocoded_at": "2026-10-16T23:25:33.759Z"
+  },
+  "geosearch|1755 York Avenue, New York, NY 10128": {
+    "lat": 40.779442,
+    "lng": -73.944877,
+    "matched": "1755 YORK AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:33.936Z"
+  },
+  "geosearch|1775 York Avenue, New York, NY 10128": {
+    "lat": 40.780325,
+    "lng": -73.94456,
+    "matched": "1775 YORK AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:34.121Z"
+  },
+  "geosearch|500 East 85th Street, New York, NY 10028": {
+    "lat": 40.774794,
+    "lng": -73.947509,
+    "matched": "500 EAST 85 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:34.319Z"
+  },
+  "geosearch|300 East 75th Street, New York, NY 10021": {
+    "lat": 40.770216,
+    "lng": -73.956724,
+    "matched": "300 EAST 75 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:34.485Z"
+  },
+  "geosearch|500 East 77th Street, New York, NY 10162": {
+    "lat": 40.769614,
+    "lng": -73.951331,
+    "matched": "500 EAST 77 STREET, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:34.666Z"
+  },
+  "geosearch|1365 York Avenue, New York, NY 10021": {
+    "lat": 40.767403,
+    "lng": -73.953926,
+    "matched": "1365 YORK AVENUE, New York, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:34.840Z"
+  },
+  "geosearch|29-59 Northern Boulevard, Long Island City, NY 11101": {
+    "lat": 40.750265,
+    "lng": -73.936217,
+    "matched": "29-59 NORTHERN BOULEVARD, Long Island City, NY, USA",
+    "matches": 1,
+    "confidence": 0.8,
+    "geocoded_at": "2026-10-16T23:25:35.015Z"
+  }
+}

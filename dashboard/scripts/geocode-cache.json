@@ -1,0 +1,478 @@
+{
+ "625 West 57th Street|New York|NY": {
+  "lat": 40.771472,
+  "lng": -73.993015,
+  "zip": "10019",
+  "source": "nyc_geosearch",
+  "label": "625 WEST 57 STREET, New York, NY, USA"
+ },
+ "25 Park Lane South|Jersey City|NJ": {
+  "lat": 40.731177,
+  "lng": -74.031541,
+  "zip": "07310",
+  "source": "census",
+  "label": "25 PARK LN S, JERSEY CITY, NJ, 07310"
+ },
+ "95 Wall Street|New York|NY": {
+  "lat": 40.704658,
+  "lng": -74.007602,
+  "zip": "10005",
+  "source": "nyc_geosearch",
+  "label": "95 WALL STREET, New York, NY, USA"
+ },
+ "10 Hanover Square|New York|NY": {
+  "lat": 40.704599,
+  "lng": -74.008822,
+  "zip": "10005",
+  "source": "nyc_geosearch",
+  "label": "10 HANOVER SQUARE, New York, NY, USA"
+ },
+ "30 Park Lane North|Jersey City|NJ": {
+  "lat": 40.731325,
+  "lng": -74.032077,
+  "zip": "07310",
+  "source": "census",
+  "label": "30 PARK LN S, JERSEY CITY, NJ, 07310"
+ },
+ "40 Newport Parkway|Jersey City|NJ": {
+  "lat": 40.729162,
+  "lng": -74.032572,
+  "zip": "07310",
+  "source": "census",
+  "label": "40 NEWPORT PKWY, JERSEY CITY, NJ, 07310"
+ },
+ "120 W. 21st Street|New York|NY": {
+  "lat": 40.74187,
+  "lng": -73.994892,
+  "zip": "10011",
+  "source": "nyc_geosearch",
+  "label": "120 WEST 21 STREET, New York, NY, USA"
+ },
+ "401 E 34th St|New York|NY": {
+  "lat": 40.743763,
+  "lng": -73.972365,
+  "zip": "10016",
+  "source": "nyc_geosearch",
+  "label": "401 EAST 34 STREET, New York, NY, USA"
+ },
+ "110 River Drive|Jersey City|NJ": {
+  "lat": 40.729947,
+  "lng": -74.031614,
+  "zip": "07310",
+  "source": "override",
+  "label": "Aquablu, 110 River Drive (OpenStreetMap)"
+ },
+ "31 River Court|Jersey City|NJ": {
+  "lat": 40.72724,
+  "lng": -74.031126,
+  "zip": "07310",
+  "source": "census",
+  "label": "31 RIVER CT, JERSEY CITY, NJ, 07310"
+ },
+ "180 River Drive|Jersey City|NJ": {
+  "lat": 40.729745,
+  "lng": -74.031934,
+  "zip": "07310",
+  "source": "census",
+  "label": "180 RIVER DR S, JERSEY CITY, NJ, 07310"
+ },
+ "30 River Court|Jersey City|NJ": {
+  "lat": 40.727039,
+  "lng": -74.031904,
+  "zip": "07310",
+  "source": "census",
+  "label": "30 RIVER CT, JERSEY CITY, NJ, 07310"
+ },
+ "45 Park Lane South|Jersey City|NJ": {
+  "lat": 40.731158,
+  "lng": -74.031417,
+  "zip": "07310",
+  "source": "census",
+  "label": "45 PARK LN S, JERSEY CITY, NJ, 07310"
+ },
+ "204 Tenth Street|Jersey City|NJ": {
+  "lat": 40.728871,
+  "lng": -74.041822,
+  "zip": "07302",
+  "source": "census",
+  "label": "204 10TH ST, JERSEY CITY, NJ, 07302"
+ },
+ "25 River Drive|Jersey City|NJ": {
+  "lat": 40.727213,
+  "lng": -74.032168,
+  "zip": "07310",
+  "source": "census",
+  "label": "25 RIVER DR S, JERSEY CITY, NJ, 07310"
+ },
+ "30 Newport Parkway|Jersey City|NJ": {
+  "lat": 40.729205,
+  "lng": -74.032692,
+  "zip": "07310",
+  "source": "census",
+  "label": "30 NEWPORT PKWY, JERSEY CITY, NJ, 07310"
+ },
+ "1 River Court|Jersey City|NJ": {
+  "lat": 40.727225,
+  "lng": -74.031193,
+  "zip": "07310",
+  "source": "census",
+  "label": "1 RIVER CT, JERSEY CITY, NJ, 07310"
+ },
+ "180 Tenth Street|Jersey City|NJ": {
+  "lat": 40.728825,
+  "lng": -74.041198,
+  "zip": "07302",
+  "source": "census",
+  "label": "180 10TH ST, JERSEY CITY, NJ, 07302"
+ },
+ "20 River Court|Jersey City|NJ": {
+  "lat": 40.727003,
+  "lng": -74.031979,
+  "zip": "07310",
+  "source": "census",
+  "label": "20 RIVER CT, JERSEY CITY, NJ, 07310"
+ },
+ "55 River Drive South|Jersey City|NJ": {
+  "lat": 40.728385,
+  "lng": -74.032007,
+  "zip": "07310",
+  "source": "census",
+  "label": "55 RIVER DR S, JERSEY CITY, NJ, 07310"
+ },
+ "35 River Drive South|Jersey City|NJ": {
+  "lat": 40.727588,
+  "lng": -74.032118,
+  "zip": "07310",
+  "source": "census",
+  "label": "35 RIVER DR S, JERSEY CITY, NJ, 07310"
+ },
+ "808 Columbus Ave|New York|NY": {
+  "lat": 40.794739,
+  "lng": -73.966632,
+  "zip": "10025",
+  "source": "nyc_geosearch",
+  "label": "808 COLUMBUS AVENUE, New York, NY, USA"
+ },
+ "10 Liberty Street|New York|NY": {
+  "lat": 40.707414,
+  "lng": -74.008187,
+  "zip": "10005",
+  "source": "nyc_geosearch",
+  "label": "10 LIBERTY STREET, New York, NY, USA"
+ },
+ "240 East 39th Street|New York|NY": {
+  "lat": 40.747941,
+  "lng": -73.974803,
+  "zip": "10016",
+  "source": "nyc_geosearch",
+  "label": "240 EAST 39 STREET, New York, NY, USA"
+ },
+ "333 East 56th Street|New York|NY": {
+  "lat": 40.758194,
+  "lng": -73.964161,
+  "zip": "10022",
+  "source": "nyc_geosearch",
+  "label": "333 EAST 56 STREET, New York, NY, USA"
+ },
+ "320 East 46th Street|New York|NY": {
+  "lat": 40.75179,
+  "lng": -73.969488,
+  "zip": "10017",
+  "source": "nyc_geosearch",
+  "label": "320 EAST 46 STREET, New York, NY, USA"
+ },
+ "300 East 56th Street|New York|NY": {
+  "lat": 40.757933,
+  "lng": -73.965344,
+  "zip": "10022",
+  "source": "nyc_geosearch",
+  "label": "300 EAST 56 STREET, New York, NY, USA"
+ },
+ "320 West 38th Street|New York|NY": {
+  "lat": 40.754975,
+  "lng": -73.993195,
+  "zip": "10018",
+  "source": "nyc_geosearch",
+  "label": "320 WEST 38 STREET, New York, NY, USA"
+ },
+ "1930 Broadway|New York|NY": {
+  "lat": 40.77241,
+  "lng": -73.981652,
+  "zip": "10023",
+  "source": "nyc_geosearch",
+  "label": "1930 B'WAY, New York, NY, USA"
+ },
+ "1755 York Avenue|New York|NY": {
+  "lat": 40.779442,
+  "lng": -73.944877,
+  "zip": "10128",
+  "source": "nyc_geosearch",
+  "label": "1755 YORK AVENUE, New York, NY, USA"
+ },
+ "1775 York Avenue|New York|NY": {
+  "lat": 40.780325,
+  "lng": -73.94456,
+  "zip": "10128",
+  "source": "nyc_geosearch",
+  "label": "1775 YORK AVENUE, New York, NY, USA"
+ },
+ "500 East 85th Street|New York|NY": {
+  "lat": 40.774794,
+  "lng": -73.947509,
+  "zip": "10028",
+  "source": "nyc_geosearch",
+  "label": "500 EAST 85 STREET, New York, NY, USA"
+ },
+ "300 East 75th Street|New York|NY": {
+  "lat": 40.770216,
+  "lng": -73.956724,
+  "zip": "10021",
+  "source": "nyc_geosearch",
+  "label": "300 EAST 75 STREET, New York, NY, USA"
+ },
+ "500 East 77th Street|New York|NY": {
+  "lat": 40.769614,
+  "lng": -73.951331,
+  "zip": "10162",
+  "source": "nyc_geosearch",
+  "label": "500 EAST 77 STREET, New York, NY, USA"
+ },
+ "1365 York Avenue|New York|NY": {
+  "lat": 40.767403,
+  "lng": -73.953926,
+  "zip": "10021",
+  "source": "nyc_geosearch",
+  "label": "1365 YORK AVENUE, New York, NY, USA"
+ },
+ "29-59 Northern Boulevard|Long Island City|NY": {
+  "lat": 40.750265,
+  "lng": -73.936217,
+  "zip": "11101",
+  "source": "nyc_geosearch",
+  "label": "29-59 NORTHERN BOULEVARD, Long Island City, NY, USA"
+ },
+ "10 Halletts Point|Astoria|NY": {
+  "lat": 40.776474,
+  "lng": -73.935127,
+  "zip": "11102",
+  "source": "nyc_geosearch",
+  "label": "10 HALLETTS POINT, Astoria, NY, USA"
+ },
+ "20 Halletts Point|Astoria|NY": {
+  "lat": 40.77641,
+  "lng": -73.93625,
+  "zip": "11102",
+  "source": "nyc_geosearch",
+  "label": "20 HALLETTS POINT, Astoria, NY, USA"
+ },
+ "30 Halletts Point|Astoria|NY": {
+  "lat": 40.77641,
+  "lng": -73.93625,
+  "zip": "11102",
+  "source": "nyc_geosearch",
+  "label": "30 HALLETTS POINT, Astoria, NY, USA"
+ },
+ "2 Gold St|New York|NY": {
+  "lat": 40.707321,
+  "lng": -74.006984,
+  "zip": "10038",
+  "source": "nyc_geosearch",
+  "label": "2 GOLD STREET, New York, NY, USA"
+ },
+ "16 Stuyvesant Oval|New York|NY": {
+  "lat": 40.731529,
+  "lng": -73.976257,
+  "zip": "10009",
+  "source": "override",
+  "label": "16 Stuyvesant Oval"
+ },
+ "601 E 20th St|New York|NY": {
+  "lat": 40.733279,
+  "lng": -73.974954,
+  "zip": "10010",
+  "source": "nyc_geosearch",
+  "label": "601 EAST 20 STREET, New York, NY, USA"
+ },
+ "281 Avenue C|New York|NY": {
+  "lat": 40.73079,
+  "lng": -73.975597,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "281 AVENUE C, New York, NY, USA"
+ },
+ "7 Peter Cooper Rd|New York|NY": {
+  "lat": 40.734525,
+  "lng": -73.975274,
+  "zip": "10010",
+  "source": "nyc_geosearch",
+  "label": "7 PETER COOPER ROAD, New York, NY, USA"
+ },
+ "6 Stuyvesant Oval|New York|NY": {
+  "lat": 40.730857,
+  "lng": -73.976744,
+  "zip": "10009",
+  "source": "override",
+  "label": "6 Stuyvesant Oval"
+ },
+ "610 E 20th St|New York|NY": {
+  "lat": 40.732568,
+  "lng": -73.974988,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "610 EAST 20 STREET, New York, NY, USA"
+ },
+ "605 E 14th St|New York|NY": {
+  "lat": 40.729493,
+  "lng": -73.977147,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "605 EAST 14 STREET, New York, NY, USA"
+ },
+ "315 Avenue C|New York|NY": {
+  "lat": 40.731812,
+  "lng": -73.974556,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "315 AVENUE C, New York, NY, USA"
+ },
+ "8 Peter Cooper Rd|New York|NY": {
+  "lat": 40.733902,
+  "lng": -73.975115,
+  "zip": "10010",
+  "source": "nyc_geosearch",
+  "label": "8 PETER COOPER ROAD, New York, NY, USA"
+ },
+ "370 First Ave|New York|NY": {
+  "lat": 40.735643,
+  "lng": -73.978185,
+  "zip": "10010",
+  "source": "nyc_geosearch",
+  "label": "370 FIRST AVENUE, New York, NY, USA"
+ },
+ "531 E 20th St|New York|NY": {
+  "lat": 40.733913,
+  "lng": -73.976455,
+  "zip": "10010",
+  "source": "nyc_geosearch",
+  "label": "531 EAST 20 STREET, New York, NY, USA"
+ },
+ "645 E 14th St|New York|NY": {
+  "lat": 40.728947,
+  "lng": -73.975934,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "645 EAST 14 STREET, New York, NY, USA"
+ },
+ "635 E 14th St|New York|NY": {
+  "lat": 40.728947,
+  "lng": -73.975934,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "635 EAST 14 STREET, New York, NY, USA"
+ },
+ "649 E 14th St|New York|NY": {
+  "lat": 40.730124,
+  "lng": -73.976573,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "649 EAST 14 STREET, New York, NY, USA"
+ },
+ "541 E 20th St|New York|NY": {
+  "lat": 40.733607,
+  "lng": -73.975727,
+  "zip": "10010",
+  "source": "nyc_geosearch",
+  "label": "541 EAST 20 STREET, New York, NY, USA"
+ },
+ "3 Peter Cooper Rd|New York|NY": {
+  "lat": 40.735264,
+  "lng": -73.977287,
+  "zip": "10010",
+  "source": "nyc_geosearch",
+  "label": "3 PETER COOPER ROAD, New York, NY, USA"
+ },
+ "624 E 20th St|New York|NY": {
+  "lat": 40.732004,
+  "lng": -73.975792,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "624 EAST 20 STREET, New York, NY, USA"
+ },
+ "540 E 20th St|New York|NY": {
+  "lat": 40.733002,
+  "lng": -73.976016,
+  "zip": "10009",
+  "source": "nyc_geosearch",
+  "label": "540 EAST 20 STREET, New York, NY, USA"
+ },
+ "15 Stuyvesant Oval|New York|NY": {
+  "lat": 40.732661,
+  "lng": -73.978939,
+  "zip": "10009",
+  "source": "override",
+  "label": "15 Stuyvesant Oval"
+ },
+ "283 Flatbush Avenue Extension|Brooklyn|NY": {
+  "lat": 40.679323,
+  "lng": -73.973698,
+  "zip": "11217",
+  "source": "nyc_geosearch",
+  "label": "283 FLATBUSH AVENUE, Brooklyn, NY, USA"
+ },
+ "101 Bedford Ave|Brooklyn|NY": {
+  "lat": 40.720016,
+  "lng": -73.954543,
+  "zip": "11211",
+  "source": "nyc_geosearch",
+  "label": "101 BEDFORD AVENUE, Brooklyn, NY, USA"
+ },
+ "65 & 75 Dupont St|Brooklyn|NY": {
+  "lat": 40.73596,
+  "lng": -73.95802,
+  "zip": "11222",
+  "source": "nyc_geosearch",
+  "label": "65 DUPONT STREET, Brooklyn, NY, USA"
+ },
+ "11 Ocean Parkway|Brooklyn|NY": {
+  "lat": 40.65017,
+  "lng": -73.97264,
+  "zip": "11218",
+  "source": "nyc_geosearch",
+  "label": "11 OCEAN PARKWAY, Brooklyn, NY, USA"
+ },
+ "30 Regent Street|Jersey City|NJ": {
+  "lat": 40.715271,
+  "lng": -74.047149,
+  "zip": "07302",
+  "source": "census",
+  "label": "30 REGENT ST, JERSEY CITY, NJ, 07302"
+ },
+ "9 Regent Street|Jersey City|NJ": {
+  "lat": 40.71523,
+  "lng": -74.046149,
+  "zip": "07302",
+  "source": "census",
+  "label": "9 REGENT ST, JERSEY CITY, NJ, 07302"
+ },
+ "333 Grand Street|Jersey City|NJ": {
+  "lat": 40.716467,
+  "lng": -74.048657,
+  "zip": "07302",
+  "source": "census",
+  "label": "333 GRAND ST, JERSEY CITY, NJ, 07302"
+ },
+ "50 Regent Street|Jersey City|NJ": {
+  "lat": 40.715264,
+  "lng": -74.04738,
+  "zip": "07302",
+  "source": "census",
+  "label": "50 REGENT ST, JERSEY CITY, NJ, 07302"
+ },
+ "88 Regent Street|Jersey City|NJ": {
+  "lat": 40.715251,
+  "lng": -74.04782,
+  "zip": "07302",
+  "source": "census",
+  "label": "88 REGENT ST, JERSEY CITY, NJ, 07302"
+ }
+}
