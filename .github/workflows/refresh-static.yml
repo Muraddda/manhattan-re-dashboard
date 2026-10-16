@@ -1,0 +1,52 @@
+# Weekly rebuild of the committed static data (transit, places, schools, lots, Michelin dining).
+# Each source runs independently; whatever changed under public/data/ is committed, which redeploys via Workers Builds.
+name: Refresh static data
+
+on:
+  schedule:
+    - cron: '0 10 * * 1' # Monday 10:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-static
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Transit
+        run: node scripts/build-transit.mjs
+        continue-on-error: true
+      - name: Places
+        run: node scripts/build-places.mjs
+        continue-on-error: true
+      - name: Schools
+        run: node scripts/build-schools.mjs
+        continue-on-error: true
+      - name: Lots
+        run: node scripts/build-lots.mjs
+        continue-on-error: true
+      - name: Dining (Michelin)
+        run: node scripts/build-dining.mjs
+        continue-on-error: true
+      - name: Check the refreshed data still builds and passes the sales self-check
+        run: npm test && npm run build
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data
+          if git diff --cached --quiet; then echo 'No data changes'; exit 0; fi
+          git commit -m 'Refresh static data'
+          git push

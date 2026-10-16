@@ -1,7 +1,0 @@
-{"sample": true, "note": "SAMPLE / FAKE new developments for demo purposes only", "developments": [
- {"id":"D-01","name":"Harbor Point Tower (SAMPLE)","address":"near 75 Pearl St","lat":40.7038,"lon":-74.0105,"units":220,"floors":58,"completion":"2028","status":"Under construction"},
- {"id":"D-02","name":"Hudson Yard Lofts (SAMPLE)","address":"near 550 W 30th St","lat":40.7526,"lon":-74.0034,"units":145,"floors":34,"completion":"2027","status":"Sales launched"},
- {"id":"D-03","name":"Bowery Arc (SAMPLE)","address":"near 250 Bowery","lat":40.7222,"lon":-73.9928,"units":64,"floors":18,"completion":"2027","status":"Pre-launch"},
- {"id":"D-04","name":"Gramercy Light (SAMPLE)","address":"near 200 E 23rd St","lat":40.7387,"lon":-73.9813,"units":98,"floors":26,"completion":"2029","status":"Approved"},
- {"id":"D-05","name":"Midtown Crest (SAMPLE)","address":"near 140 W 57th St","lat":40.7651,"lon":-73.9790,"units":120,"floors":72,"completion":"2028","status":"Under construction"}
-]}

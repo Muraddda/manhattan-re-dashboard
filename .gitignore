@@ -5,3 +5,5 @@ scripts/cache
 # generated, too large for git: regenerate per README
 public/data/buildings.json
 public/data/blocks.json
+# local Worker state (wrangler dev)
+.wrangler
