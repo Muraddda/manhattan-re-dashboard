@@ -1,9 +1,8 @@
 # Skyline Realty — Manhattan South 3D dashboard (test run)
 
 Vite + React + TS, MapLibre GL (OpenFreeMap `positron` style, no API key) + deck.gl overlays (`MapboxOverlay`).
-Cities: Skylines II-inspired look: light warm-gray ground, pastel extruded buildings with ambient + directional
-lighting, green parks, blue water, ~58° pitch, rounded glass panels, round layer-toggle toolbar, bubbly pin icons,
-cyan/teal selection highlight.
+Look: daylight 3D city (near-white massing, glassy blue towers, low warm sun + cool sky fill), coral listing buildings with
+price tags, one blue accent for selection; light glass UI in Geist with Lucide icons and spring motion (respects reduced motion).
 
 Area: Manhattan south of 59th St / Central Park (coarse polygon in `scripts/area.mjs`, inside bbox -74.03..-73.93, 40.70..40.77).
 
@@ -12,8 +11,10 @@ Area: Manhattan south of 59th St / Central Park (coarse polygon in `scripts/area
     npm run dev        # http://localhost:5173
     npm run build
     node scripts/screenshot.mjs "http://localhost:5173/?static"   # -> screenshot.png (CHROME=/path/to/chrome to override)
-Amenities: hidden on load; they pop up within `NEARBY_RADIUS_M` (400 m, `src/App.tsx`) of the selected listing/building with a ring. Toolbar amenity buttons cycle nearby-only (default) → show all → off. Esc or empty click clears.
-URL flags: `?static` stops the pulse animation (for headless/software GL), `?shadows` enables experimental deck.gl shadow maps.
+UI: one glass side panel (search, status filters, sort, listings; a Market tab with inventory, price by neighborhood and new developments), a detail sheet for the selection, a layer dock and map controls (zoom, north, 2D/3D, home). Every listing gets an HTML price tag above its building; hovering a row highlights the building and vice versa. `/` or ⌘K focuses search, Esc closes.
+Phones (≤820 px): floating search bar, scrollable layer chips, and a draggable bottom sheet (peek / half / full) with the selection shown as a card above it.
+Amenities: hidden on load; they pop up within `NEARBY_RADIUS_M` (400 m, `src/App.tsx`) of the selected listing/building with a ring. Dock amenity buttons cycle nearby-only (default) → show all → off.
+URL flags: `?static` skips the intro flight and marker transitions (headless/software GL), `?simple` uses the merged-block city, `?shadows` enables experimental deck.gl shadow maps.
 
 ## Data
 | File | What |
@@ -40,17 +41,16 @@ automatically via point-in-polygon (`matchBuilding`). Click a building → teal 
 ## Walking minutes
 Straight-line distance × 1.25 grid detour ÷ 80 m/min. Approximate only (no routing).
 
-## Simplified city (default) vs detailed (`?detail`)
-Default view loads `public/data/blocks.json` (≈3.7k features) built by `scripts/make-blocks.py`
+## Detailed city (default) vs simplified (`?simple`)
+The default view draws every footprint from `buildings.json` (most realistic massing). `?simple` loads `public/data/blocks.json` (≈3.7k features) built by `scripts/make-blocks.py`
 (`node scripts/extract-streets.mjs && .venv/bin/python scripts/make-blocks.py`; needs `pip install shapely numpy`).
 - Blocks = Manhattan-south polygon minus buffered OSM street centerlines (from the tiles). One extruded footprint per block at the
   area-weighted average height of its buildings; id `blk-<lat5>-<|lon|5>`. Blocks with <35% building coverage (parks, plazas) keep individual buildings.
 - Landmarks stay detailed: height >250 m, or footprint contains a curated famous-building point
   (Empire State, One WTC, Chrysler, Flatiron, 432 Park, Woolworth, One Vanderbilt, …; tile data has no name/tourism/historic tags).
-- Listing buildings are cut out of their block and drawn individually in pulsing coral (raised to block roof +4 m so they stay visible).
+- Listing buildings are cut out of their block and drawn individually in coral (raised to block roof +4 m so they stay visible).
 - Each block lists its `buildingIds`, and `buildingToBlock` maps detailed ids → block ids, so the per-building `BuildingStore` still works.
-Open `http://localhost:5173/?detail` for the original per-footprint mode (`buildings.json`).
-Listings have no pins: find them via the coral buildings or the Listings list in the stats panel.
+If one of the two files is missing, the app falls back to the other.
 
 ## GitHub copy: what is not included
 The GitHub repo was uploaded file-by-file through the GitHub API (the box had no git credentials), so:
