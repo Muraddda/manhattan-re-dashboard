@@ -1,0 +1,5688 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-01T08:52:28Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 357544577,
+  "lat": 40.7012239,
+  "lon": -73.9445117,
+  "tags": {
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "942331",
+    "name": "All Saints High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357548361,
+  "lat": 40.7327110,
+  "lon": -73.9825978,
+  "tags": {
+    "addr:city": "Manhattan",
+    "addr:housenumber": "345",
+    "addr:postcode": "10003",
+    "addr:street": "East 15th Street",
+    "amenity": "school",
+    "gnis:feature_id": "943768",
+    "name": "High School for Health Professions and Human Services",
+    "operator": "The New York City Department of Education",
+    "phone": "+1 212 780 9175",
+    "website": "https://www.hphsnyc.org/",
+    "wikidata": "Q5756583",
+    "wikipedia": "en:High School for Health Professions and Human Services"
+  }
+},
+{
+  "type": "node",
+  "id": 357548368,
+  "lat": 40.7097874,
+  "lon": -73.9634840,
+  "tags": {
+    "amenity": "school",
+    "ele": "13",
+    "gnis:feature_id": "943769",
+    "name": "Beth Jacob Seminary"
+  }
+},
+{
+  "type": "node",
+  "id": 357561095,
+  "lat": 40.7452800,
+  "lon": -74.0047200,
+  "tags": {
+    "amenity": "school",
+    "ele": "4",
+    "gnis:feature_id": "950991",
+    "name": "General Theological Seminary",
+    "wheelchair": "yes",
+    "wikidata": "Q1501676",
+    "wikipedia": "en:General Theological Seminary"
+  }
+},
+{
+  "type": "node",
+  "id": 357565063,
+  "lat": 40.7234356,
+  "lon": -73.9540269,
+  "tags": {
+    "amenity": "school",
+    "ele": "4",
+    "gnis:feature_id": "953064",
+    "name": "Holy Family School"
+  }
+},
+{
+  "type": "node",
+  "id": 357567347,
+  "lat": 40.7197963,
+  "lon": -73.9774880,
+  "tags": {
+    "amenity": "school",
+    "ele": "3",
+    "gnis:feature_id": "954282",
+    "name": "Public School M188 The Island School"
+  }
+},
+{
+  "type": "node",
+  "id": 357567542,
+  "lat": 40.7295465,
+  "lon": -73.9826390,
+  "tags": {
+    "amenity": "school",
+    "ele": "6",
+    "gnis:feature_id": "954336",
+    "name": "Twelfth Street Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 357578424,
+  "lat": 40.7442685,
+  "lon": -74.0004172,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-04-28",
+    "ele": "6",
+    "gnis:feature_id": "961248",
+    "name": "Public School 11"
+  }
+},
+{
+  "type": "node",
+  "id": 357578602,
+  "lat": 40.7143829,
+  "lon": -73.9956849,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "40",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Division Street",
+    "amenity": "school",
+    "ele": "17",
+    "name": "Yung Wing Elementary",
+    "ref": "PS124",
+    "website": "https://ps124m.org"
+  }
+},
+{
+  "type": "node",
+  "id": 357578738,
+  "lat": 40.7412130,
+  "lon": -73.9801389,
+  "tags": {
+    "amenity": "school",
+    "ele": "10",
+    "gnis:feature_id": "961340",
+    "name": "Public School 14"
+  }
+},
+{
+  "type": "node",
+  "id": 357579076,
+  "lat": 40.7551017,
+  "lon": -73.9659718,
+  "tags": {
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "961413",
+    "name": "United Nations School"
+  }
+},
+{
+  "type": "node",
+  "id": 357579218,
+  "lat": 40.7567683,
+  "lon": -73.9723609,
+  "tags": {
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "961446",
+    "name": "Public School 18"
+  }
+},
+{
+  "type": "node",
+  "id": 357579732,
+  "lat": 40.7162135,
+  "lon": -73.9987505,
+  "tags": {
+    "amenity": "school",
+    "ele": "7",
+    "gnis:feature_id": "961549",
+    "name": "Public School 23"
+  }
+},
+{
+  "type": "node",
+  "id": 357580621,
+  "lat": 40.7591213,
+  "lon": -73.9666402,
+  "tags": {
+    "addr:city": "New York",
+    "addr:country": "US",
+    "addr:housenumber": "233",
+    "addr:postcode": "10022",
+    "addr:state": "NY",
+    "addr:street": "East 56th Street",
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "961768",
+    "grades": "3K-5",
+    "internet_access": "yes",
+    "name": "Public School 59",
+    "polling_station": "yes",
+    "website": "https://ps59.net/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 357580682,
+  "lat": 40.7278799,
+  "lon": -74.0040284,
+  "tags": {
+    "amenity": "school",
+    "ele": "6",
+    "gnis:feature_id": "961786",
+    "name": "Public School 621"
+  }
+},
+{
+  "type": "node",
+  "id": 357580780,
+  "lat": 40.7634348,
+  "lon": -73.9795833,
+  "tags": {
+    "amenity": "school",
+    "ele": "20",
+    "gnis:feature_id": "961811",
+    "name": "Public School 69"
+  }
+},
+{
+  "type": "node",
+  "id": 357584102,
+  "lat": 40.7195468,
+  "lon": -73.9423600,
+  "tags": {
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "963418",
+    "name": "Saint Cecilia School"
+  }
+},
+{
+  "type": "node",
+  "id": 357584495,
+  "lat": 40.7166700,
+  "lon": -73.9583300,
+  "tags": {
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "963503",
+    "name": "Saint Francis Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 357586417,
+  "lat": 40.7430624,
+  "lon": -73.9531269,
+  "tags": {
+    "addr:housenumber": "10-08",
+    "addr:postcode": "11101",
+    "addr:street": "49th Avenue",
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "963971",
+    "name": "Saint Marys School"
+  }
+},
+{
+  "type": "node",
+  "id": 357593428,
+  "lat": 40.7070470,
+  "lon": -73.9440266,
+  "tags": {
+    "amenity": "school",
+    "ele": "9",
+    "gnis:feature_id": "967830",
+    "name": "Most Holy Trinity School"
+  }
+},
+{
+  "type": "node",
+  "id": 357610557,
+  "lat": 40.7144444,
+  "lon": -73.9975000,
+  "tags": {
+    "amenity": "school",
+    "ele": "11",
+    "gnis:feature_id": "2063258",
+    "name": "Public School 124",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 357618078,
+  "lat": 40.7514099,
+  "lon": -73.9368787,
+  "tags": {
+    "amenity": "school",
+    "ele": "10",
+    "gnis:feature_id": "2080357",
+    "mascot": "Eagles",
+    "name": "Academy of American Studies",
+    "wikidata": "Q4671418",
+    "wikipedia": "en:Academy of American Studies"
+  }
+},
+{
+  "type": "node",
+  "id": 357618145,
+  "lat": 40.7517275,
+  "lon": -73.9367830,
+  "tags": {
+    "amenity": "school",
+    "ele": "10",
+    "gnis:feature_id": "2080379",
+    "name": "Newcomers School",
+    "wikidata": "Q7017651",
+    "wikipedia": "en:Newcomers High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357618189,
+  "lat": 40.7544444,
+  "lon": -73.9311111,
+  "tags": {
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "2080394",
+    "name": "Queens Lutheran School"
+  }
+},
+{
+  "type": "node",
+  "id": 357618546,
+  "lat": 40.7194428,
+  "lon": -73.9821917,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "219",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Stanton Street",
+    "amenity": "school",
+    "gnis:feature_id": "2080642",
+    "name": "Our Lady of Sorrows School",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 357618564,
+  "lat": 40.7313624,
+  "lon": -73.9944525,
+  "tags": {
+    "addr:street": "East 8th Street",
+    "alt_name": "Cantor Film Center",
+    "amenity": "school",
+    "ele": "9",
+    "gnis:feature_id": "2080741",
+    "name": "Iris and B Gerald Cantor Film Center"
+  }
+},
+{
+  "type": "node",
+  "id": 357618567,
+  "lat": 40.7288889,
+  "lon": -73.9952778,
+  "tags": {
+    "amenity": "school",
+    "ele": "11",
+    "gnis:feature_id": "2080751",
+    "name": "Brookdale Center Hebrew Union College"
+  }
+},
+{
+  "type": "node",
+  "id": 357618575,
+  "lat": 40.7305142,
+  "lon": -73.9988154,
+  "tags": {
+    "amenity": "school",
+    "ele": "7",
+    "gnis:feature_id": "2080757",
+    "name": "Hagop Kevorkian Center for Near Eastern Studies",
+    "website": "https://as.nyu.edu"
+  }
+},
+{
+  "type": "node",
+  "id": 357618581,
+  "lat": 40.7291677,
+  "lon": -74.0002418,
+  "tags": {
+    "amenity": "school",
+    "ele": "7",
+    "gnis:feature_id": "2080762",
+    "name": "Lower West Side Children's Center"
+  }
+},
+{
+  "type": "node",
+  "id": 357619111,
+  "lat": 40.7061075,
+  "lon": -73.9630510,
+  "tags": {
+    "addr:housenumber": "505",
+    "addr:postcode": "11211",
+    "addr:street": "Bedford Avenue",
+    "amenity": "school",
+    "ele": "16",
+    "gnis:feature_id": "2081633",
+    "name": "Yeshiva Yesoda Hatora of K'Hal Adas Yereim"
+  }
+},
+{
+  "type": "node",
+  "id": 357619272,
+  "lat": 40.7011228,
+  "lon": -73.9445018,
+  "tags": {
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "2081877",
+    "name": "All Saints Elementary School"
+  }
+},
+{
+  "type": "node",
+  "id": 357619312,
+  "lat": 40.7024080,
+  "lon": -73.9598031,
+  "tags": {
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "2081890",
+    "name": "Beth Chana School for Girls"
+  }
+},
+{
+  "type": "node",
+  "id": 357619314,
+  "lat": 40.7050000,
+  "lon": -73.9597222,
+  "tags": {
+    "amenity": "school",
+    "ele": "16",
+    "gnis:feature_id": "2081891",
+    "name": "Beth Rachel School for Girls"
+  }
+},
+{
+  "type": "node",
+  "id": 357619348,
+  "lat": 40.7050000,
+  "lon": -73.9530556,
+  "tags": {
+    "amenity": "school",
+    "ele": "9",
+    "gnis:feature_id": "2081901",
+    "name": "Bnos Yakov School for Girls"
+  }
+},
+{
+  "type": "node",
+  "id": 357619470,
+  "lat": 40.7049705,
+  "lon": -73.9618503,
+  "tags": {
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "2082147",
+    "name": "Hychel Hatorah"
+  }
+},
+{
+  "type": "node",
+  "id": 357619538,
+  "lat": 40.7040001,
+  "lon": -73.9605387,
+  "tags": {
+    "amenity": "school",
+    "ele": "13",
+    "gnis:feature_id": "2082168",
+    "name": "Kedishas Naftoli"
+  }
+},
+{
+  "type": "node",
+  "id": 357619609,
+  "lat": 40.7021304,
+  "lon": -73.9557045,
+  "tags": {
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "2082191",
+    "name": "Mesivta Tifereth Zvi Spinka"
+  }
+},
+{
+  "type": "node",
+  "id": 357619668,
+  "lat": 40.7173889,
+  "lon": -73.9572791,
+  "tags": {
+    "addr:housenumber": "180",
+    "addr:postcode": "11211",
+    "addr:street": "North 7th Street",
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "2082227",
+    "name": "Northside Catholic School at Saint Vincent De Paul"
+  }
+},
+{
+  "type": "node",
+  "id": 357619823,
+  "lat": 40.7112526,
+  "lon": -73.9427495,
+  "tags": {
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "2082277",
+    "name": "Saint John the Evangelist Lutheran School"
+  }
+},
+{
+  "type": "node",
+  "id": 357619908,
+  "lat": 40.7018969,
+  "lon": -73.9626396,
+  "tags": {
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "2082296",
+    "name": "Talmud Torah Dnitra"
+  }
+},
+{
+  "type": "node",
+  "id": 357619914,
+  "lat": 40.7049431,
+  "lon": -73.9618226,
+  "tags": {
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "2082298",
+    "name": "Talmud Torah Tashbar"
+  }
+},
+{
+  "type": "node",
+  "id": 357619918,
+  "lat": 40.7008684,
+  "lon": -73.9621416,
+  "tags": {
+    "addr:housenumber": "35",
+    "addr:postcode": "11249",
+    "addr:street": "Hewes Street",
+    "amenity": "school",
+    "ele": "4",
+    "gnis:feature_id": "2082299",
+    "name": "Talmud Torah Toldos Hillel-Krasna"
+  }
+},
+{
+  "type": "node",
+  "id": 357619933,
+  "lat": 40.7050203,
+  "lon": -73.9491762,
+  "tags": {
+    "amenity": "school",
+    "ele": "4",
+    "gnis:feature_id": "2082387",
+    "name": "Tiferes Bnos Girls School"
+  }
+},
+{
+  "type": "node",
+  "id": 357619959,
+  "lat": 40.7038906,
+  "lon": -73.9605387,
+  "tags": {
+    "amenity": "school",
+    "ele": "13",
+    "gnis:feature_id": "2082395",
+    "name": "Yeshiva Beth Yitzchok D Spinka"
+  }
+},
+{
+  "type": "node",
+  "id": 357619969,
+  "lat": 40.7002578,
+  "lon": -73.9535793,
+  "tags": {
+    "amenity": "school",
+    "ele": "3",
+    "gnis:feature_id": "2082398",
+    "name": "Yeshiva Bnos Ahavas Israel"
+  }
+},
+{
+  "type": "node",
+  "id": 357619986,
+  "lat": 40.7061623,
+  "lon": -73.9631007,
+  "tags": {
+    "addr:housenumber": "505",
+    "addr:postcode": "11211",
+    "addr:street": "Bedford Avenue",
+    "amenity": "school",
+    "ele": "16",
+    "gnis:feature_id": "2082404",
+    "name": "Yeshiva Jesode Hatorah"
+  }
+},
+{
+  "type": "node",
+  "id": 357620024,
+  "lat": 40.7030556,
+  "lon": -73.9508333,
+  "tags": {
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "2082416",
+    "name": "Yeshiva Sharie Torah"
+  }
+},
+{
+  "type": "node",
+  "id": 357620039,
+  "lat": 40.7061399,
+  "lon": -73.9594877,
+  "tags": {
+    "addr:housenumber": "188",
+    "addr:postcode": "11211",
+    "addr:street": "Ross Street",
+    "amenity": "school",
+    "ele": "16",
+    "gnis:feature_id": "2082421",
+    "name": "Yeshiva Tzemach Tzadik Viznitz"
+  }
+},
+{
+  "type": "node",
+  "id": 357620046,
+  "lat": 40.7025848,
+  "lon": -73.9597653,
+  "tags": {
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "2082423",
+    "name": "Yeshiva Yesode Hatorah"
+  }
+},
+{
+  "type": "node",
+  "id": 357620261,
+  "lat": 40.7326857,
+  "lon": -74.0009895,
+  "tags": {
+    "amenity": "school",
+    "ele": "6",
+    "gnis:feature_id": "2082893",
+    "name": "Saint Joseph's Washington Place School"
+  }
+},
+{
+  "type": "node",
+  "id": 357620429,
+  "lat": 40.7438889,
+  "lon": -73.9822222,
+  "tags": {
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "2083088",
+    "name": "Lexington Avenue Campus Touro College"
+  }
+},
+{
+  "type": "node",
+  "id": 357620705,
+  "lat": 40.7658333,
+  "lon": -73.9646959,
+  "tags": {
+    "amenity": "school",
+    "ele": "19",
+    "gnis:feature_id": "2083511",
+    "mascot": "Falcons",
+    "name": "Saint Vincent Ferrer School",
+    "wikidata": "Q7592088"
+  }
+},
+{
+  "type": "node",
+  "id": 357620708,
+  "lat": 40.7672109,
+  "lon": -73.9641727,
+  "tags": {
+    "amenity": "school",
+    "ele": "23",
+    "gnis:feature_id": "2083516",
+    "name": "Kennedy Child Study Center"
+  }
+},
+{
+  "type": "node",
+  "id": 357621335,
+  "lat": 40.7686410,
+  "lon": -73.9666795,
+  "tags": {
+    "amenity": "school",
+    "ele": "21",
+    "gnis:feature_id": "2083880",
+    "mascot": "Tigers",
+    "mascot:name": "Dominic the Tiger",
+    "name": "Dominican Academy",
+    "wikidata": "Q5290722"
+  }
+},
+{
+  "type": "node",
+  "id": 357621359,
+  "lat": 40.7653352,
+  "lon": -73.9597364,
+  "tags": {
+    "amenity": "school",
+    "ele": "17",
+    "gnis:feature_id": "2083886",
+    "name": "Ella Baker School"
+  }
+},
+{
+  "type": "node",
+  "id": 357621363,
+  "lat": 40.7653519,
+  "lon": -73.9597637,
+  "tags": {
+    "addr:housenumber": "317",
+    "addr:street": "East 67th Street",
+    "amenity": "school",
+    "ele": "17",
+    "gnis:feature_id": "2083887",
+    "name": "Vanguard High School",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "ref": "02M449",
+    "website": "https://vanguardhighschool.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 357621367,
+  "lat": 40.7655687,
+  "lon": -73.9595921,
+  "tags": {
+    "amenity": "school",
+    "ele": "17",
+    "gnis:feature_id": "2083888",
+    "name": "M459 Manhattan International High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357621383,
+  "lat": 40.7324983,
+  "lon": -73.9827378,
+  "tags": {
+    "amenity": "school",
+    "ele": "7",
+    "gnis:feature_id": "2083892",
+    "name": "Institute for Collaborative Education"
+  }
+},
+{
+  "type": "node",
+  "id": 357621469,
+  "lat": 40.7172222,
+  "lon": -73.9894492,
+  "tags": {
+    "amenity": "school",
+    "ele": "11",
+    "gnis:feature_id": "2083912",
+    "name": "Manhattan Bridges High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357621494,
+  "lat": 40.7354798,
+  "lon": -73.9813483,
+  "tags": {
+    "addr:housenumber": "320",
+    "addr:postcode": "10003",
+    "addr:street": "East 20th Street",
+    "alt_name": "Middle School 255",
+    "amenity": "school",
+    "ele": "6",
+    "fax": "+1-212-614-0095",
+    "gnis:feature_id": "2083918",
+    "name": "Salk School of Science",
+    "phone": "+1-212-614-8785",
+    "short_name": "M.S. 255",
+    "website": "https://www.salkschool.org"
+  }
+},
+{
+  "type": "node",
+  "id": 357621498,
+  "lat": 40.7441667,
+  "lon": -74.0005556,
+  "tags": {
+    "amenity": "school",
+    "ele": "6",
+    "gnis:feature_id": "2083920",
+    "name": "Middle School 260"
+  }
+},
+{
+  "type": "node",
+  "id": 357621515,
+  "lat": 40.7172739,
+  "lon": -73.9895047,
+  "tags": {
+    "amenity": "school",
+    "ele": "11",
+    "gnis:feature_id": "2083925",
+    "name": "New Design High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357621536,
+  "lat": 40.7424139,
+  "lon": -74.0025156,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "333",
+    "addr:postcode": "10011",
+    "addr:state": "NY",
+    "addr:street": "West 17th Street",
+    "amenity": "school",
+    "ele": "5",
+    "fax": "+1-212-675-6524",
+    "fee": "no",
+    "gnis:feature_id": "2083930",
+    "grades": "9-12",
+    "isced:level": "2-3",
+    "name": "New York City Museum School",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "phone": "+1-212-675-6206",
+    "ref": "M414",
+    "religion": "none",
+    "website": "https://www.nycmuseumschool.org",
+    "wheelchair": "yes",
+    "wikidata": "Q12063910"
+  }
+},
+{
+  "type": "node",
+  "id": 357621553,
+  "lat": 40.7655631,
+  "lon": -73.9935861,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "525",
+    "addr:postcode": "10019",
+    "addr:state": "NY",
+    "addr:street": "West 50th Street",
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "2083934",
+    "name": "Park West Educational Campus"
+  }
+},
+{
+  "type": "node",
+  "id": 357621557,
+  "lat": 40.7686111,
+  "lon": -73.9663889,
+  "tags": {
+    "amenity": "school",
+    "ele": "22",
+    "gnis:feature_id": "2083935",
+    "name": "Peter G Peterson Center for International Studies"
+  }
+},
+{
+  "type": "node",
+  "id": 357621583,
+  "lat": 40.7355177,
+  "lon": -73.9814466,
+  "tags": {
+    "addr:housenumber": "320",
+    "addr:postcode": "10003",
+    "addr:street": "East 20th Street",
+    "alt_name": "Augustus Saint-Gaudens Elementary School",
+    "amenity": "school",
+    "ele": "6",
+    "fax": "+1-212-533-5388",
+    "gnis:feature_id": "2083941",
+    "name": "Public School 40",
+    "phone": "+1-212-475-5500",
+    "short_name": "P.S. 40",
+    "website": "https://www.ps40.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 357621626,
+  "lat": 40.7185361,
+  "lon": -73.9984892,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "ele": "6",
+    "gnis:feature_id": "2083951",
+    "name": "Public School 130"
+  }
+},
+{
+  "type": "node",
+  "id": 357621676,
+  "lat": 40.7611111,
+  "lon": -73.9883333,
+  "tags": {
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "2083997",
+    "name": "Public School 212"
+  }
+},
+{
+  "type": "node",
+  "id": 357621754,
+  "lat": 40.7390224,
+  "lon": -73.9853705,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "127",
+    "addr:postcode": "10010",
+    "addr:state": "NY",
+    "addr:street": "East 22nd Street",
+    "amenity": "school",
+    "ele": "9",
+    "gnis:feature_id": "2084016",
+    "name": "School of the Future"
+  }
+},
+{
+  "type": "node",
+  "id": 357621758,
+  "lat": 40.7172511,
+  "lon": -73.9894777,
+  "tags": {
+    "amenity": "school",
+    "ele": "11",
+    "gnis:feature_id": "2084017",
+    "mascot": "Bears",
+    "name": "Seward Park High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357621884,
+  "lat": 40.7466876,
+  "lon": -74.0050109,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-04-28",
+    "ele": "3",
+    "gnis:feature_id": "2091592",
+    "name": "Guardian Angel School"
+  }
+},
+{
+  "type": "node",
+  "id": 357623980,
+  "lat": 40.7154162,
+  "lon": -73.9617216,
+  "tags": {
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "2097561",
+    "name": "Our Lady of Consolation School"
+  }
+},
+{
+  "type": "node",
+  "id": 357624025,
+  "lat": 40.7113396,
+  "lon": -73.9427699,
+  "tags": {
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "2097577",
+    "name": "Saint Johns Evangelical Lutheran School"
+  }
+},
+{
+  "type": "node",
+  "id": 357630693,
+  "lat": 40.7095462,
+  "lon": -73.9447343,
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "223",
+    "addr:postcode": "11206",
+    "addr:state": "NY",
+    "addr:street": "Graham Avenue",
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "2363677",
+    "name": "Lyons Community School",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "operator:wikipedia": "en:New York City Department of Education",
+    "website": "https://www.lyonscommunityschool.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 357632422,
+  "lat": 40.7388889,
+  "lon": -73.9936111,
+  "tags": {
+    "amenity": "school",
+    "ele": "11",
+    "gnis:feature_id": "2368020",
+    "name": "Taylor Business Institute"
+  }
+},
+{
+  "type": "node",
+  "id": 357648433,
+  "lat": 40.7199987,
+  "lon": -73.9773764,
+  "tags": {
+    "amenity": "school",
+    "ele": "3",
+    "gnis:feature_id": "2493021",
+    "name": "Public School MO94"
+  }
+},
+{
+  "type": "node",
+  "id": 357648487,
+  "lat": 40.7435086,
+  "lon": -73.9335532,
+  "tags": {
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "2493038",
+    "name": "Q530 International High School at LaGuardia Community College",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 357648532,
+  "lat": 40.7654825,
+  "lon": -73.9595892,
+  "tags": {
+    "amenity": "school",
+    "ele": "17",
+    "gnis:feature_id": "2493060",
+    "name": "M565 Urban Academy Laboratory High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357648621,
+  "lat": 40.7615114,
+  "lon": -73.9886384,
+  "tags": {
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "2493099",
+    "name": "M408 Professional Performing Arts High School"
+  }
+},
+{
+  "type": "node",
+  "id": 357650837,
+  "lat": 40.7598662,
+  "lon": -73.9750298,
+  "tags": {
+    "amenity": "school",
+    "ele": "19",
+    "gnis:feature_id": "2501238",
+    "name": "Laboratory Institute of Merchandising"
+  }
+},
+{
+  "type": "node",
+  "id": 357653013,
+  "lat": 40.7322655,
+  "lon": -74.0030561,
+  "tags": {
+    "amenity": "school",
+    "ele": "6",
+    "gnis:feature_id": "2515677",
+    "name": "Greenwich House Preschool"
+  }
+},
+{
+  "type": "node",
+  "id": 357653017,
+  "lat": 40.7322415,
+  "lon": -74.0030830,
+  "tags": {
+    "amenity": "school",
+    "ele": "6",
+    "gnis:feature_id": "2515678",
+    "name": "Barrow Street Nursery School"
+  }
+},
+{
+  "type": "node",
+  "id": 357746581,
+  "lat": 40.7416006,
+  "lon": -74.0286587,
+  "tags": {
+    "amenity": "school",
+    "ele": "9",
+    "gnis:feature_id": "2060316",
+    "name": "Hoboken Catholic Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 888905617,
+  "lat": 40.7150849,
+  "lon": -73.9569057,
+  "tags": {
+    "amenity": "school",
+    "name": "Middle School 577"
+  }
+},
+{
+  "type": "node",
+  "id": 1240900780,
+  "lat": 40.7680130,
+  "lon": -73.9709581,
+  "tags": {
+    "amenity": "school",
+    "name": "Zoo School"
+  }
+},
+{
+  "type": "node",
+  "id": 1251960767,
+  "lat": 40.7073611,
+  "lon": -74.0069841,
+  "tags": {
+    "amenity": "school",
+    "name": "Montessori School of Manhattan",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1273439123,
+  "lat": 40.7406754,
+  "lon": -73.9964838,
+  "tags": {
+    "addr:housename": "Metropolitan Gallery",
+    "addr:housenumber": "123",
+    "addr:street": "West 18th Street",
+    "amenity": "school",
+    "name": "Metropolitan Gallery / Meeting Site"
+  }
+},
+{
+  "type": "node",
+  "id": 1767286893,
+  "lat": 40.7003182,
+  "lon": -73.9942882,
+  "tags": {
+    "amenity": "school",
+    "name": "The Robert Fulton School"
+  }
+},
+{
+  "type": "node",
+  "id": 1827758532,
+  "lat": 40.7137873,
+  "lon": -73.9805941,
+  "tags": {
+    "addr:city": "New York",
+    "addr:country": "US",
+    "addr:housenumber": "551",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Grand Street",
+    "amenity": "school",
+    "name": "Paul Taylor Dance Company"
+  }
+},
+{
+  "type": "node",
+  "id": 2569263853,
+  "lat": 40.7362948,
+  "lon": -74.0095270,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "155",
+    "addr:postcode": "10014",
+    "addr:state": "NY",
+    "addr:street": "Bank Street",
+    "alt_name": "SFPC",
+    "amenity": "school",
+    "description": "Artist run school where students and faculty work closely to explore the intersections of code, design, hardware and theory focusing especially on artistic intervention.",
+    "email": "info@sfpc.io",
+    "name": "School for Poetic Computation",
+    "operator": "School for Poetic Computation",
+    "start_date": "2013",
+    "toilets": "yes",
+    "toilets:unisex": "yes",
+    "toilets:wheelchair": "yes",
+    "website": "http://sfpc.io",
+    "wikidata": "Q22061065"
+  }
+},
+{
+  "type": "node",
+  "id": 2704022017,
+  "lat": 40.7350205,
+  "lon": -73.9878029,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-03-28",
+    "fax": "+1-212-439-8705",
+    "name": "Goethe Institut",
+    "name:de": "Goethe Institut",
+    "name:en": "Goethe Institute",
+    "phone": "+1-212-439-8700",
+    "website:de": "https://www.goethe.de/ins/us/de/sta/ney.html",
+    "website:en": "https://www.goethe.de/ins/us/en/sta/ney.html"
+  }
+},
+{
+  "type": "node",
+  "id": 2705023058,
+  "lat": 40.7276924,
+  "lon": -74.0022708,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "60",
+    "addr:street": "MacDougal Street",
+    "amenity": "school",
+    "name": "Cooke Center Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 2709860771,
+  "lat": 40.7615988,
+  "lon": -73.9956193,
+  "tags": {
+    "amenity": "school",
+    "ele": "6",
+    "gnis:feature_id": "961742",
+    "name": "Public School 51"
+  }
+},
+{
+  "type": "node",
+  "id": 2710195161,
+  "lat": 40.7679539,
+  "lon": -73.9881627,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "444",
+    "addr:postcode": "10019",
+    "addr:state": "NY",
+    "addr:street": "West 56th Street",
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "2083889",
+    "name": "High School for Environmental Studies",
+    "website": "https://www.envirostudies.org/",
+    "wikidata": "Q16975684",
+    "wikipedia": "en:High School for Environmental Studies"
+  }
+},
+{
+  "type": "node",
+  "id": 2710195173,
+  "lat": 40.7680257,
+  "lon": -73.9891224,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "850",
+    "addr:postcode": "10019",
+    "addr:state": "NY",
+    "addr:street": "10th Avenue",
+    "amenity": "school",
+    "fax": "+1-212-262-8110",
+    "name": "Independence High School",
+    "phone": "+1-212-262-8067",
+    "website": "https://www.ihsnyc.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 2713422339,
+  "lat": 40.7194404,
+  "lon": -73.9821787,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "219",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Stanton Street",
+    "alt_name": "Cooke Center Grammar School",
+    "amenity": "school",
+    "email": "schooladmin@cookeschool.org",
+    "name": "Cooke School and Institute Lower School",
+    "phone": "+1-646-273-5555",
+    "website": "https://cookeschool.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 2837384392,
+  "lat": 40.7057886,
+  "lon": -74.0112224,
+  "tags": {
+    "addr:housenumber": "41",
+    "addr:postcode": "10004",
+    "addr:street": "Broad Street",
+    "amenity": "school",
+    "check_date": "2025-08-14",
+    "education": "school",
+    "name": "Lehman Manhattan Preparatory School",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2837938580,
+  "lat": 40.7000742,
+  "lon": -73.9550150,
+  "tags": {
+    "addr:housenumber": "127",
+    "addr:postcode": "11206",
+    "addr:street": "Wallabout Street",
+    "amenity": "school",
+    "ele": "4",
+    "gnis:feature_id": "2082399",
+    "name": "Yeshiva Bnos Spinka"
+  }
+},
+{
+  "type": "node",
+  "id": 2837938581,
+  "lat": 40.7006100,
+  "lon": -73.9560577,
+  "tags": {
+    "addr:housenumber": "40",
+    "addr:postcode": "11206",
+    "addr:street": "Lynch Street",
+    "amenity": "school",
+    "ele": "4",
+    "gnis:feature_id": "2082408",
+    "name": "Yeshiva Mesivta Arugath Habosem"
+  }
+},
+{
+  "type": "node",
+  "id": 2837949767,
+  "lat": 40.7032106,
+  "lon": -73.9482279,
+  "tags": {
+    "addr:housenumber": "101",
+    "addr:postcode": "11206",
+    "addr:street": "Walton Street",
+    "amenity": "school",
+    "ele": "4",
+    "gnis:feature_id": "2082153",
+    "name": "Intermediate School 318",
+    "wikidata": "Q17182193"
+  }
+},
+{
+  "type": "node",
+  "id": 2837959372,
+  "lat": 40.7021063,
+  "lon": -73.9557189,
+  "tags": {
+    "addr:housenumber": "199",
+    "addr:postcode": "11211",
+    "addr:street": "Lee Avenue",
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "2082169",
+    "name": "Keren Hatorah"
+  }
+},
+{
+  "type": "node",
+  "id": 2838085102,
+  "lat": 40.7041916,
+  "lon": -73.9609452,
+  "tags": {
+    "addr:housenumber": "563",
+    "addr:postcode": "11211",
+    "addr:street": "Bedford Avenue",
+    "amenity": "school",
+    "ele": "13",
+    "gnis:feature_id": "2081632",
+    "name": "Bais Yakov of Khal Adas Yereim"
+  }
+},
+{
+  "type": "node",
+  "id": 2838102155,
+  "lat": 40.7067842,
+  "lon": -73.9605115,
+  "tags": {
+    "addr:housenumber": "185",
+    "addr:postcode": "11211",
+    "addr:street": "Wilson Street",
+    "amenity": "school",
+    "ele": "15",
+    "gnis:feature_id": "2082189",
+    "name": "Mesivta Nachlas Yacov A Yerim"
+  }
+},
+{
+  "type": "node",
+  "id": 2838158923,
+  "lat": 40.7069914,
+  "lon": -73.9680901,
+  "tags": {
+    "addr:housenumber": "31",
+    "addr:postcode": "11249",
+    "addr:street": "Division Avenue",
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "2081886",
+    "name": "Be'ikvei Hatzoin"
+  }
+},
+{
+  "type": "node",
+  "id": 2838353329,
+  "lat": 40.7061555,
+  "lon": -73.9519987,
+  "tags": {
+    "addr:housenumber": "324",
+    "addr:postcode": "11211",
+    "addr:street": "Penn Street",
+    "amenity": "school",
+    "ele": "7",
+    "gnis:feature_id": "2082297",
+    "name": "Talmud Torah of Kasho"
+  }
+},
+{
+  "type": "node",
+  "id": 2838530799,
+  "lat": 40.7070651,
+  "lon": -73.9523273,
+  "tags": {
+    "addr:housenumber": "345",
+    "addr:postcode": "11211",
+    "addr:street": "Hewes Street",
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "2081897",
+    "name": "Bnos Chayil"
+  }
+},
+{
+  "type": "node",
+  "id": 2839787498,
+  "lat": 40.7132932,
+  "lon": -73.9380494,
+  "tags": {
+    "addr:housenumber": "287",
+    "addr:postcode": "11211",
+    "addr:street": "Powers Street",
+    "amenity": "school",
+    "ele": "10",
+    "gnis:feature_id": "964034",
+    "name": "Saint Nicholas Elementary School"
+  }
+},
+{
+  "type": "node",
+  "id": 2840742400,
+  "lat": 40.7163710,
+  "lon": -73.9466013,
+  "tags": {
+    "addr:housenumber": "120",
+    "addr:postcode": "11211",
+    "addr:street": "Jackson St",
+    "amenity": "school",
+    "designation": "After School Center",
+    "name": "School Settlement Association",
+    "source": "http://www.schoolsettlement.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 2847058535,
+  "lat": 40.7443260,
+  "lon": -73.9576660,
+  "tags": {
+    "addr:city": "Long Island City",
+    "addr:housenumber": "48-09",
+    "addr:postcode": "11109",
+    "addr:state": "NY",
+    "addr:street": "Center Boulevard",
+    "amenity": "school",
+    "name": "PS/IS 78Q Early Childhood Center",
+    "website": "https://ps78.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 2855056896,
+  "lat": 40.7590956,
+  "lon": -73.9664369,
+  "tags": {
+    "addr:housenumber": "245",
+    "addr:street": "East 56th Street",
+    "amenity": "school",
+    "gnis:feature_id": "2083923",
+    "height": "30.1",
+    "name": "High School of Art and Design",
+    "website": "https://www.artanddesignhs.org",
+    "wikidata": "Q12060065",
+    "wikipedia": "en:High School of Art and Design"
+  }
+},
+{
+  "type": "node",
+  "id": 3356089619,
+  "lat": 40.7447556,
+  "lon": -73.9839134,
+  "tags": {
+    "amenity": "school",
+    "name": "Rebecca School",
+    "wikidata": "Q7301904"
+  }
+},
+{
+  "type": "node",
+  "id": 4006285140,
+  "lat": 40.7250606,
+  "lon": -73.9807900,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Brigid School",
+    "website": "https://www.stbrigidschoolny.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 4475057767,
+  "lat": 40.7318504,
+  "lon": -73.9905257,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "86",
+    "addr:postcode": "10003",
+    "addr:state": "NY",
+    "addr:street": "4th Avenue",
+    "amenity": "school",
+    "name": "Grace Church School"
+  }
+},
+{
+  "type": "node",
+  "id": 4867750466,
+  "lat": 40.7481685,
+  "lon": -73.9929081,
+  "tags": {
+    "addr:housenumber": "350",
+    "addr:postcode": "10001",
+    "addr:street": "7th Avenue",
+    "addr:unit": "Suite 1201",
+    "amenity": "school",
+    "email": "Info@internationalwinecenter.com",
+    "name": "International Wine Center (IWC)",
+    "name:es": "Centro internacional de Vinos (IWC)",
+    "opening_hours": "Mo-Fr 08:30-18:00",
+    "operator": "WSET",
+    "phone": "+1 212-239-3055",
+    "website": "https://internationalwinecenter.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 5087629622,
+  "lat": 40.7230548,
+  "lon": -74.0078313,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "200",
+    "addr:street": "Hudson Street",
+    "amenity": "school",
+    "name": "Arrojo Cosmetology School"
+  }
+},
+{
+  "type": "node",
+  "id": 5213944829,
+  "lat": 40.7377783,
+  "lon": -73.9953709,
+  "tags": {
+    "addr:housenumber": "51",
+    "addr:postcode": "10011",
+    "addr:street": "West 15th Street",
+    "amenity": "school",
+    "name": "PhotoManhattan"
+  }
+},
+{
+  "type": "node",
+  "id": 5231706539,
+  "lat": 40.7148341,
+  "lon": -73.9991105,
+  "tags": {
+    "addr:housenumber": "29",
+    "addr:street": "Mott Street",
+    "amenity": "school",
+    "name": "Transfiguration Roman Catholic School"
+  }
+},
+{
+  "type": "node",
+  "id": 5300031526,
+  "lat": 40.7389807,
+  "lon": -73.9950746,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "64",
+    "addr:postcode": "10011",
+    "addr:street": "West 17th Street",
+    "amenity": "school",
+    "name": "The Sixth Avenue Elementary School - PS340",
+    "operator": "The New York City Department of Education",
+    "phone": "+1 917 305 1000",
+    "website": "https://ps-340-sixth-avenue-elementary-school.echalksites.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 5595546825,
+  "lat": 40.7206573,
+  "lon": -73.9438410,
+  "tags": {
+    "addr:housenumber": "517",
+    "addr:street": "Meeker Avenue",
+    "amenity": "school",
+    "name": "WeBees"
+  }
+},
+{
+  "type": "node",
+  "id": 5616248355,
+  "lat": 40.7173439,
+  "lon": -73.9893919,
+  "tags": {
+    "amenity": "school",
+    "name": "High School for Dual Language and Asian Studies"
+  }
+},
+{
+  "type": "node",
+  "id": 6066607072,
+  "lat": 40.7412985,
+  "lon": -73.9906650,
+  "tags": {
+    "addr:housenumber": "5",
+    "addr:street": "West 22nd Street",
+    "amenity": "school",
+    "name": "Montessori Flatiron",
+    "phone": "+1-212-633-0600",
+    "website": "https://themontessorischools.org"
+  }
+},
+{
+  "type": "node",
+  "id": 6231307185,
+  "lat": 40.7115067,
+  "lon": -73.9966587,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "1",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Monroe Street",
+    "amenity": "school",
+    "name": "St. Joseph School",
+    "operator": "St. Joseph School",
+    "phone": "+1-212-233-5152",
+    "wikidata": "Q7593866"
+  }
+},
+{
+  "type": "node",
+  "id": 6231514603,
+  "lat": 40.7138631,
+  "lon": -73.9906331,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "155",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "East Broadway",
+    "amenity": "school",
+    "name": "Talent Prep",
+    "operator": "Talent Prep",
+    "phone": "+1-917-636-8113",
+    "website": "https://talentprep.org"
+  }
+},
+{
+  "type": "node",
+  "id": 6236561793,
+  "lat": 40.7199324,
+  "lon": -73.9918334,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "38",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Delancey Street",
+    "amenity": "school",
+    "operator": "Great Oaks Charter School",
+    "phone": "+1-212-233-5152",
+    "website": "https://greatoakscharter.org"
+  }
+},
+{
+  "type": "node",
+  "id": 6577240608,
+  "lat": 40.7429152,
+  "lon": -73.9595696,
+  "tags": {
+    "addr:city": "Long Island City",
+    "addr:housenumber": "1-50",
+    "addr:postcode": "11101",
+    "addr:state": "NY",
+    "addr:street": "51st Avenue",
+    "amenity": "school",
+    "name": "Academy for Careers in Television & Film",
+    "website": "https://www.schools.nyc.gov/schools/Q301"
+  }
+},
+{
+  "type": "node",
+  "id": 6670244871,
+  "lat": 40.7660283,
+  "lon": -73.9600655,
+  "tags": {
+    "addr:housenumber": "300",
+    "addr:street": "East 68th Street",
+    "amenity": "school",
+    "name": "Talent Unlimited High School",
+    "website": "https://tuhs.nyc/",
+    "wikidata": "Q7679191"
+  }
+},
+{
+  "type": "node",
+  "id": 6793153516,
+  "lat": 40.7406745,
+  "lon": -74.0275376,
+  "tags": {
+    "amenity": "school",
+    "name": "Stevens Cooperative School"
+  }
+},
+{
+  "type": "node",
+  "id": 8112276466,
+  "lat": 40.7095422,
+  "lon": -74.0074153,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "15",
+    "addr:postcode": "10038",
+    "addr:state": "NY",
+    "addr:street": "Dutch Street",
+    "addr:unit": "A",
+    "amenity": "school",
+    "name": "Downtown Little School",
+    "website": "https://www.downtownlittleschool.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 8389081725,
+  "lat": 40.7127601,
+  "lon": -73.9629307,
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "117",
+    "addr:postcode": "11249",
+    "addr:state": "NY",
+    "addr:street": "South 3rd Street",
+    "amenity": "school",
+    "name": "C'E Montessori Brooklyn",
+    "phone": "+1-347-384-2179",
+    "website": "https://www.montessoribrooklyn.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 8392053748,
+  "lat": 40.7126692,
+  "lon": -73.9626504,
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "119",
+    "addr:postcode": "11249",
+    "addr:state": "NY",
+    "addr:street": "South 3rd Street",
+    "amenity": "school",
+    "name": "C'E Montessori Brooklyn",
+    "phone": "+1-347-384-2179",
+    "website": "https://www.montessoribrooklyn.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 9403894912,
+  "lat": 40.7503065,
+  "lon": -73.9729142,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "442",
+    "addr:postcode": "10018",
+    "addr:state": "NY",
+    "addr:street": "East 42nd Street",
+    "amenity": "school",
+    "name": "Lyceum Kennedy French American School",
+    "website": "https://fr.lyceumkennedy.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 9793717850,
+  "lat": 40.7031271,
+  "lon": -73.9847996,
+  "tags": {
+    "addr:housenumber": "52",
+    "addr:postcode": "11201",
+    "addr:street": "Bridge Street",
+    "alt_name": "The Art of Words Community School",
+    "amenity": "school",
+    "name": "TAWCS",
+    "website": "https://www.tawcs.org"
+  }
+},
+{
+  "type": "node",
+  "id": 10665137474,
+  "lat": 40.7052408,
+  "lon": -74.0127902,
+  "tags": {
+    "addr:city": "New York",
+    "addr:floor": "5",
+    "addr:housenumber": "26",
+    "addr:postcode": "10004",
+    "addr:state": "NY",
+    "addr:street": "Broadway",
+    "amenity": "school",
+    "contact:facebook": "UASBYW.US",
+    "fax": "+1-212-668-0635",
+    "grades": "9-12",
+    "internet_access": "no",
+    "name": "Urban Assembly School of Business for Young Women",
+    "phone": "+1-212-668-0169",
+    "polling_station": "yes",
+    "ref": "M316",
+    "religion": "none",
+    "school:gender": "female",
+    "website": "https://www.uasbfyw.org/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10665280266,
+  "lat": 40.7052186,
+  "lon": -74.0131790,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "7",
+    "addr:postcode": "10004",
+    "addr:state": "NY",
+    "addr:street": "Beaver Street",
+    "amenity": "school",
+    "fax": "+1-646-826-8175",
+    "grades": "9-12",
+    "name": "Richard R. Green High School of Teaching",
+    "phone": "+1-646-826-8174",
+    "ref": "M580",
+    "religion": "none",
+    "school:gender": "mixed",
+    "website": "https://www.rrghst.org/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11222032518,
+  "lat": 40.7110207,
+  "lon": -74.0054391,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "12",
+    "addr:postcode": "10038",
+    "addr:state": "NY",
+    "addr:street": "Spruce Street",
+    "amenity": "school",
+    "grades": "K-8",
+    "name": "Spruce Street School",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "ref": "PS 397",
+    "religion": "none",
+    "website": "https://www.sprucestreetnyc.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 11367696069,
+  "lat": 40.7525949,
+  "lon": -74.0236937,
+  "tags": {
+    "addr:housenumber": "1300",
+    "addr:postcode": "07030",
+    "addr:street": "Sinatra Drive North",
+    "amenity": "school",
+    "name": "Cresthill Academy Day Care and Preschool",
+    "website": "https://www.cresthillacademy.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 11717251420,
+  "lat": 40.7599900,
+  "lon": -73.9705353,
+  "tags": {
+    "amenity": "school",
+    "name": "Sahra & William M Lese Religious School",
+    "religion": "jewish"
+  }
+},
+{
+  "type": "node",
+  "id": 11729195305,
+  "lat": 40.7566386,
+  "lon": -73.9652034,
+  "tags": {
+    "addr:housenumber": "340",
+    "addr:street": "East 54th Street",
+    "amenity": "school",
+    "check_date": "2024-03-13",
+    "level": "0",
+    "name": "The Neighborhood Playhouse School of the Theater",
+    "source": "survey",
+    "start_date": "1928",
+    "website": "https://www.neighborhoodplayhouse.org"
+  }
+},
+{
+  "type": "node",
+  "id": 11827116643,
+  "lat": 40.7229754,
+  "lon": -73.9535642,
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "29",
+    "addr:postcode": "11222",
+    "addr:state": "NY",
+    "addr:street": "Nassau Avenue",
+    "amenity": "school",
+    "name": "Ardor School",
+    "website": "https://www.ardorschool.com"
+  }
+},
+{
+  "type": "node",
+  "id": 11986125252,
+  "lat": 40.7423924,
+  "lon": -74.0024678,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "333",
+    "addr:postcode": "10011",
+    "addr:state": "NY",
+    "addr:street": "West 17th Street",
+    "amenity": "school",
+    "ele": "5",
+    "fax": "+1-212-691-2147",
+    "gnis:feature_id": "2083929",
+    "grades": "9-12",
+    "isced:level": "2-3",
+    "name": "New York City Laboratory School for Collaborative Studies",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "phone": "+1-212-691-6119",
+    "ref": "M412",
+    "religion": "none",
+    "website": "https://www.nyclabschool.org",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11986125256,
+  "lat": 40.7423698,
+  "lon": -74.0024148,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "333",
+    "addr:postcode": "10011",
+    "addr:state": "NY",
+    "addr:street": "West 17th Street",
+    "amenity": "school",
+    "ele": "5",
+    "fax": "+1-212-691-6219",
+    "fee": "no",
+    "gnis:feature_id": "2083928",
+    "grades": "6-8",
+    "isced:level": "1-2",
+    "name": "New York City Laboratory Middle School for Collaborative Studies",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "phone": "+1-212-691-6119",
+    "ref": "M312",
+    "religion": "none",
+    "website": "https://www.labmiddleschool.com",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12034940395,
+  "lat": 40.7455203,
+  "lon": -73.9538893,
+  "tags": {
+    "addr:housenumber": "5-44",
+    "addr:street": "47th Avenue",
+    "amenity": "school",
+    "name": "Lolly's Learning Center",
+    "phone": "+1 718-729-9071",
+    "website": "www.lollyslearningcenter.com"
+  }
+},
+{
+  "type": "node",
+  "id": 12291033512,
+  "lat": 40.7055464,
+  "lon": -74.0155366,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "2-26",
+    "addr:postcode": "10004",
+    "addr:state": "NY",
+    "addr:street": "Washington Street",
+    "amenity": "school",
+    "name": "District 2 Pre-K Center",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "preschool": "yes",
+    "ref:nycschools": "Z015",
+    "website": "https://www.schools.nyc.gov/schools/Z015"
+  }
+},
+{
+  "type": "node",
+  "id": 12605004886,
+  "lat": 40.7649306,
+  "lon": -73.9691763,
+  "tags": {
+    "addr:housenumber": "52",
+    "addr:postcode": "10065",
+    "addr:street": "East 62nd Street",
+    "amenity": "school",
+    "mascot": "Panthers",
+    "name": "Browning School"
+  }
+},
+{
+  "type": "node",
+  "id": 12605006618,
+  "lat": 40.7418043,
+  "lon": -73.9858555,
+  "tags": {
+    "addr:housenumber": "55",
+    "addr:postcode": "10010",
+    "addr:street": "East 25th Street",
+    "amenity": "school",
+    "grades": "9-12",
+    "mascot": "Blue Devils",
+    "name": "Baruch College Campus High School"
+  }
+},
+{
+  "type": "node",
+  "id": 12605018215,
+  "lat": 40.7613254,
+  "lon": -73.9960622,
+  "tags": {
+    "addr:housenumber": "522",
+    "addr:postcode": "10036",
+    "addr:street": "West 44th Street",
+    "amenity": "school",
+    "grades": "9-12",
+    "mascot": "Blue Demons",
+    "name": "The Beacon School"
+  }
+},
+{
+  "type": "node",
+  "id": 12605040738,
+  "lat": 40.7631064,
+  "lon": -73.9494802,
+  "tags": {
+    "amenity": "school",
+    "grades": "K-12",
+    "mascot": "White Tigers",
+    "name": "The Child School / Legacy High School"
+  }
+},
+{
+  "type": "node",
+  "id": 12605085818,
+  "lat": 40.7246281,
+  "lon": -74.0050184,
+  "tags": {
+    "alt_name": "Chelsea Vocational School",
+    "amenity": "school",
+    "fax": "+1-212-941-7934",
+    "grades": "9-12",
+    "mascot": "Lions",
+    "name": "Chelsea Career and Techincal High School",
+    "phone": "+1-212-925-1080",
+    "ref:nycdoe": "M615",
+    "website": "https://www.chelseacte.org",
+    "wikidata": "Q5090099"
+  }
+},
+{
+  "type": "node",
+  "id": 12605220561,
+  "lat": 40.7269267,
+  "lon": -74.0047831,
+  "tags": {
+    "amenity": "school",
+    "mascot": "Knights",
+    "name": "Elisabeth Irwin High School"
+  }
+},
+{
+  "type": "node",
+  "id": 12605229934,
+  "lat": 40.7340531,
+  "lon": -73.9852812,
+  "tags": {
+    "amenity": "school",
+    "mascot": "Owls",
+    "name": "Friends Seminary",
+    "phone": "+1 212-979-5030",
+    "website": "https://www.friendsseminary.org/",
+    "wikidata": "Q5504210",
+    "wikipedia": "en:Friends Seminary"
+  }
+},
+{
+  "type": "node",
+  "id": 12616827011,
+  "lat": 40.7455565,
+  "lon": -73.9964516,
+  "tags": {
+    "amenity": "school",
+    "mascot": "Falcons",
+    "mascot:name": "Mikey the Falcon",
+    "name": "High School of Fashion Industries"
+  }
+},
+{
+  "type": "node",
+  "id": 12618270838,
+  "lat": 40.7419770,
+  "lon": -73.9921913,
+  "tags": {
+    "amenity": "school",
+    "mascot": "Silver Hawks",
+    "name": "Manhattan Village Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 12643783750,
+  "lat": 40.7046128,
+  "lon": -74.0112906,
+  "tags": {
+    "amenity": "school",
+    "mascot": "Phoenix",
+    "name": "Millenium High School"
+  }
+},
+{
+  "type": "node",
+  "id": 12643784161,
+  "lat": 40.7398108,
+  "lon": -74.0043925,
+  "tags": {
+    "amenity": "school",
+    "denomination": "catholic",
+    "grades": "9-12",
+    "mascot": "Dragons",
+    "name": "Notre Dame School",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 12643816838,
+  "lat": 40.7434047,
+  "lon": -74.0025404,
+  "tags": {
+    "addr:housenumber": "351",
+    "addr:postcode": "10011",
+    "addr:street": "West 18th Street",
+    "amenity": "school",
+    "gnis:feature_id": "953408",
+    "name": "Charles Evan Hughes High School"
+  }
+},
+{
+  "type": "node",
+  "id": 12643816839,
+  "lat": 40.7431192,
+  "lon": -74.0023339,
+  "tags": {
+    "addr:housenumber": "351",
+    "addr:postcode": "10011",
+    "addr:street": "West 18th Street",
+    "amenity": "school",
+    "grades": "6-12",
+    "mascot": "Titans",
+    "name": "Quest to Learn"
+  }
+},
+{
+  "type": "node",
+  "id": 12952466724,
+  "lat": 40.7180837,
+  "lon": -73.9534780,
+  "tags": {
+    "addr:housenumber": "217",
+    "addr:postcode": "11211",
+    "addr:street": "North 10th Street",
+    "amenity": "school",
+    "name": "BSNBCS High School",
+    "official_name": "Bedford Stuyvesant New Beginnings Charter School High School",
+    "phone": "+1-347-943-5940",
+    "website": "https://bsnbcs.org/high-school/"
+  }
+},
+{
+  "type": "node",
+  "id": 12997487202,
+  "lat": 40.7286460,
+  "lon": -73.9912931,
+  "tags": {
+    "addr:housenumber": "46",
+    "addr:street": "Cooper Square",
+    "amenity": "school",
+    "name": "Grace Church School",
+    "website": "http://gcschool.org"
+  }
+},
+{
+  "type": "node",
+  "id": 13190222586,
+  "lat": 40.7560591,
+  "lon": -73.9845398,
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "123",
+    "addr:state": "NY",
+    "addr:street": "West 43rd Street",
+    "amenity": "school",
+    "name": "Repertory Company High School for Theatre Arts",
+    "phone": "+1-212-382-1875",
+    "website": "https://www.repertorycompanyhs.org"
+  }
+},
+{
+  "type": "way",
+  "id": 26807522,
+  "center": {
+    "lat": 40.7474504,
+    "lon": -74.0301770
+  },
+  "nodes": [
+    294075442,
+    7210851139,
+    7210851138,
+    7210851137,
+    7210851136,
+    7210851143,
+    7210851148,
+    7210851149,
+    7210851150,
+    7210851147,
+    7210851146,
+    7210851145,
+    7210851144,
+    294075447,
+    294075449,
+    7210851135,
+    7210851140,
+    7210851141,
+    7210851142,
+    294075442
+  ],
+  "tags": {
+    "addr:city": "Hoboken",
+    "addr:housenumber": "215",
+    "addr:state": "NJ",
+    "addr:street": "9th Street",
+    "amenity": "school",
+    "name": "Joseph F. Brandt Middle School"
+  }
+},
+{
+  "type": "way",
+  "id": 48610330,
+  "center": {
+    "lat": 40.7111616,
+    "lon": -73.9388839
+  },
+  "nodes": [
+    617357397,
+    617357398,
+    617357400,
+    617357401,
+    617357403,
+    2715578922,
+    617357397
+  ],
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "850",
+    "addr:postcode": "11211",
+    "addr:state": "NY",
+    "addr:street": "Grand Street",
+    "amenity": "school",
+    "mascot": "Wolves",
+    "name": "The High School of Enterprise, Business, and Technology",
+    "website": "https://sites.google.com/ebtbrooklyn.com/home/",
+    "wikidata": "Q14706363",
+    "wikipedia": "en:High School of Enterprise, Business, & Technology"
+  }
+},
+{
+  "type": "way",
+  "id": 147472863,
+  "center": {
+    "lat": 40.7184434,
+    "lon": -73.9762040
+  },
+  "nodes": [
+    1606835943,
+    1606835928,
+    1606835749,
+    1606835806,
+    1606835943
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "525",
+    "addr:street": "East Houston Street",
+    "amenity": "school",
+    "ele": "2",
+    "gnis:feature_id": "961928",
+    "name": "Bard High School Early College",
+    "short_name": "BHSEC",
+    "website": "https://www.bard.edu/bhsec/",
+    "wikidata": "Q4860040",
+    "wikipedia": "en:Bard High School Early College"
+  }
+},
+{
+  "type": "way",
+  "id": 147472868,
+  "center": {
+    "lat": 40.7194335,
+    "lon": -73.9796548
+  },
+  "nodes": [
+    1606908176,
+    1606908178,
+    1606915847,
+    1606908163,
+    1606908176
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "111",
+    "addr:street": "Columbia Street",
+    "amenity": "school",
+    "education": "school",
+    "ele": "4",
+    "gnis:feature_id": "2493064",
+    "mascot": "Eagles",
+    "name": "New Explorations into Science Technology and Math High School",
+    "ref": "M539",
+    "website": "https://www.schools.nyc.gov/SchoolPortals/01/M539",
+    "wikidata": "Q6953582"
+  }
+},
+{
+  "type": "way",
+  "id": 160905765,
+  "center": {
+    "lat": 40.7613223,
+    "lon": -73.9886669
+  },
+  "nodes": [
+    2840169692,
+    1595140630,
+    1728793890,
+    1728793893,
+    2840169692
+  ],
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-11-04",
+    "name": "Midtown West School PS 212"
+  }
+},
+{
+  "type": "way",
+  "id": 160905767,
+  "center": {
+    "lat": 40.7659211,
+    "lon": -73.9897734
+  },
+  "nodes": [
+    1728793885,
+    1728793881,
+    2709956078,
+    2709956055,
+    2709956033,
+    12691113899,
+    1728793887,
+    1728793882,
+    1728793886,
+    1728793885
+  ],
+  "tags": {
+    "amenity": "school",
+    "ele": "12",
+    "gnis:feature_id": "961259",
+    "name": "Public School 111 Adolph S. Ochs"
+  }
+},
+{
+  "type": "way",
+  "id": 207600837,
+  "center": {
+    "lat": 40.7181301,
+    "lon": -73.9841089
+  },
+  "nodes": [
+    2178527857,
+    2178527997,
+    2178527962,
+    2178527853,
+    2178527857
+  ],
+  "tags": {
+    "amenity": "school",
+    "ele": "8",
+    "gnis:feature_id": "2080639",
+    "name": "Public School 142"
+  }
+},
+{
+  "type": "way",
+  "id": 217991148,
+  "center": {
+    "lat": 40.7200452,
+    "lon": -73.9860347
+  },
+  "nodes": [
+    2273010160,
+    2273010161,
+    2273010162,
+    2273010163,
+    2273010160
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "145",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Stanton Street",
+    "amenity": "school",
+    "email": "ranaya@schools.nyc.gov",
+    "fax": "+1 212 260 0813",
+    "name": "Lower East Side Preparatory High School",
+    "nycdoitt:bin": "1004323",
+    "phone": "+1 212 505 6366",
+    "website": "https://lespnyc.com",
+    "wikidata": "Q19572703",
+    "wikipedia": "en:Lower East Side Preparatory High School"
+  }
+},
+{
+  "type": "way",
+  "id": 247864236,
+  "center": {
+    "lat": 40.7305053,
+    "lon": -73.9822604
+  },
+  "nodes": [
+    2547218785,
+    2547218827,
+    2547218823,
+    2547218825,
+    2547218820,
+    2547218816,
+    2547218808,
+    2547218781,
+    2547218712,
+    2547218814,
+    2547218867,
+    2547218836,
+    2547218785
+  ],
+  "tags": {
+    "addr:housenumber": "419",
+    "addr:postcode": "10009",
+    "addr:street": "East 13th Street",
+    "amenity": "school",
+    "building": "school",
+    "denomination": "roman_catholic",
+    "height": "22.6",
+    "name": "Immaculate Conception School",
+    "nycdoitt:bin": "1079097",
+    "phone": "+1-212-475-2590",
+    "religion": "christian",
+    "website": "https://www.immaculateconceptionschoolnyc.org/"
+  }
+},
+{
+  "type": "way",
+  "id": 248156677,
+  "center": {
+    "lat": 40.7292834,
+    "lon": -74.0019532
+  },
+  "nodes": [
+    2550013129,
+    2550013159,
+    2550013180,
+    2550013199,
+    2550013193,
+    2550013143,
+    2550013129
+  ],
+  "tags": {
+    "amenity": "school",
+    "building": "yes",
+    "height": "18.2",
+    "name": "Little Red School House & Elisabeth Irwin High School",
+    "nycdoitt:bin": "1008298",
+    "website": "https://www.lrei.org/",
+    "wikidata": "Q6651525",
+    "wikipedia": "en:Little Red School House"
+  }
+},
+{
+  "type": "way",
+  "id": 248773786,
+  "center": {
+    "lat": 40.7361103,
+    "lon": -73.9923506
+  },
+  "nodes": [
+    2555137454,
+    2855927779,
+    2555137483,
+    2555137502,
+    2555137482,
+    2555137454
+  ],
+  "tags": {
+    "addr:housenumber": "10",
+    "addr:postcode": "10003",
+    "addr:street": "East 15th Street",
+    "amenity": "school",
+    "building": "school",
+    "fax": "+1-212-524-4365",
+    "height": "10.2",
+    "name": "The Clinton School",
+    "nycdoitt:bin": "1016067",
+    "phone": "+1-212-524-4360",
+    "website": "https://theclintonschool.net"
+  }
+},
+{
+  "type": "way",
+  "id": 249663144,
+  "center": {
+    "lat": 40.7326831,
+    "lon": -73.9843166
+  },
+  "nodes": [
+    2562432793,
+    2562432805,
+    2562432785,
+    2562432780,
+    2562432758,
+    2562432745,
+    2562432770,
+    2562432860,
+    2562432839,
+    2562432793
+  ],
+  "tags": {
+    "addr:housenumber": "240",
+    "addr:postcode": "10003",
+    "addr:street": "2nd Avenue",
+    "amenity": "school",
+    "building": "school",
+    "ele": "9",
+    "fax": "+1-212-353-1673",
+    "gnis:feature_id": "2076780",
+    "height": "28.1",
+    "name": "Manhattan Comprehensive Night And Day High School",
+    "nycdoitt:bin": "1020416",
+    "phone": "+1-212-353-2010",
+    "website": "https://www.mcndhs.com"
+  }
+},
+{
+  "type": "way",
+  "id": 249666267,
+  "center": {
+    "lat": 40.7326319,
+    "lon": -74.0059444
+  },
+  "nodes": [
+    2562464178,
+    2562464189,
+    2562464193,
+    2562464212,
+    2562464131,
+    2562464129,
+    2562464130,
+    2562464196,
+    2562464187,
+    2562464178
+  ],
+  "tags": {
+    "addr:housenumber": "490",
+    "addr:postcode": "10014",
+    "addr:street": "Hudson Street",
+    "amenity": "school",
+    "building": "school",
+    "ele": "6",
+    "gnis:feature_id": "954312",
+    "height": "26.0",
+    "name": "Public School 3",
+    "nycdoitt:bin": "1009872",
+    "polling_station": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 250267995,
+  "center": {
+    "lat": 40.7162106,
+    "lon": -73.9935639
+  },
+  "nodes": [
+    2567559121,
+    2567559123,
+    2567559116,
+    2567559115,
+    2567559113,
+    2567559111,
+    2567559110,
+    2567559108,
+    2567559105,
+    2567559103,
+    2567559101,
+    2567559100,
+    2567559096,
+    2567559088,
+    2567559087,
+    2567559082,
+    2567559080,
+    2567559079,
+    2567559092,
+    2567559095,
+    2567559098,
+    2567559099,
+    2567559097,
+    2567559094,
+    2567559091,
+    2567559089,
+    2567559093,
+    2567559086,
+    2567559090,
+    2567559084,
+    2567559083,
+    2567559078,
+    2567559077,
+    2567559076,
+    2567559075,
+    2567559074,
+    2567559073,
+    2567559071,
+    2567559070,
+    2567559069,
+    2567559068,
+    2567559065,
+    2567559063,
+    2567558998,
+    2567558995,
+    2567558994,
+    2567558991,
+    2567558988,
+    2567558985,
+    2567558982,
+    2567558979,
+    2567558977,
+    2567558976,
+    2567558978,
+    2567558980,
+    2567558984,
+    2567559004,
+    6340314470,
+    2567558879,
+    2567558891,
+    2567558909,
+    2567558928,
+    2567558927,
+    2567558925,
+    2567558924,
+    2567558926,
+    2567558929,
+    2567558931,
+    2567558934,
+    2567558938,
+    2567558942,
+    2567558945,
+    2567558951,
+    2567558954,
+    2567558960,
+    2567558962,
+    2567558968,
+    2567558971,
+    2567558972,
+    2567558975,
+    2567558987,
+    2567559025,
+    2567559018,
+    2567559038,
+    2567559044,
+    2567559046,
+    2567559047,
+    2567559050,
+    2567559053,
+    2567559057,
+    2567559059,
+    2567559061,
+    2567559081,
+    2567559085,
+    2567559104,
+    2567559109,
+    2567559112,
+    2567559117,
+    2567559118,
+    2567559124,
+    2567559127,
+    2567559128,
+    2567559125,
+    2567559122,
+    2567559121
+  ],
+  "tags": {
+    "addr:housenumber": "100",
+    "addr:postcode": "10002",
+    "addr:street": "Hester Street",
+    "amenity": "school",
+    "building": "school",
+    "ele": "13",
+    "gnis:feature_id": "954341",
+    "height": "20.9",
+    "name": "Intermediate School 131",
+    "nycdoitt:bin": "1082489"
+  }
+},
+{
+  "type": "way",
+  "id": 263719235,
+  "center": {
+    "lat": 40.7660120,
+    "lon": -73.9299839
+  },
+  "nodes": [
+    7461535531,
+    7461535532,
+    7461535533,
+    7461535534,
+    7461535531
+  ],
+  "tags": {
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "954251",
+    "name": "I.S. 126Q Albert Shanker School for Visual & Performing Arts",
+    "name:etymology:wikidata": "Q4711205",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "operator:wikipedia": "en:New York City Department of Education",
+    "phone": "+1-718-782-2527",
+    "website": "https://www.schools.nyc.gov/schoolportals/14/k126/default.htm"
+  }
+},
+{
+  "type": "way",
+  "id": 264627666,
+  "center": {
+    "lat": 40.7425693,
+    "lon": -74.0023681
+  },
+  "nodes": [
+    2702857330,
+    2702857329,
+    2702857333,
+    2702857413,
+    2702857387,
+    2702857391,
+    2702857313,
+    2702857245,
+    11988915356,
+    11986125254,
+    11986125258,
+    11986125257,
+    2702857316,
+    2702857320,
+    2702857330
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "333",
+    "addr:postcode": "10011",
+    "addr:state": "NY",
+    "addr:street": "West 17th Street",
+    "amenity": "school",
+    "ele": "5",
+    "mascot": "Alligators",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 264637733,
+  "center": {
+    "lat": 40.7379618,
+    "lon": -73.9948392
+  },
+  "nodes": [
+    2702958608,
+    2702958634,
+    2702958597,
+    2702958621,
+    2702958611,
+    2702958617,
+    2702958643,
+    2702958647,
+    2702958674,
+    2702958670,
+    2702958672,
+    2702958659,
+    2702958657,
+    2702958651,
+    2702958608
+  ],
+  "tags": {
+    "addr:housenumber": "30",
+    "addr:postcode": "10011",
+    "addr:street": "West 16th Street",
+    "amenity": "school",
+    "building": "yes",
+    "height": "28.3",
+    "mascot": "Knights",
+    "name": "Xavier High School",
+    "nycdoitt:bin": "1080629"
+  }
+},
+{
+  "type": "way",
+  "id": 264656668,
+  "center": {
+    "lat": 40.7494168,
+    "lon": -74.0033210
+  },
+  "nodes": [
+    2703159974,
+    2703160011,
+    2703160060,
+    2703160047,
+    9347909520,
+    2703159974
+  ],
+  "tags": {
+    "amenity": "school",
+    "building": "school",
+    "building:colour": "#F4EECE",
+    "building:levels": "10",
+    "building:part": "yes",
+    "height": "40",
+    "name": "Avenues",
+    "nycdoitt:bin": "1012384",
+    "roof:material": "concrete",
+    "roof:shape": "flat",
+    "website": "https://www.avenues.org/",
+    "wikidata": "Q4828229",
+    "wikipedia": "en:Avenues: The World School"
+  }
+},
+{
+  "type": "way",
+  "id": 264667014,
+  "center": {
+    "lat": 40.7489427,
+    "lon": -74.0002420
+  },
+  "nodes": [
+    2703228246,
+    2703228247,
+    2703228215,
+    2703228217,
+    2703228200,
+    2703228198,
+    2703228192,
+    2703228190,
+    8262309010,
+    2703228179,
+    2703228178,
+    2703228175,
+    2703228174,
+    2703228177,
+    2703228176,
+    2703228181,
+    2703228180,
+    2703228188,
+    2703228186,
+    2703228194,
+    2703228196,
+    2703228202,
+    2703228204,
+    2703228211,
+    2703228213,
+    2703228242,
+    2703228244,
+    2703228250,
+    2703228252,
+    2703228246
+  ],
+  "tags": {
+    "addr:housenumber": "281",
+    "addr:postcode": "10001",
+    "addr:street": "9th Avenue",
+    "amenity": "school",
+    "building": "school",
+    "height": "18.9",
+    "name": "Public School 33",
+    "nycdoitt:bin": "1012829"
+  }
+},
+{
+  "type": "way",
+  "id": 264755079,
+  "center": {
+    "lat": 40.7351548,
+    "lon": -73.9807082
+  },
+  "nodes": [
+    2704046138,
+    2704046178,
+    2704046192,
+    2704046248,
+    2704046241,
+    2704046188,
+    2704046138
+  ],
+  "tags": {
+    "addr:housenumber": "342",
+    "addr:postcode": "10003",
+    "addr:street": "East 20th Street",
+    "amenity": "school",
+    "building": "yes",
+    "height": "12.7",
+    "name": "Chabad of Gramercy Park",
+    "nycdoitt:bin": "1020531",
+    "operator": "New York Hebrew",
+    "phone": "+1-212-924-3200",
+    "religion": "jewish",
+    "website": "https://www.nyhebrew.org"
+  }
+},
+{
+  "type": "way",
+  "id": 264758415,
+  "center": {
+    "lat": 40.7373269,
+    "lon": -73.9820821
+  },
+  "nodes": [
+    2704081204,
+    2704081206,
+    2704081198,
+    2704081210,
+    2704081219,
+    2704081244,
+    2704081232,
+    2704081250,
+    2704081259,
+    2704081271,
+    2704081320,
+    2704081281,
+    2704081241,
+    2704081204
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "234",
+    "addr:postcode": "10010",
+    "addr:state": "NY",
+    "addr:street": "East 22nd Street",
+    "amenity": "school",
+    "building": "school",
+    "denomination": "catholic",
+    "height": "22.7",
+    "name": "The Ephiphany School",
+    "nycdoitt:bin": "1082129",
+    "phone": "+1-212-473-4128",
+    "religion": "christian",
+    "website": "https://www.theepiphanyschool.org/"
+  }
+},
+{
+  "type": "way",
+  "id": 265319542,
+  "center": {
+    "lat": 40.7602020,
+    "lon": -73.9933007
+  },
+  "nodes": [
+    2709879101,
+    2709879145,
+    2709879225,
+    2709879188,
+    2709879123,
+    2709879101
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:country": "US",
+    "addr:housenumber": "432",
+    "addr:postcode": "10036",
+    "addr:state": "NY",
+    "addr:street": "West 44th Street",
+    "amenity": "school",
+    "building": "yes",
+    "ele": "9",
+    "fax": "+1 212 757 7638",
+    "gnis:feature_id": "2083192",
+    "height": "12.9",
+    "name": "The Actors Studio",
+    "nycdoitt:bin": "1026377",
+    "phone": "+1 212 757 0870",
+    "roof:shape": "gabled",
+    "website": "https://theactorsstudio.org/",
+    "wikidata": "Q216458"
+  }
+},
+{
+  "type": "way",
+  "id": 265329549,
+  "center": {
+    "lat": 40.7641926,
+    "lon": -73.9858987
+  },
+  "nodes": [
+    2709968170,
+    2709968120,
+    2709968018,
+    2709967999,
+    2709967945,
+    2709967930,
+    2709967911,
+    2709967883,
+    2709967942,
+    2709967963,
+    2709967981,
+    2709968000,
+    2709968071,
+    2709968122,
+    2709968141,
+    2709968183,
+    2709968212,
+    2709968230,
+    2709968251,
+    2709968258,
+    2709968228,
+    2709968210,
+    2709968170
+  ],
+  "tags": {
+    "addr:housenumber": "317",
+    "addr:street": "West 52nd Street",
+    "amenity": "school",
+    "building": "school",
+    "ele": "19",
+    "gnis:feature_id": "961765",
+    "height": "14.8",
+    "name": "Public School 58",
+    "nycdoitt:bin": "1025241",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 265344257,
+  "center": {
+    "lat": 40.7694977,
+    "lon": -73.9829577
+  },
+  "nodes": [
+    2710082489,
+    2710082448,
+    2710082484,
+    2710082482,
+    10863921029,
+    2710082471,
+    2710082476,
+    2710082486,
+    2710082483,
+    2710082490,
+    2710082485,
+    2710082494,
+    2710082495,
+    2710082498,
+    2710082493,
+    2710082489
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "17",
+    "addr:postcode": "10023",
+    "addr:state": "NY",
+    "addr:street": "West 60th Street",
+    "amenity": "school",
+    "building": "school",
+    "building:levels": "11",
+    "building:levels:underground": "1",
+    "height": "40.5",
+    "name": "The Shefa School",
+    "nycdoitt:bin": "1027188",
+    "opening_date": "2024-08",
+    "roof:levels": "4",
+    "roof:shape": "flat",
+    "website": "https://campaign.shefaschool.org/our-new-home/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 265516382,
+  "center": {
+    "lat": 40.7510359,
+    "lon": -73.9724046
+  },
+  "nodes": [
+    2711693196,
+    10017163238,
+    2711693216,
+    9578078199,
+    9578078175,
+    9578078176,
+    2711693276,
+    2711693250,
+    3055366342,
+    3055366340,
+    2711693196
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "225",
+    "addr:postcode": "10017",
+    "addr:street": "East 43rd Street",
+    "amenity": "school",
+    "building": "yes",
+    "building:colour": "#2E332F",
+    "building:levels": "4",
+    "height": "19.7",
+    "name": "Lyceum Kennedy International School",
+    "nycdoitt:bin": "1037559",
+    "roof:material": "concrete",
+    "roof:shape": "flat",
+    "website": "https://lyceumkennedy.org/"
+  }
+},
+{
+  "type": "way",
+  "id": 265954025,
+  "center": {
+    "lat": 40.7147768,
+    "lon": -73.9456725
+  },
+  "nodes": [
+    2715577162,
+    2715577157,
+    2715577161,
+    2840742503,
+    2840742522,
+    2840742582,
+    2840742592,
+    2840742678,
+    617342584,
+    2840742653,
+    2715577162
+  ],
+  "tags": {
+    "addr:housenumber": "320",
+    "addr:postcode": "11211",
+    "addr:street": "Manhattan Avenue",
+    "amenity": "school",
+    "fax": "+1-718-599-7417",
+    "name": "P.S. 132 The Conselyea School",
+    "nycdoe:ref": "K132",
+    "phone": "+1-718-599-7301",
+    "website": "https://ps132ny.wordpress.com"
+  }
+},
+{
+  "type": "way",
+  "id": 265955275,
+  "center": {
+    "lat": 40.7088331,
+    "lon": -73.9391231
+  },
+  "nodes": [
+    2715582212,
+    2839764749,
+    2715582210,
+    6049957187,
+    6049957192,
+    617375609,
+    617375628,
+    2715582211,
+    6049957194,
+    6049957190,
+    2715582212
+  ],
+  "tags": {
+    "amenity": "school",
+    "ele": "13",
+    "gnis:feature_id": "961482",
+    "name": "Public School 196",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230"
+  }
+},
+{
+  "type": "way",
+  "id": 265957952,
+  "center": {
+    "lat": 40.7192212,
+    "lon": -73.9837806
+  },
+  "nodes": [
+    2178450640,
+    9205440306,
+    2178450632,
+    9205440307,
+    2178527988,
+    2715605024,
+    9395814946,
+    9395814947,
+    9396040820,
+    9395814949,
+    3200271557,
+    3200271555,
+    2715605026,
+    2178450650,
+    2178450640
+  ],
+  "tags": {
+    "alt_name": "Public School 140",
+    "amenity": "school",
+    "full_name": "Public School 140 Nathan Straus",
+    "name": "P.S. 140 Nathan Straus"
+  }
+},
+{
+  "type": "way",
+  "id": 265959076,
+  "center": {
+    "lat": 40.7119255,
+    "lon": -73.9601434
+  },
+  "nodes": [
+    2715613629,
+    2494052377,
+    2494052235,
+    2494052418,
+    2494052427,
+    2494052430,
+    2494052433,
+    2494052453,
+    2715613630,
+    2715613628,
+    2715613631,
+    2494052628,
+    2494052674,
+    2715613629
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Junior High School 50"
+  }
+},
+{
+  "type": "way",
+  "id": 265987129,
+  "center": {
+    "lat": 40.7007105,
+    "lon": -73.9928395
+  },
+  "nodes": [
+    2715841831,
+    2715841828,
+    2715841830,
+    2715841832,
+    2715841831
+  ],
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-10-01",
+    "name": "The Emily Warren Roebling School",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "website": "https://www.schools.nyc.gov/schools/K008"
+  }
+},
+{
+  "type": "way",
+  "id": 266033995,
+  "center": {
+    "lat": 40.7584033,
+    "lon": -73.9909483
+  },
+  "nodes": [
+    2716231720,
+    2716231800,
+    2716231813,
+    2716231861,
+    2716231826,
+    2716231807,
+    2716231720
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "332",
+    "addr:postcode": "10036",
+    "addr:street": "West 43rd Street",
+    "amenity": "school",
+    "building": "school",
+    "ele": "11",
+    "gnis:feature_id": "2083202",
+    "height": "22.9",
+    "name": "Holy Cross School",
+    "nycdoitt:bin": "1083730",
+    "start_date": "1887"
+  }
+},
+{
+  "type": "way",
+  "id": 266077860,
+  "center": {
+    "lat": 40.7636848,
+    "lon": -73.9903181
+  },
+  "nodes": [
+    2709937313,
+    2709937311,
+    2709937088,
+    2709937063,
+    2716714109,
+    2709937019,
+    2709937005,
+    2709936974,
+    2709936962,
+    2709936927,
+    2709936920,
+    2709936742,
+    2716714107,
+    2709936788,
+    2709936832,
+    2716714108,
+    2709936830,
+    2709936850,
+    2709936916,
+    2709937313
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "439",
+    "addr:postcode": "10019",
+    "addr:street": "West 49th Street",
+    "amenity": "school",
+    "ele": "14",
+    "gnis:feature_id": "958480",
+    "name": "High School of Graphic Communication Arts",
+    "website": "https://www.schools.nyc.gov/SchoolPortals/02/M625/default.htm",
+    "wikidata": "Q5756630",
+    "wikipedia": "en:High School of Graphic Communication Arts"
+  }
+},
+{
+  "type": "way",
+  "id": 278033590,
+  "center": {
+    "lat": 40.7092880,
+    "lon": -74.0123346
+  },
+  "nodes": [
+    2824641604,
+    3762209186,
+    2824641586,
+    12361377540,
+    2824641561,
+    2824641576,
+    3762209179,
+    3762209180,
+    2824641585,
+    2824641590,
+    2824641596,
+    2824641604
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "100",
+    "addr:street": "Trinity Place",
+    "amenity": "school",
+    "building": "school",
+    "building:levels": "10",
+    "ele": "5",
+    "gnis:feature_id": "2083910",
+    "mascot": "Panthers",
+    "name": "High School of Economics and Finance",
+    "nycdoitt:bin": "1001037",
+    "wikidata": "Q5756623"
+  }
+},
+{
+  "type": "way",
+  "id": 278033603,
+  "center": {
+    "lat": 40.7089817,
+    "lon": -74.0124823
+  },
+  "nodes": [
+    2824641547,
+    2824641556,
+    2824641555,
+    2824641565,
+    2824641564,
+    2824641569,
+    2824641554,
+    2824641552,
+    2824641551,
+    12361291561,
+    2824641541,
+    2824641543,
+    2824641540,
+    3772831306,
+    2824641547
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "90",
+    "addr:postcode": "10006",
+    "addr:state": "NY",
+    "addr:street": "Trinity Place",
+    "amenity": "school",
+    "building": "school",
+    "ele": "5",
+    "gnis:feature_id": "2083909",
+    "height": "62.7",
+    "mascot": "Panthers",
+    "name": "Leadership and Public Service High School",
+    "nycdoitt:bin": "1001035",
+    "polling_station": "yes",
+    "wikidata": "Q6508641"
+  }
+},
+{
+  "type": "way",
+  "id": 278084941,
+  "center": {
+    "lat": 40.7086446,
+    "lon": -74.0019312
+  },
+  "nodes": [
+    2825126122,
+    2825126108,
+    2825126121,
+    2825126119,
+    2825126084,
+    2825126071,
+    11375807998,
+    2825126125,
+    2825126149,
+    2825126124,
+    2825126122
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "1",
+    "addr:postcode": "10038",
+    "addr:state": "NY",
+    "addr:street": "Peck Slip",
+    "amenity": "school",
+    "building": "school",
+    "grades": "0-5",
+    "height": "22.6",
+    "name": "The Peck Slip School",
+    "nycdoitt:bin": "1001363",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "ref": "P.S. 343",
+    "religion": "none",
+    "website": "http://www.peckslip.org/",
+    "wheelchair": "yes",
+    "wikidata": "Q121315765"
+  }
+},
+{
+  "type": "way",
+  "id": 279574671,
+  "center": {
+    "lat": 40.7047829,
+    "lon": -73.9532861
+  },
+  "nodes": [
+    2837986015,
+    2837986044,
+    2837986045,
+    2837986054,
+    2837986061,
+    2837986050,
+    2837986024,
+    2837986015
+  ],
+  "tags": {
+    "addr:housenumber": "281",
+    "addr:postcode": "11211",
+    "addr:street": "Rutledge Street",
+    "amenity": "school",
+    "building": "yes",
+    "ele": "9",
+    "gnis:feature_id": "2082403",
+    "height": "12.0",
+    "name": "Yeshiva Gedolah Ohr Yisroel",
+    "nycdoitt:bin": "3060906"
+  }
+},
+{
+  "type": "way",
+  "id": 279772407,
+  "center": {
+    "lat": 40.7150156,
+    "lon": -73.9527351
+  },
+  "nodes": [
+    2839657699,
+    4917640691,
+    2839657846,
+    2839657558,
+    2839657585,
+    2839657629,
+    2839657699
+  ],
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "299",
+    "addr:postcode": "11211",
+    "addr:state": "NY",
+    "addr:street": "North 7th Street",
+    "amenity": "school",
+    "building": "school",
+    "height": "10.0",
+    "name": "Williamsburg Northside Lower School",
+    "nycdoitt:bin": "3062015",
+    "website": "https://www.willnorth.org/"
+  }
+},
+{
+  "type": "way",
+  "id": 280143250,
+  "center": {
+    "lat": 40.7358035,
+    "lon": -73.9539254
+  },
+  "nodes": [
+    2843030238,
+    2843030240,
+    2843030235,
+    2843030237,
+    2843030232,
+    2843030233,
+    2843030226,
+    2843030225,
+    2843030221,
+    2843030218,
+    2843030095,
+    2843030089,
+    2843030247,
+    2843030248,
+    2843030244,
+    2843030243,
+    2843030238
+  ],
+  "tags": {
+    "addr:housenumber": "150",
+    "addr:postcode": "11222",
+    "addr:street": "Dupont Street",
+    "amenity": "school",
+    "building": "yes",
+    "ele": "4",
+    "gnis:feature_id": "2097587",
+    "height": "10.0",
+    "name": "Parish School of Saints Cyril and Methodius",
+    "nycdoitt:bin": "3063843"
+  }
+},
+{
+  "type": "way",
+  "id": 280613417,
+  "center": {
+    "lat": 40.7655075,
+    "lon": -73.9331230
+  },
+  "nodes": [
+    2846950145,
+    2846950457,
+    2846950672,
+    2846950446,
+    2846950348,
+    2846950316,
+    2846950304,
+    2846950145
+  ],
+  "tags": {
+    "addr:housenumber": "14-30",
+    "addr:postcode": "11106",
+    "addr:street": "Broadway",
+    "amenity": "school",
+    "building": "yes",
+    "ele": "5",
+    "gnis:feature_id": "2079303",
+    "height": "34.1",
+    "name": "Long Island City High School",
+    "nycdoitt:bin": "4467709",
+    "wikidata": "Q6672669",
+    "wikipedia": "en:Long Island City High School"
+  }
+},
+{
+  "type": "way",
+  "id": 280616733,
+  "center": {
+    "lat": 40.7572094,
+    "lon": -73.9339246
+  },
+  "nodes": [
+    2846997265,
+    2846997263,
+    2846997209,
+    2846997095,
+    2846997053,
+    2846997061,
+    2846997041,
+    2846997005,
+    2846997002,
+    2846996695,
+    2846996652,
+    2846996659,
+    2846996657,
+    2846997013,
+    2846997011,
+    2846997022,
+    2846997028,
+    2846997036,
+    2846997062,
+    2846997064,
+    2846997073,
+    2846997070,
+    2846997274,
+    2846997276,
+    2846997290,
+    2846997287,
+    2846997508,
+    2846997299,
+    2846997518,
+    2846997501,
+    2846997265
+  ],
+  "tags": {
+    "addr:housenumber": "25-05",
+    "addr:postcode": "11106",
+    "addr:street": "37th Avenue",
+    "amenity": "school",
+    "building": "yes",
+    "ele": "8",
+    "gnis:feature_id": "961261",
+    "height": "17.0",
+    "name": "Public School 112",
+    "nycdoitt:bin": "4004170"
+  }
+},
+{
+  "type": "way",
+  "id": 280641768,
+  "center": {
+    "lat": 40.7644947,
+    "lon": -73.9391361
+  },
+  "nodes": [
+    2847158799,
+    2847158665,
+    2847158697,
+    2847158681,
+    2847158663,
+    2847158646,
+    2847158630,
+    2847158609,
+    2847158649,
+    2847158676,
+    2847158687,
+    2847158693,
+    2847158694,
+    2847158713,
+    2847158720,
+    2847158824,
+    2847158806,
+    2847158799
+  ],
+  "tags": {
+    "addr:housenumber": "34-12",
+    "addr:postcode": "11106",
+    "addr:street": "10th Street",
+    "amenity": "school",
+    "building": "school",
+    "height": "9.5",
+    "name": "Growing Up Green Middle School",
+    "nycdoitt:bin": "4003863",
+    "website": "https://gugcs.org"
+  }
+},
+{
+  "type": "way",
+  "id": 281336899,
+  "center": {
+    "lat": 40.7472085,
+    "lon": -73.9555920
+  },
+  "nodes": [
+    2853020401,
+    2853021043,
+    2853020899,
+    2853021088,
+    2853020850,
+    2853020821,
+    2853020815,
+    2853021068,
+    11249821752,
+    11249821751,
+    11249821750,
+    5285583852,
+    2853020473,
+    2853020073,
+    2853020401
+  ],
+  "tags": {
+    "addr:city": "Long Island City",
+    "addr:housenumber": "46-08",
+    "addr:postcode": "11101",
+    "addr:state": "NY",
+    "addr:street": "5th Street",
+    "amenity": "school",
+    "building": "school",
+    "building:levels": "8",
+    "height": "129.8",
+    "name": "PS/IS 78Q The Robert F. Wagner, Jr. School",
+    "nycdoitt:bin": "4542629",
+    "website": "https://ps78.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 281499418,
+  "center": {
+    "lat": 40.7291517,
+    "lon": -73.9824713
+  },
+  "nodes": [
+    2549930747,
+    2549930737,
+    2549930728,
+    2549930675,
+    2549930653,
+    2549930613,
+    2549930598,
+    10119541721,
+    10119541723,
+    2549930707,
+    2549930712,
+    2549930723,
+    2549930726,
+    2549930743,
+    2549930747
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "420",
+    "addr:postcode": "10009",
+    "addr:street": "East 12th Street",
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "2083885",
+    "mascot": "Tigers",
+    "name": "East Side Community High School",
+    "ref": "M450",
+    "wikidata": "Q5329363",
+    "wikipedia": "en:East Side Community High School"
+  }
+},
+{
+  "type": "way",
+  "id": 284879996,
+  "center": {
+    "lat": 40.7639856,
+    "lon": -73.9484549
+  },
+  "nodes": [
+    2885824755,
+    2885824740,
+    2885824739,
+    2885824761,
+    2885824759,
+    2885824756,
+    2885824741,
+    2885824726,
+    2885824721,
+    2885824718,
+    2885824713,
+    2885824709,
+    2885824708,
+    2885824598,
+    2885824596,
+    2885824594,
+    2885824702,
+    2885824701,
+    2885824703,
+    2885824715,
+    2885824716,
+    2885824720,
+    2885824724,
+    2885824725,
+    2885824729,
+    2885824762,
+    2885824760,
+    2885824754,
+    2885824753,
+    2885824751,
+    2885824750,
+    2885824749,
+    2885824747,
+    2885824744,
+    2885824745,
+    2885824746,
+    2885824752,
+    2885824748,
+    2885824742,
+    2885824738,
+    2885824743,
+    2885824758,
+    2885824757,
+    2885824763,
+    2885824764,
+    2885824766,
+    2885824765,
+    2885824768,
+    2885824767,
+    2885824755
+  ],
+  "tags": {
+    "addr:housenumber": "645",
+    "addr:postcode": "10044",
+    "addr:street": "Main Street",
+    "amenity": "school",
+    "building": "school",
+    "height": "15.7",
+    "name": "Public School 217/Intermediate School 217",
+    "nycdoitt:bin": "1084848"
+  }
+},
+{
+  "type": "way",
+  "id": 317348442,
+  "center": {
+    "lat": 40.7111326,
+    "lon": -73.9855259
+  },
+  "nodes": [
+    3235936411,
+    3235958216,
+    3235959752,
+    2826544243,
+    3235936410,
+    2826544239,
+    2826544224,
+    3235936387,
+    3235936393,
+    3235937541,
+    2826544264,
+    3235959714,
+    2826544273,
+    357621633,
+    2826544274,
+    2826544272,
+    3235936411
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:postcode": "10002",
+    "addr:state": "NY",
+    "addr:street": "Cherry Street",
+    "alt_name": "Shuang Wen",
+    "amenity": "school",
+    "ele": "6",
+    "fax": "+1-212-602-9710",
+    "gnis:feature_id": "2083953",
+    "grades": "PK;0-8;SE",
+    "name": "Public School 184m",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "phone": "+1-212-602-9700",
+    "short_name": "P.S. 184m",
+    "website": "https://www.schools.nyc.gov/schools/M184"
+  }
+},
+{
+  "type": "way",
+  "id": 364262683,
+  "center": {
+    "lat": 40.7133527,
+    "lon": -73.9860565
+  },
+  "nodes": [
+    3683158249,
+    3683158250,
+    3683158251,
+    3683158252,
+    3683158249
+  ],
+  "tags": {
+    "alt_name": "Corlears Junior High School",
+    "amenity": "school",
+    "name": "Junior High School 56"
+  }
+},
+{
+  "type": "way",
+  "id": 365936508,
+  "center": {
+    "lat": 40.7100554,
+    "lon": -73.9546844
+  },
+  "nodes": [
+    3699347561,
+    3699347562,
+    3699347563,
+    3699347564,
+    3699347565,
+    3699347561
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 19",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230"
+  }
+},
+{
+  "type": "way",
+  "id": 365937086,
+  "center": {
+    "lat": 40.7223153,
+    "lon": -73.9537375
+  },
+  "nodes": [
+    3699353881,
+    3699353882,
+    3699353883,
+    3699353884,
+    3699353881
+  ],
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-03-09",
+    "name": "Automotive High School"
+  }
+},
+{
+  "type": "way",
+  "id": 367809093,
+  "center": {
+    "lat": 40.7373319,
+    "lon": -73.9993808
+  },
+  "nodes": [
+    2569063799,
+    2569063810,
+    2569063815,
+    2569063819,
+    2569063826,
+    2569063832,
+    2569063834,
+    2569063842,
+    2569063870,
+    2569063865,
+    2569063858,
+    2569063845,
+    2569063806,
+    2569063799
+  ],
+  "tags": {
+    "addr:housenumber": "146",
+    "addr:postcode": "10011",
+    "addr:street": "West 13th Street",
+    "amenity": "school",
+    "building": "yes",
+    "height": "16.8",
+    "name": "City and Country School",
+    "nycdoitt:bin": "1010604;1083193;1010604;1083193;1083194",
+    "wikidata": "Q5123519"
+  }
+},
+{
+  "type": "way",
+  "id": 370907280,
+  "center": {
+    "lat": 40.7433135,
+    "lon": -73.9295900
+  },
+  "nodes": [
+    3745741932,
+    3745741934,
+    3745741933,
+    3745741935,
+    3745741932
+  ],
+  "tags": {
+    "addr:city": "Long Island City",
+    "addr:country": "US",
+    "addr:postcode": "11101",
+    "addr:state": "NY",
+    "amenity": "school",
+    "ele": "16",
+    "gnis:feature_id": "942726",
+    "mascot": "Flyers",
+    "mascot:iconography": "Eagles",
+    "mascot:name": "Captain Eagle",
+    "name": "Aviation High School",
+    "phone": "+1 718 361-2032",
+    "wikidata": "Q4828641"
+  }
+},
+{
+  "type": "way",
+  "id": 370940924,
+  "center": {
+    "lat": 40.7422215,
+    "lon": -73.9452555
+  },
+  "nodes": [
+    3746019815,
+    3746019814,
+    9456785124,
+    9456785126,
+    3746019815
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "P4@Skillman School"
+  }
+},
+{
+  "type": "way",
+  "id": 377513609,
+  "center": {
+    "lat": 40.7444399,
+    "lon": -73.9779015
+  },
+  "nodes": [
+    2709389422,
+    3808870188,
+    2709389314,
+    2709389375,
+    2709389431,
+    2709389453,
+    6323963846,
+    6323963845,
+    2709389408,
+    2709389425,
+    2709389479,
+    2709389486,
+    2709389488,
+    6323963844,
+    2709389566,
+    2709389682,
+    2709389563,
+    2709389508,
+    2709389422
+  ],
+  "tags": {
+    "addr:housenumber": "210",
+    "addr:postcode": "10016",
+    "addr:street": "East 33rd Street",
+    "alt_name": "The Mary Lindley Murray School",
+    "amenity": "school",
+    "fax": "+1-212-696-1009",
+    "name": "Public School 116",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "phone": "+1-212-685-4366",
+    "website": "https://www.ps116.org",
+    "wikidata": "Q125358487"
+  }
+},
+{
+  "type": "way",
+  "id": 410303209,
+  "center": {
+    "lat": 40.7111591,
+    "lon": -74.0016404
+  },
+  "nodes": [
+    4121348014,
+    1253071017,
+    1253071013,
+    1253071032,
+    1253070573,
+    4121348004,
+    4121348013,
+    4121348056,
+    4121348005,
+    4121348045,
+    4121348040,
+    4121348032,
+    4121348020,
+    4121347999,
+    4121348046,
+    4121348018,
+    4121348003,
+    4121348058,
+    4121348051,
+    4121348027,
+    4121348010,
+    4121348024,
+    4121348057,
+    4121348008,
+    4121347998,
+    4121348016,
+    4121348043,
+    4121348021,
+    4121348054,
+    4121348035,
+    4121348059,
+    4121348030,
+    4121348033,
+    4121347996,
+    4121347995,
+    4121348012,
+    4121348029,
+    4121348000,
+    4121348017,
+    4121348006,
+    4121348039,
+    4121348047,
+    4121348050,
+    4121347997,
+    4121348053,
+    4121348019,
+    4121348036,
+    4121348038,
+    4121348007,
+    4121348042,
+    4121348015,
+    4121348022,
+    4121348028,
+    4121348048,
+    4121348052,
+    4121348001,
+    4121348034,
+    4121348031,
+    4121348002,
+    4121348011,
+    4121348023,
+    4121348014
+  ],
+  "tags": {
+    "amenity": "school",
+    "mascot": "Flash",
+    "name": "Murry Bergtraum High School for Business Careers",
+    "wikidata": "Q6939655"
+  }
+},
+{
+  "type": "way",
+  "id": 449336714,
+  "center": {
+    "lat": 40.7450046,
+    "lon": -74.0281805
+  },
+  "nodes": [
+    4463068512,
+    4463068513,
+    4463068514,
+    4463068515,
+    4463068516,
+    4463068517,
+    4463068512
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "All Saints Episcopal Day School",
+    "wikidata": "Q4729298"
+  }
+},
+{
+  "type": "way",
+  "id": 449336716,
+  "center": {
+    "lat": 40.7452078,
+    "lon": -74.0281153
+  },
+  "nodes": [
+    4463068529,
+    4463068530,
+    4463068531,
+    4463068532,
+    4463068529
+  ],
+  "tags": {
+    "amenity": "school",
+    "grades": "K-12",
+    "name": "Hoboken Charter School",
+    "wikidata": "Q97355158",
+    "wikipedia": "en:Hoboken Charter School"
+  }
+},
+{
+  "type": "way",
+  "id": 450344771,
+  "center": {
+    "lat": 40.7697370,
+    "lon": -74.0221023
+  },
+  "nodes": [
+    4472625952,
+    4472625914,
+    4999661722,
+    4472625911,
+    4472625913,
+    4472625952
+  ],
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 450431063,
+  "center": {
+    "lat": 40.7686297,
+    "lon": -74.0280504
+  },
+  "nodes": [
+    440243693,
+    4473551176,
+    4473551181,
+    4473554390,
+    4473554396,
+    4473554394,
+    4473554397,
+    440243693
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Daniel Webster Number 2 Elementary School"
+  }
+},
+{
+  "type": "way",
+  "id": 453527685,
+  "center": {
+    "lat": 40.7220241,
+    "lon": -73.9787302
+  },
+  "nodes": [
+    2567535099,
+    2567535111,
+    3204169581,
+    3204169580,
+    3204169579,
+    4502505642,
+    2567535131,
+    3291925028,
+    3291925027,
+    2567535106,
+    4502505641,
+    2567535088,
+    2567535076,
+    2567534989,
+    2567535099
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 15 - Roberto Clemente"
+  }
+},
+{
+  "type": "way",
+  "id": 453527686,
+  "center": {
+    "lat": 40.7236473,
+    "lon": -73.9816020
+  },
+  "nodes": [
+    2567538977,
+    2567538967,
+    2567538959,
+    2567538940,
+    2567538920,
+    4502505647,
+    4502505648,
+    4502505649,
+    4502505652,
+    4502505654,
+    4502505656,
+    4502505657,
+    4502505655,
+    4502505653,
+    4502505651,
+    4502505650,
+    2567538948,
+    4502505646,
+    2567538916,
+    2567538905,
+    4502505645,
+    4502505644,
+    4502505643,
+    2567538862,
+    2567538880,
+    2567538882,
+    2567538885,
+    2567538926,
+    2567538924,
+    2567538955,
+    2567538952,
+    2567538965,
+    2567538966,
+    2567538972,
+    2567538969,
+    2567538991,
+    2567538992,
+    2567538997,
+    2567538995,
+    2567538996,
+    2567538994,
+    2567538993,
+    2567538987,
+    2567538988,
+    2567538986,
+    2567538985,
+    2567538984,
+    2567538977
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "600",
+    "addr:postcode": "10009",
+    "addr:street": "East 6th Street",
+    "amenity": "school",
+    "name": "Public School 64"
+  }
+},
+{
+  "type": "way",
+  "id": 453528990,
+  "center": {
+    "lat": 40.7260125,
+    "lon": -73.9750445
+  },
+  "nodes": [
+    2567527080,
+    2567527063,
+    2567527057,
+    4502518771,
+    2567527055,
+    2567527065,
+    2567527069,
+    2567527074,
+    2567527080
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "730",
+    "addr:postcode": "10009",
+    "addr:street": "East 12th Street",
+    "amenity": "school",
+    "gnis:feature_id": "961658",
+    "name": "Public School 34"
+  }
+},
+{
+  "type": "way",
+  "id": 453531005,
+  "center": {
+    "lat": 40.7300122,
+    "lon": -73.9845198
+  },
+  "nodes": [
+    2547123163,
+    2547123193,
+    4502535318,
+    8888045087,
+    2547123271,
+    2547123239,
+    8887980285,
+    4502535317,
+    8887980286,
+    2547123184,
+    2547123158,
+    8888045088,
+    8887980287,
+    2547122878,
+    2547122345,
+    2547123163
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "185",
+    "addr:postcode": "10003",
+    "addr:street": "1st Avenue",
+    "alt_name": "P.S. 19 East Village Community School",
+    "amenity": "school",
+    "name": "East Village Community School",
+    "nycdoe:ref": "M315",
+    "old_name": "P.S. 19 Asher Levy School",
+    "phone": "+1-212-533-5340",
+    "short_name": "PS19 EVCS",
+    "website": "https://www.ps19evcs.org"
+  }
+},
+{
+  "type": "way",
+  "id": 453531406,
+  "center": {
+    "lat": 40.7259664,
+    "lon": -73.9880166
+  },
+  "nodes": [
+    2547055595,
+    4502539351,
+    4502539299,
+    4502539301,
+    9936456392,
+    2547055806,
+    2547055782,
+    2547055770,
+    9936456393,
+    4502539302,
+    4502539300,
+    2547055714,
+    2547055699,
+    2547055665,
+    2547055629,
+    2547055585,
+    2547055454,
+    2547055503,
+    2547055520,
+    2547055535,
+    2547055567,
+    2547055574,
+    2547055595
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "113",
+    "addr:postcode": "10003",
+    "addr:street": "East 4th Street",
+    "amenity": "school",
+    "name": "Manhattan School for Career Development"
+  }
+},
+{
+  "type": "way",
+  "id": 459797785,
+  "center": {
+    "lat": 40.7443156,
+    "lon": -74.0009494
+  },
+  "nodes": [
+    4555387711,
+    4555387712,
+    4555387713,
+    4555387714,
+    2703021334,
+    2703021380,
+    2703021431,
+    2703021221,
+    2703021187,
+    2703021127,
+    2703021105,
+    2703021053,
+    2703021025,
+    2703020975,
+    2703020915,
+    2703020812,
+    2703020810,
+    2703020836,
+    2703020911,
+    2703020939,
+    2703021020,
+    4555387711
+  ],
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 460504395,
+  "center": {
+    "lat": 40.7214659,
+    "lon": -73.9861987
+  },
+  "nodes": [
+    4561457052,
+    4561457049,
+    2567547531,
+    2567547370,
+    9951392573,
+    9951392572,
+    2567547328,
+    2567547461,
+    4561457047,
+    4561457050,
+    4561457052
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "166",
+    "addr:postcode": "10002",
+    "addr:street": "Essex Street",
+    "alt_name": "Public School 20",
+    "amenity": "school",
+    "name": "Anna Silver School",
+    "short_name": "P.S. 20"
+  }
+},
+{
+  "type": "way",
+  "id": 474632750,
+  "center": {
+    "lat": 40.7318832,
+    "lon": -73.9907281
+  },
+  "nodes": [
+    4500010372,
+    4500010379,
+    4685430886,
+    4500010377,
+    4500010381,
+    1729141648,
+    1729141660,
+    1729141671,
+    1729141672,
+    1729141692,
+    1729141685,
+    4685430884,
+    1729141677,
+    2547193506,
+    2547193511,
+    2547193531,
+    2547193528,
+    2547193508,
+    1729141694,
+    1729141678,
+    2547193494,
+    2547193491,
+    2547193487,
+    2547193462,
+    2547193465,
+    4500010380,
+    2547193468,
+    2547193459,
+    2547193456,
+    4500010364,
+    4500010362,
+    4685430885,
+    4500010372
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Grace Church School"
+  }
+},
+{
+  "type": "way",
+  "id": 540092756,
+  "center": {
+    "lat": 40.7444992,
+    "lon": -73.9724590
+  },
+  "nodes": [
+    5754266064,
+    9811195603,
+    9811195602,
+    9811195601,
+    9811195600,
+    3108507825,
+    9811195598,
+    9811195599,
+    3863128576,
+    6294355106,
+    9811195592,
+    9811195591,
+    9811195595,
+    9811195581,
+    5754266064
+  ],
+  "tags": {
+    "addr:housenumber": "425",
+    "addr:postcode": "10016",
+    "addr:street": "East 35th Street",
+    "alt_name": "P.S. 281",
+    "amenity": "school",
+    "building": "school",
+    "fax": "+1-212-251-6645",
+    "height": "33.6",
+    "name": "The River School",
+    "nycdoitt:bin": "1089385",
+    "phone": "+1-212-251-6640",
+    "website": "https://ps281.org"
+  }
+},
+{
+  "type": "way",
+  "id": 556550147,
+  "center": {
+    "lat": 40.7017960,
+    "lon": -73.9537141
+  },
+  "nodes": [
+    3699342275,
+    3699342276,
+    3699342271,
+    3699342272,
+    5368768972,
+    5368768970,
+    5368768966,
+    3699342275
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 380"
+  }
+},
+{
+  "type": "way",
+  "id": 561866924,
+  "center": {
+    "lat": 40.7583986,
+    "lon": -73.9391966
+  },
+  "nodes": [
+    357578458,
+    5417203712,
+    8547465578,
+    8547465579,
+    5417203713,
+    8547465598,
+    8547465585,
+    8547465573,
+    8547465574,
+    5417203714,
+    5417203715,
+    8547465597,
+    5417203716,
+    5417203717,
+    5417203718,
+    357578458
+  ],
+  "tags": {
+    "alt_name": "Public School 111;Community School 111 Queens;Jacob Blackwell School",
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "961258",
+    "name": "Public School 111 Jacob Blackwell",
+    "official_name": "Community School of Multimedia Communications & Art",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "operator:wikipedia": "en:New York City Department of Education",
+    "ref": "Q111",
+    "short_name": "P.S. 111",
+    "website": "https://www.ps111q.org/"
+  }
+},
+{
+  "type": "way",
+  "id": 582732646,
+  "center": {
+    "lat": 40.7149555,
+    "lon": -73.9634749
+  },
+  "nodes": [
+    5572434497,
+    5572434508,
+    5572434500,
+    11133327088,
+    11133327087,
+    5572434485,
+    5572434497
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 84"
+  }
+},
+{
+  "type": "way",
+  "id": 665487263,
+  "center": {
+    "lat": 40.7199842,
+    "lon": -73.9479055
+  },
+  "nodes": [
+    6228788690,
+    6228788691,
+    6228788692,
+    12146379694,
+    12146379695,
+    6228788690
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Junior High School 126"
+  }
+},
+{
+  "type": "way",
+  "id": 675913190,
+  "center": {
+    "lat": 40.7129118,
+    "lon": -73.9915155
+  },
+  "nodes": [
+    6330422141,
+    11658565306,
+    6330018978,
+    11658565307,
+    8279851236,
+    11658565353,
+    11658565570,
+    11658565582,
+    11658565309,
+    8279851237,
+    11658565310,
+    2826520653,
+    11658565305,
+    2826520693,
+    2826520757,
+    11658710476,
+    5323081047,
+    5323081050,
+    6330422141
+  ],
+  "tags": {
+    "addr:housenumber": "122",
+    "addr:postcode": "10002",
+    "addr:street": "Henry Street",
+    "amenity": "school",
+    "ele": "3",
+    "gnis:feature_id": "961493",
+    "name": "Public School 2",
+    "ref": "PS 2",
+    "short_name": "P.S. 2"
+  }
+},
+{
+  "type": "way",
+  "id": 675961951,
+  "center": {
+    "lat": 40.7125535,
+    "lon": -73.9974835
+  },
+  "nodes": [
+    2825313109,
+    2825313037,
+    11504448507,
+    2496629204,
+    2496629205,
+    2825313046,
+    2825313114,
+    2825313109
+  ],
+  "tags": {
+    "amenity": "school",
+    "education": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 677116750,
+  "center": {
+    "lat": 40.7159150,
+    "lon": -73.9934208
+  },
+  "nodes": [
+    6340314468,
+    6340314469,
+    2567558906,
+    6340314470,
+    2567559004,
+    2567558984,
+    6340314471,
+    6340314468
+  ],
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 682951604,
+  "center": {
+    "lat": 40.7415680,
+    "lon": -73.9774609
+  },
+  "nodes": [
+    2704114511,
+    2704114515,
+    2704114519,
+    2704114526,
+    2704114521,
+    2704114525,
+    2704114507,
+    5277922121,
+    2704114481,
+    2704114503,
+    2704114512,
+    2704114511
+  ],
+  "tags": {
+    "addr:housenumber": "301",
+    "addr:postcode": "10016",
+    "addr:street": "East 29th Street",
+    "amenity": "school",
+    "building": "yes",
+    "ele": "9",
+    "fax": "+1-212-722-1387",
+    "gnis:feature_id": "2083135",
+    "height": "28.7",
+    "name": "Churchill School and Center",
+    "nycdoitt:bin": "1020614;1081677",
+    "old_name": "Pinkerton Environmental Center",
+    "phone": "+1-212-722-0610",
+    "website": "https://www.churchillschoolnyc.org"
+  }
+},
+{
+  "type": "way",
+  "id": 711552605,
+  "center": {
+    "lat": 40.7688378,
+    "lon": -73.9515214
+  },
+  "nodes": [
+    2712510965,
+    6689923805,
+    6689923804,
+    2712511043,
+    2712511098,
+    6689923803,
+    2712511036,
+    2712511017,
+    2712510983,
+    2712510979,
+    2712510965
+  ],
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-07-30",
+    "ele": "22",
+    "gnis:feature_id": "2083911",
+    "name": "Lycée Français de New-York",
+    "website": "https://www.lfny.org",
+    "wikidata": "Q3269093",
+    "wikipedia": "fr:Lycée français de New York"
+  }
+},
+{
+  "type": "way",
+  "id": 733046919,
+  "center": {
+    "lat": 40.7608759,
+    "lon": -73.9416217
+  },
+  "nodes": [
+    2482941856,
+    2482941857,
+    6864390876,
+    6864390877,
+    2482941860,
+    2482941861,
+    2482941856
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 76",
+    "short_name": "PS 76"
+  }
+},
+{
+  "type": "way",
+  "id": 920642904,
+  "center": {
+    "lat": 40.7097908,
+    "lon": -73.9444840
+  },
+  "nodes": [
+    8548019755,
+    7257110364,
+    8548019756,
+    8548019757,
+    7257110360,
+    8548019758,
+    8548019755
+  ],
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "223",
+    "addr:postcode": "11206",
+    "addr:state": "NY",
+    "addr:street": "Graham Avenue",
+    "amenity": "school",
+    "mascot": "Titans",
+    "name": "Brooklyn Latin School",
+    "name:en": "Brooklyn Latin School",
+    "name:la": "Schola Latina Brookliniensis",
+    "official_name": "The Brooklyn Latin School",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "operator:wikipedia": "en:New York City Department of Education",
+    "school": "magnet",
+    "short_name": "TBLS",
+    "website": "https://brooklynlatin.org/",
+    "wikidata": "Q4974870",
+    "wikipedia": "en:Brooklyn Latin School"
+  }
+},
+{
+  "type": "way",
+  "id": 949267308,
+  "center": {
+    "lat": 40.7354589,
+    "lon": -73.9993958
+  },
+  "nodes": [
+    2569065914,
+    2569065884,
+    2569065797,
+    2569065791,
+    2569065801,
+    8787892472,
+    8787892420,
+    2569065802,
+    8787892418,
+    8787892404,
+    8787892421,
+    8787892405,
+    8787892419,
+    2569065756,
+    2569065736,
+    2569065743,
+    8787892473,
+    8787892474,
+    8787892475,
+    2569065740,
+    8787892476,
+    2569065716,
+    2569065730,
+    2569065735,
+    2569065742,
+    2569065737,
+    2569065747,
+    2569065750,
+    2569065751,
+    2569065758,
+    2569065759,
+    2569065761,
+    2569065767,
+    2569065770,
+    2569065814,
+    2569065823,
+    2569065914
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "116",
+    "addr:postcode": "10011",
+    "addr:state": "NY",
+    "addr:street": "West 11th Street",
+    "alt_name": "Greenwich Village School",
+    "amenity": "school",
+    "grades": "PK-5;SP",
+    "name": "Public School 41",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "operator:wikipedia": "en:New York City Department of Education",
+    "ref": "PS 41M",
+    "short_name": "P.S. 41",
+    "website": "https://www.ps41.org/"
+  }
+},
+{
+  "type": "way",
+  "id": 1016411986,
+  "center": {
+    "lat": 40.7026896,
+    "lon": -73.9413330
+  },
+  "nodes": [
+    2838402530,
+    2838402526,
+    2838402277,
+    2838402264,
+    9374700176,
+    9374700177,
+    6770679586,
+    6770679590,
+    9374700178,
+    9374700179,
+    2838402530
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 257"
+  }
+},
+{
+  "type": "way",
+  "id": 1016411992,
+  "center": {
+    "lat": 40.7006514,
+    "lon": -73.9376742
+  },
+  "nodes": [
+    9374700198,
+    9374700199,
+    9374700200,
+    9374700201,
+    9374700202,
+    13571799328,
+    13112903048,
+    9374700203,
+    9374700198
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 120",
+    "wikidata": "Q117819894"
+  }
+},
+{
+  "type": "way",
+  "id": 1016418798,
+  "center": {
+    "lat": 40.7121360,
+    "lon": -73.9842930
+  },
+  "nodes": [
+    2826642246,
+    2826642244,
+    9374738895,
+    9374738896,
+    9374738897,
+    2826642233,
+    2826642246
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "University Neighborhood High School"
+  }
+},
+{
+  "type": "way",
+  "id": 1065540561,
+  "center": {
+    "lat": 40.7152933,
+    "lon": -73.9573152
+  },
+  "nodes": [
+    9785615224,
+    9785615223,
+    9785615222,
+    9785615221,
+    9785615220,
+    9785615224
+  ],
+  "tags": {
+    "amenity": "school",
+    "ele": "7",
+    "gnis:feature_id": "961419",
+    "name": "Public School 17"
+  }
+},
+{
+  "type": "way",
+  "id": 1069684116,
+  "center": {
+    "lat": 40.7017909,
+    "lon": -73.9816078
+  },
+  "nodes": [
+    9817956248,
+    9817956247,
+    9817956246,
+    9817956249,
+    2568494591,
+    2568494727,
+    9817956250,
+    9817956245,
+    9817956244,
+    2568494563,
+    9815549107,
+    2568494620,
+    9817956248
+  ],
+  "tags": {
+    "addr:housenumber": "209",
+    "addr:postcode": "11201",
+    "addr:street": "York Street",
+    "alt_name": "Daniel Hall Williams School",
+    "amenity": "school",
+    "name": "Public School 307",
+    "phone": "+1-718-834-4748",
+    "website": "https://www.ps307brooklyn.org"
+  }
+},
+{
+  "type": "way",
+  "id": 1085842599,
+  "center": {
+    "lat": 40.7155650,
+    "lon": -73.9548123
+  },
+  "nodes": [
+    9949556562,
+    9949556561,
+    9949556560,
+    9949556559,
+    9949556562
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Harry Van Arsdale High School"
+  }
+},
+{
+  "type": "way",
+  "id": 1097340320,
+  "center": {
+    "lat": 40.7389958,
+    "lon": -73.9608430
+  },
+  "nodes": [
+    10047838961,
+    5749890038,
+    10047838963,
+    10047838966,
+    10047838965,
+    10047838974,
+    5749890029,
+    10047838961
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "P.S. 384 - Hunters Point Elementary"
+  }
+},
+{
+  "type": "way",
+  "id": 1131163855,
+  "center": {
+    "lat": 40.7237389,
+    "lon": -73.9419255
+  },
+  "nodes": [
+    10540338291,
+    2842681810,
+    10540338286,
+    10540338285,
+    10540338287,
+    10540338288,
+    10540338289,
+    10540338290,
+    10540338291
+  ],
+  "tags": {
+    "addr:city": "Brooklyn",
+    "addr:housenumber": "124",
+    "addr:postcode": "11222",
+    "addr:state": "NY",
+    "addr:street": "Monitor Street",
+    "alt_name": "The Montior",
+    "amenity": "school",
+    "fax": "+1-718-383-5053",
+    "grades": "PK;0-5;SE",
+    "name": "Public School 110",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "phone": "+1-718-383-7600",
+    "ref": "K110",
+    "short_name": "P.S. 110",
+    "website": "https://www.schools.nyc.gov/schools/K110"
+  }
+},
+{
+  "type": "way",
+  "id": 1149529092,
+  "center": {
+    "lat": 40.7108807,
+    "lon": -73.9466894
+  },
+  "nodes": [
+    2838698461,
+    10693864752,
+    2838698475,
+    2838698479,
+    2838698485,
+    9775456296,
+    9775456297,
+    9775456292,
+    9775456293,
+    10693864753,
+    10693864754,
+    10693864755,
+    2838698509,
+    2838698469,
+    10693864764,
+    10693864765,
+    10693864756,
+    10693864766,
+    10693864750,
+    10693864749,
+    10693864769,
+    10693864758,
+    10693864767,
+    10693864768,
+    10693864757,
+    2838698447,
+    2838698461
+  ],
+  "tags": {
+    "amenity": "school",
+    "gnis:feature_id": "961445",
+    "name": "Public School 18"
+  }
+},
+{
+  "type": "way",
+  "id": 1149531149,
+  "center": {
+    "lat": 40.7067152,
+    "lon": -73.9456482
+  },
+  "nodes": [
+    2838492506,
+    2838492505,
+    10693930883,
+    10693930873,
+    10693930878,
+    2838492509,
+    2838492515,
+    10693930874,
+    10693930875,
+    2838492521,
+    2838492514,
+    10693930876,
+    2838492506
+  ],
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 1290906211,
+  "center": {
+    "lat": 40.7244355,
+    "lon": -73.9862132
+  },
+  "nodes": [
+    2550785217,
+    2550785166,
+    2550785035,
+    2550785098,
+    2550785217
+  ],
+  "tags": {
+    "amenity": "school",
+    "name": "Public School 63"
+  }
+},
+{
+  "type": "way",
+  "id": 1292949301,
+  "center": {
+    "lat": 40.7407119,
+    "lon": -74.0032270
+  },
+  "nodes": [
+    2702832095,
+    2702832052,
+    2702832044,
+    11986237906,
+    11986237907,
+    11986237908,
+    11986237909,
+    2702831996,
+    2702832022,
+    2702832026,
+    2702832029,
+    2702832058,
+    2702832071,
+    2702832081,
+    2702832095
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "324",
+    "addr:postcode": "10010",
+    "addr:state": "NY",
+    "addr:street": "West 15th Street",
+    "amenity": "school",
+    "grades": "PK-5",
+    "isced:level": "0-1",
+    "name": "Corlears School",
+    "nursery": "yes",
+    "phone": "+1-212-741-2800",
+    "preschool": "yes",
+    "religion": "none",
+    "website": "https://corlearsschool.org"
+  }
+},
+{
+  "type": "way",
+  "id": 1362710595,
+  "center": {
+    "lat": 40.7281234,
+    "lon": -73.9897549
+  },
+  "nodes": [
+    2494162042,
+    2494162163,
+    12616810056,
+    2494162121,
+    2494162140,
+    2494162209,
+    2494160717,
+    2494161908,
+    2494162042
+  ],
+  "tags": {
+    "amenity": "school",
+    "mascot": "Cardinals",
+    "name": "La Salle Academy",
+    "phone": "+1-212-475-8940",
+    "website": "https://www.lasalleacademy.org"
+  }
+},
+{
+  "type": "way",
+  "id": 1365373854,
+  "center": {
+    "lat": 40.7179481,
+    "lon": -74.0139047
+  },
+  "nodes": [
+    2569923731,
+    11458509455,
+    2569923813,
+    2569923863,
+    2569923865,
+    2569923876,
+    8282428796,
+    2569923888,
+    8282428788,
+    2569923884,
+    2569923867,
+    2569923852,
+    2569923847,
+    2569923849,
+    2569923844,
+    11458527696,
+    2569923731
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:housenumber": "345",
+    "addr:postcode": "10282",
+    "addr:state": "NY",
+    "addr:street": "Chambers Street",
+    "amenity": "school",
+    "ele": "0",
+    "gnis:feature_id": "2060115",
+    "mascot": "Peglegs",
+    "mascot:name": "Pegleg Pete",
+    "name": "Stuyvesant High School",
+    "religion": "none",
+    "start_date": "1992",
+    "website": "https://stuy.enschool.org/",
+    "wikidata": "Q3098911",
+    "wikipedia": "en:Stuyvesant High School"
+  }
+},
+{
+  "type": "way",
+  "id": 1365375884,
+  "center": {
+    "lat": 40.7363213,
+    "lon": -73.9734614
+  },
+  "nodes": [
+    1009245506,
+    1602659286,
+    3686034886,
+    3734578672,
+    3686034882,
+    387183813,
+    3686034884,
+    2043949449,
+    387183814,
+    2043949443,
+    166879004,
+    1602659282,
+    1009245501,
+    1009245506
+  ],
+  "tags": {
+    "addr:city": "New York",
+    "addr:country": "US",
+    "addr:housenumber": "24-50",
+    "addr:postcode": "10010",
+    "addr:street": "FDR Drive",
+    "amenity": "school",
+    "ele": "0",
+    "fee": "yes",
+    "gnis:feature_id": "2083091",
+    "grades": "0 to 12",
+    "isced:level": "0-3",
+    "mascot": "Unicorns",
+    "name": "United Nations International School",
+    "name:ja": "国連国際学校",
+    "short_name": "UNIS",
+    "website": "https://www.unis.org/",
+    "wheelchair": "yes",
+    "wikidata": "Q14707545",
+    "wikipedia": "en:United Nations International School"
+  }
+},
+{
+  "type": "way",
+  "id": 1365380989,
+  "center": {
+    "lat": 40.7396296,
+    "lon": -73.9968794
+  },
+  "nodes": [
+    2702937474,
+    2702937444,
+    2702937428,
+    12644016263,
+    12644016264,
+    2702937391,
+    12644016265,
+    2702937460,
+    2702937474
+  ],
+  "tags": {
+    "addr:housenumber": "122",
+    "addr:postcode": "10011",
+    "addr:street": "West 17th Street",
+    "amenity": "school",
+    "mascot": "Bulldogs",
+    "mascot:name": "Winston the Bulldog",
+    "name": "Winston Prepatory School",
+    "website": "https://www.winstonprep.edu",
+    "wikidata": "Q8026117"
+  }
+},
+{
+  "type": "way",
+  "id": 1378215986,
+  "center": {
+    "lat": 40.7275362,
+    "lon": -73.9782615
+  },
+  "nodes": [
+    2567528208,
+    12761085778,
+    12761085777,
+    2567528202,
+    2567528211,
+    2567528219,
+    2567528220,
+    2567528221,
+    2567528208
+  ],
+  "tags": {
+    "amenity": "school",
+    "fax": "+1-212-614-9462",
+    "name": "The Children's Workshop School",
+    "phone": "+1-212-614-9531",
+    "ref:nycschools": "M361",
+    "website": "https://cwsnyc.org"
+  }
+},
+{
+  "type": "relation",
+  "id": 3719727,
+  "center": {
+    "lat": 40.7096345,
+    "lon": -73.9538773
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 279661701,
+      "role": "outer"
+    },
+    {
+      "type": "way",
+      "ref": 279661702,
+      "role": "inner"
+    }
+  ],
+  "tags": {
+    "addr:housenumber": "360",
+    "addr:postcode": "11211",
+    "addr:street": "Keap Street",
+    "amenity": "school",
+    "building": "school",
+    "ele": "7",
+    "gnis:feature_id": "2082256",
+    "height": "4.2",
+    "name": "Public School 319",
+    "nycdoitt:bin": "3063189",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 12475907,
+  "center": {
+    "lat": 40.7054219,
+    "lon": -73.9388593
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 920642663,
+      "role": "outer"
+    },
+    {
+      "type": "way",
+      "ref": 920642658,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "alt_name": "Public School 147 Brooklyn;The Isaac Remsen School",
+    "alt_name:etymology": "Isaac B. Remsen",
+    "amenity": "school",
+    "ele": "5",
+    "gnis:feature_id": "961357",
+    "name": "Public School 147",
+    "official_name": "School for Environmental Engineering",
+    "operator": "New York City Department of Education",
+    "operator:short": "NYC Public Schools",
+    "operator:type": "public",
+    "operator:wikidata": "Q408230",
+    "operator:wikipedia": "en:New York City Department of Education",
+    "ref": "K147",
+    "short_name": "P.S. 147",
+    "type": "multipolygon",
+    "website": "https://ps147brooklyn-org.webs.com/",
+    "wikidata": "Q109444303"
+  }
+}
+
+  ]
+}
