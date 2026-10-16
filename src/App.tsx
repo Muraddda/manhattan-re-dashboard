@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as maplibregl from 'maplibre-gl';
 import type { Feature, FeatureCollection } from 'geojson';
+// MapLibre 6 looks for its worker next to its own module, a file the bundler never emits, so a production build
+// (e.g. the Cloudflare deploy) drew only the background. Ship the worker as an asset and point MapLibre at it.
+import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
+maplibregl.setWorkerUrl(workerUrl);
 import { ArrowUpDown, Bath, BedDouble, Box, Building2, ChartColumn, ChevronRight, Footprints, GraduationCap, Home, LayoutList, Minus, Navigation2, Plus, Ruler, Search, ShoppingCart, Sparkles, TrainFront, Trees, X, type LucideIcon } from 'lucide-react';
 import type { Amenities, Amenity, AmenityCategory, Building, BuildingStore, Development, Listing, LngLat, Selection } from './types';
 import { distanceMeters, fmtPrice, loadAmenities, loadBlocks, loadBuildings, loadDevelopments, loadListings, matchBuilding, nearest, walkMinutes } from './data';
@@ -96,7 +100,8 @@ export default function App() {
   useEffect(() => {
     const soft = <T,>(p: Promise<T>, fallback: T, what: string) => p.catch(e => { console.error(`Failed to load ${what}:`, e); return fallback; });
     const blocks = () => loadBlocks().then(r => r.items);
-    const city = soft(SIMPLE ? blocks().catch(loadBuildings) : loadBuildings().catch(blocks), [] as Building[], 'city geometry');
+    // no generated city files is a supported setup (basemap building tiles take over), so it is not an error
+    const city = (SIMPLE ? blocks().catch(loadBuildings) : loadBuildings().catch(blocks)).catch(() => { console.info('No generated city files; using basemap buildings (npm run data)'); return [] as Building[]; });
     Promise.all([city, soft(loadListings(), [], 'listings'), soft(loadDevelopments(), [], 'developments'), soft(loadAmenities(), null, 'amenities')]).then(([b, l, d, a]) => {
       const byListing = new Map<string, string>(); for (const x of b) for (const lid of x.listings ?? []) byListing.set(lid, x.id);
       const ls = l.map(x => ({ ...x, buildingId: byListing.get(x.id) ?? matchBuilding([x.lon, x.lat], b) }));
