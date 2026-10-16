@@ -1,72 +1,118 @@
-# Skyline Realty — Manhattan South 3D dashboard (test run)
+# Skyline · Manhattan homes for independent agents
 
-Vite + React + TS, MapLibre GL only (OpenFreeMap `positron` style, no API key). The whole scene is one WebGL context: buildings are a
-`fill-extrusion` layer, markers are symbol layers, price tags are HTML markers.
-Look: daylight 3D city (near-white massing, glassy blue towers, low warm sun + cool sky fill), coral listing buildings with
-price tags, one blue accent for selection; light glass UI in Geist with Lucide icons and spring motion (respects reduced motion).
+A map-first tool for showing Manhattan homes to clients and pricing them. Every number comes from public data
+(NYC Open Data, MTA, OpenStreetMap). Nothing is sample data.
 
-Area: Manhattan south of 59th St / Central Park (coarse polygon in `scripts/area.mjs`, inside bbox -74.03..-73.93, 40.70..40.77).
+Live: https://manhattan-re-dashboard.aerkin.workers.dev
+
+## What it does
+
+**For a buyer** (pick *Buyer* at the top):
+- **Homes:** every recorded Manhattan sale of the last 12 months (about 13,500), plus the agent's own listings.
+  - Filter by status, type, price, size and recency.
+  - Each home gets a value badge: its price per ft² against the neighborhood median for the same type.
+- **Client needs:** dietary requirements, places the client must reach (office, school, family) and a minimum
+  zoned-school score.
+  - Every home in the list then shows "~18 min to 1 Liberty Plaza · Kosher ≤ 4 min · Zoned school 82%".
+  - One switch keeps only the homes that meet all of the needs; you can also sort by commute.
+- **Commute:** door-to-door subway + walking time to any address, computed in the browser from the MTA timetable
+  (weekday-morning averages, including waits and transfers).
+  - Each trip shows its legs with official line bullets and is drawn on the map.
+  - **Time map** shades everywhere reachable in 15 / 30 / 45 minutes.
+- **Schools:**
+  - Zoned elementary and middle school (2024-25 zones) with 2026 reading and math proficiency against the NYC average.
+  - District middle schools ranked by score, and nearby high schools by graduation rate.
+- **Food & dietary:**
+  - Kosher, halal, vegan, vegetarian, gluten-free and organic options, each with the nearest grocery and the
+    restaurants within a 10-minute walk.
+  - Nearest premium grocer, supermarket, and organic, Asian, Indian, Latin and Italian markets.
+  - Dining by cuisine, share of health-grade-A restaurants, and Michelin-starred places within 20 minutes.
+- **Area:**
+  - Reported felonies and 311 noise near the home against the Manhattan average.
+  - FEMA flood zone, parks and playgrounds, and live Citi Bike docks.
+- **Climate & environment** (Mireye Earth API): elevation and distance to the shoreline (flags low-lying homes near
+  the water for storm-surge checks), the current FEMA flood zone, tree canopy, distance to the nearest major road
+  (traffic noise) and the nearest airport. Each value shows its underlying source and confidence.
+
+**For a seller:**
+- **Value:**
+  - A comps-based estimate: median $/ft² of the nearest same-type sales × size, with the middle-half range.
+  - The comparable sales themselves.
+  - Every recorded sale in the building since 2016.
+  - The neighborhood's 12-month trend.
+- **Market tab:** 12-month and 10-year Manhattan trends, plus a sortable neighborhood table (click a neighborhood to see its homes).
+
+**For a developer:**
+- **Develop tab, Pipeline:** every new residential building filed since 2019 (DCP Housing Database), with units and status.
+- **Develop tab, Soft sites:** private lots whose building uses far less residential floor area than zoning allows.
+- **Building section:** zoning, FAR built vs max, unused floor area, landmark or historic district, assessed value.
+
+**For an agent** (Tour tab):
+- **Tour:** shortlist homes (♥), see travel time between consecutive showings, and reorder them by travel time ("Best order").
+- **Share:** copy a client link that opens the same profile and shortlist, or print a client report.
+- **My listings:** import a CSV (address, unit, price, beds, baths, sqft, type, status, url, notes).
+  - Addresses are located with the NYC geocoder, and rows that don't match are reported rather than guessed.
+  - Listings stay in that browser.
+
+Search any NYC address or building and you get the same analysis even if it never sold. Clicking any building on
+the map resolves its tax lot (BBL).
+
+## Why there are no "active listings" by default
+There is no free, legal feed of Manhattan for-sale listings: REBNY RLS needs brokerage membership, and scraping
+StreetEasy or Zillow breaks their terms. The map therefore shows recorded sales, and agents import their own listings.
+An IDX or RLS feed can be added later as another data source.
+
+## Data
+| Data | Source | Refresh |
+|---|---|---|
+| Sales (12 months) | DOF Rolling Sales `usep-8jbt` | daily by the Worker cron (DOF publishes monthly) |
+| 10-year price trend | DOF Annualized Sales `w2pb-icbu` | daily |
+| New developments | DCP Housing Database `br6q-ssj3` | daily |
+| Restaurants + grades | DOHMH inspections `43nn-pn8j` | daily |
+| Soft sites | PLUTO `64uk-42ks` | daily |
+| Lot positions, condo unit sizes | PLUTO + DOF assessment roll `8y4t-faws` → `public/data/lots.json` | weekly (GitHub Action) |
+| Schools, zones, scores | DOE zones (`cmjf-yawu`, `t26j-jbq7`, `8ugf-3d8u`), locations `wg9x-4ke6`, InfoHub test results, graduation `mjm3-8dw8` → `schools.json` | weekly |
+| Subway graph | MTA GTFS static → `transit.json` | weekly |
+| Groceries, diets, parks | OpenStreetMap via Overpass → `places.json` | weekly |
+| Michelin stars | Wikipedia list (2025 guide) → `dining.json` | weekly |
+| Lot facts, building sales, crime, noise | PLUTO, `w2pb-icbu`, NYPD `5uac-w243`, 311 `erm2-nwe9` | live per click |
+| Citi Bike | GBFS (proxied by the Worker) | live |
+| Elevation, shoreline, current FEMA flood zone, tree canopy, major roads, airports | [Mireye Earth API](https://api.mireye.com) `/v1/fetch` (USGS 3DEP, NOAA CUSP, FEMA NFHL, USFS NLCD, Overture, FAA) via the Worker's `/api/env` | per click, cached 30 days per location |
+
+Known limits:
+- DOF records no bedrooms and no co-op unit sizes, so co-ops are valued on price only.
+- School locations are the 2019-20 file, and zones are 2024-25.
+- Graduation rates are for the class of 2023.
+- Commute times are typical weekday-morning averages from the timetable, not live arrivals.
+
+## Architecture
+- `src/`: React + MapLibre GL 6. The whole scene is one WebGL context: the basemap's building tiles for 3D,
+  GeoJSON layers for everything else. It runs at 1× pixel ratio without MSAA on weak or software GPUs (`?lite` and `?hq` force it).
+  - `src/lib/`: data logic.
+    - `transit.ts`: Dijkstra over (station, line) states.
+    - `value.ts`: comps.
+    - `sales.ts`: DOF rows to placed homes.
+    - `schools.ts`, `places.ts` and `area.ts`: live lookups.
+  - `src/ui/`: panels.
+  - `src/map/scene.ts`: map layers.
+- `worker/`: Cloudflare Worker. It serves the static build, `/api/data/:key` from KV (filled on first request,
+  refreshed daily by cron `23 9 * * *`; upstream bytes are streamed into KV unparsed, so CPU stays tiny) and
+  `/api/citibike/*`. Its config is in `wrangler.jsonc`, with KV namespace `manhattan-re-dashboard-data`.
+  - `/api/env` (`worker/env.ts`) calls Mireye with the Worker secret `MIREYE_API_TOKEN`, so the token never
+    reaches the browser.
+    - Only points around Manhattan are accepted, rounded to about 10 m.
+    - Each location is cached in KV for 30 days, and fresh lookups are capped at 400 a day to protect the account's credits.
+    - Set the token with `npx wrangler secret put MIREYE_API_TOKEN`. For local `npm run worker`, put `MIREYE_API_TOKEN=...`
+      in a git-ignored `.dev.vars` file. Without a token the panel simply does not appear.
+- `scripts/build-*.mjs`: static data builders. `.github/workflows/refresh-static.yml` runs them weekly and commits the results.
+  The MTA timetable expires every few months, which this refresh covers.
 
 ## Run
     npm install
-    npm run dev        # http://localhost:5173 (works straight away; uses basemap building tiles)
-    npm run data       # optional, ~1 min: per-building footprints with stable IDs + highlighted listing buildings
-    npm run build
-    node scripts/screenshot.mjs "http://localhost:5173/?static"   # -> screenshot.png (CHROME=/path/to/chrome to override)
-UI: one glass side panel (search, status filters, sort, listings; a Market tab with inventory, price by neighborhood and new developments), a detail sheet for the selection, a layer dock and map controls (zoom, north, 2D/3D, home). Every listing gets an HTML price tag above its building; hovering a row highlights the building and vice versa. `/` or ⌘K focuses search, Esc closes.
-Phones (≤820 px): floating search bar, scrollable layer chips, and a draggable bottom sheet (peek / half / full) with the selection shown as a card above it.
-Amenities: hidden on load; they pop up within `NEARBY_RADIUS_M` (400 m, `src/App.tsx`) of the selected listing/building with a ring. Dock amenity buttons cycle nearby-only (default) → show all → off.
-URL flags: `?static` skips the intro flight and marker transitions (headless/software GL), `?simple` uses the merged-block city (`npm run data:simple`, needs `pip install shapely numpy`), `?lite` / `?hq` force the render tier.
-
-## Rendering on weak GPUs
-MapLibre tiles the building GeoJSON in a worker and draws only the tiles in view (simplified when far away), lights per vertex,
-and hit-tests on the CPU, so there is no picking pass on mouse move and no second canvas. Software and low-end GPUs are detected
-(`WEBGL_debug_renderer_info`) and get the `lite` tier: 1x pixel ratio and no MSAA. Measured on a CPU-only renderer (SwiftShader,
-1440×900): the previous deck.gl scene ran at 0.2 fps (overview) / 0.6 fps (street); this one runs at 3.7–5.5 / 7.9–12.6 fps,
-about what the empty basemap costs.
-
-## Data
-| File | What |
-|---|---|
-| `public/listings.csv` | **SAMPLE** listings (fake). Swap in real data with the same columns. |
-| `public/data/developments.json` | **SAMPLE** new developments (fake). |
-| `public/data/buildings.json` | ~36.9k building footprints + heights (OSM via OpenFreeMap tiles). |
-| `public/data/amenities.json` | Real OSM grocery/supermarkets, schools, parks, subway stations. |
-| `public/data/overpass/*.json` | Raw Overpass caches (grocery, schools) captured when a mirror briefly responded. |
-
-Regenerate: `npm run data` (= `node scripts/extract-tiles.mjs`, used, reliable) or `node scripts/fetch-osm.mjs` (Overpass, retries across
-mirrors; Overpass was returning 500/502/504 during the build, so the tile extractor is the default source).
-
-## Building IDs (design choice)
-With `buildings.json` present, buildings are drawn from our own GeoJSON source (`fill-extrusion` by `render_height`, `promoteId: 'id'` for
-feature-state highlight), not from the basemap, so we own the IDs. Without it the app falls back to the basemap's building tiles:
-the city still renders and clicks still work, but there are no stable IDs and no per-building highlight.
-OpenFreeMap z14 tiles merge neighbouring footprints into one multipolygon feature, so the tile feature id is not per-building.
-Instead each footprint ring is one building; rings clipped at tile borders are re-joined, and the ID is
-`bld-<lat 5dp>-<|lon| 5dp>` of the footprint centroid (~1 m), suffixed `-2`, `-3`… for stacked parts sharing a centroid.
-Deterministic across reloads/rebuilds while the OSM geometry is unchanged.
-
-Per-building data lives in a `BuildingStore = Record<buildingId, BuildingData>` (`src/types.ts`); listings are attached
-automatically via point-in-polygon (`matchBuilding`). Click a building → blue highlight + side panel with ID and attached data.
-
-## Walking minutes
-Straight-line distance × 1.25 grid detour ÷ 80 m/min. Approximate only (no routing).
-
-## Detailed city (default) vs simplified (`?simple`)
-The default view draws every footprint from `buildings.json` (most realistic massing). `?simple` loads `public/data/blocks.json` (≈3.7k features) built by `scripts/make-blocks.py`
-(`node scripts/extract-streets.mjs && .venv/bin/python scripts/make-blocks.py`; needs `pip install shapely numpy`).
-- Blocks = Manhattan-south polygon minus buffered OSM street centerlines (from the tiles). One extruded footprint per block at the
-  area-weighted average height of its buildings; id `blk-<lat5>-<|lon|5>`. Blocks with <35% building coverage (parks, plazas) keep individual buildings.
-- Landmarks stay detailed: height >250 m, or footprint contains a curated famous-building point
-  (Empire State, One WTC, Chrysler, Flatiron, 432 Park, Woolworth, One Vanderbilt, …; tile data has no name/tourism/historic tags).
-- Listing buildings are cut out of their block and drawn individually in coral (raised to block roof +4 m so they stay visible).
-- Each block lists its `buildingIds`, and `buildingToBlock` maps detailed ids → block ids, so the per-building `BuildingStore` still works.
-If one of the two files is missing, the app falls back to the other.
-
-## GitHub copy: what is not included
-The GitHub repo was uploaded file-by-file through the GitHub API (the box had no git credentials), so:
-- `public/data/buildings.json` (~12 MB) and `public/data/blocks.json` (~3.5 MB) are not committed (the app runs without them, see above).
-  Generate with `npm run data`, and for `?simple` also `npm run data:simple` (needs `pip install shapely numpy`).
-  (Note: `extract-tiles.mjs` also rewrites `amenities.json` from current tiles.)
-- Binary images (`screenshot*.png`, `reference/shot-*`) are not included; `reference/NOTES.md` describes the style reference.
-- Local git history was not transferred; the repo starts from a snapshot of the latest commit.
+    npm run dev        # http://localhost:5173 (uses the committed snapshots in public/data)
+    npm run worker     # production build behind the real Worker on :8787 (local KV)
+    npm run build      # type-checks app + worker, then builds
+    npm test           # sales placement + valuation self-check on the snapshot
+    npm run data       # rebuild every static dataset (needs network; ~2 min)
+URL flags: `?static` skips the intro flight (screenshots), `?lite` / `?hq` force the render tier.
+`SOCRATA_APP_TOKEN` (env var for the scripts) or the Worker secret `SODA_APP_TOKEN` raises NYC Open Data rate limits.
