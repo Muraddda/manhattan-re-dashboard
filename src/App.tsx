@@ -1,21 +1,29 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as maplibregl from 'maplibre-gl';
-import { MapboxOverlay } from '@deck.gl/mapbox';
-import { AmbientLight, LightingEffect, DirectionalLight } from '@deck.gl/core';
-import { IconLayer, PathLayer, ScatterplotLayer, SolidPolygonLayer } from '@deck.gl/layers';
+import type { Feature, FeatureCollection } from 'geojson';
 import { ArrowUpDown, Bath, BedDouble, Box, Building2, ChartColumn, ChevronRight, Footprints, GraduationCap, Home, LayoutList, Minus, Navigation2, Plus, Ruler, Search, ShoppingCart, Sparkles, TrainFront, Trees, X, type LucideIcon } from 'lucide-react';
-import type { Amenities, Amenity, AmenityCategory, Building, BuildingPart, BuildingStore, Development, Listing, LngLat, Selection } from './types';
+import type { Amenities, Amenity, AmenityCategory, Building, BuildingStore, Development, Listing, LngLat, Selection } from './types';
 import { distanceMeters, fmtPrice, loadAmenities, loadBlocks, loadBuildings, loadDevelopments, loadListings, matchBuilding, nearest, walkMinutes } from './data';
-import { COLORS, iconSpec } from './icons';
+import { COLORS, MARKERS, type IconKey } from './icons';
 
-type RGBA = [number, number, number, number];
 const Q = new URLSearchParams(location.search);
 /** `?simple` draws the merged street blocks (blocks.json) instead of every footprint (buildings.json). */
 const SIMPLE = Q.has('simple');
 /** `?static` skips the intro flight and marker transitions (headless screenshots). */
 const STATIC = Q.has('static');
-const SHADOWS = Q.has('shadows');
 const REDUCED = STATIC || matchMedia('(prefers-reduced-motion: reduce)').matches;
+/** Render budget: weak or software GPUs ('lite') draw at 1x with no MSAA. `?lite` / `?hq` force a tier. */
+const TIER: 'lite' | 'hq' = Q.has('lite') ? 'lite' : Q.has('hq') ? 'hq' : detectTier();
+function detectTier(): 'lite' | 'hq' {
+  const gl = document.createElement('canvas').getContext('webgl2');
+  if (!gl) return 'lite';
+  const ext = gl.getExtension('WEBGL_debug_renderer_info');
+  const renderer = ext ? String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)) : '';
+  gl.getExtension('WEBGL_lose_context')?.loseContext();
+  return /swiftshader|llvmpipe|softpipe|software|basic render|mali-[4t]|adreno \(tm\) [345]|powervr/i.test(renderer) || (navigator.hardwareConcurrency ?? 8) <= 4 ? 'lite' : 'hq';
+}
+const DPR = Math.min(devicePixelRatio, TIER === 'lite' ? 1 : 2);
+const GL = { antialias: TIER === 'hq', preserveDrawingBuffer: STATIC }; // the buffer only needs preserving for screenshots
 
 const HOME = { center: [-73.9915, 40.7335] as LngLat, zoom: 14.1, pitch: 58, bearing: -29 };
 /** Radius (m) for amenity pop-ups around the selection (~5-min walk). */
@@ -29,25 +37,32 @@ const CATS: { key: AmenityCategory; label: string; Icon: LucideIcon }[] = [
 const STATUSES = ['All', 'Active', 'In Contract', 'Sold'] as const;
 const SORTS = { 'price-desc': 'Price: high to low', 'price-asc': 'Price: low to high', 'ppsf-desc': 'Price / ft²' } as const;
 
-// Scene palette: near-white massing (Apple-Maps-like daylight), glassy blue towers, one warm accent for listings.
-const ACCENT: RGBA = [59, 91, 253, 255];
-const HILITE: RGBA = [59, 91, 253, 110];
-const LISTING: RGBA = [242, 100, 61, 255];
-const LISTING_DIM: RGBA = [246, 196, 178, 255];
-const hash = (s: string) => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); };
-function massing(id: string, h: number): RGBA {
-  const j = (hash(id) % 7) - 3;
-  const glass = Math.min(1, Math.max(0, (h - 90) / 160)); // towers drift toward a cool glass tint
-  const base = [241 + j, 242 + j, 246 + j], tower = [206, 220, 241];
-  return [0, 1, 2].map(i => Math.round(base[i] + (tower[i] - base[i]) * glass)).concat(255) as RGBA;
+// The whole scene is drawn by MapLibre in one WebGL context: buildings are a fill-extrusion layer (tiled in a worker, only
+// visible tiles drawn, per-vertex light, CPU hit-testing), markers are symbol layers. No second canvas, no GPU picking pass.
+const C = { accent: '#3b5bfd', hover: '#c3cdff', listing: '#f2643d', listingHover: '#ff805c', listingDim: '#f6c4b2', base: '#f4f5f8', tower: '#c9d9f0' };
+const fs = (k: string) => ['boolean', ['feature-state', k], false];
+/** Building colour: selection > listing (unless listings are hidden) > hover > height ramp (towers drift to a cool glass tint). */
+const buildingColor = (listings: boolean) => ['case',
+  fs('sel'), C.accent,
+  ...(listings ? [['==', ['get', 'l'], 1], ['case', fs('hover'), C.listingHover, fs('dim'), C.listingDim, C.listing]] : []),
+  fs('hover'), C.hover,
+  ['interpolate', ['linear'], ['get', 'h'], 70, C.base, 260, C.tower]] as unknown as maplibregl.ExpressionSpecification;
+const iconSize = (pop: number) => ['*', pop, ['case', ['==', ['get', 'far'], 1], 0.42, 0.58]] as maplibregl.ExpressionSpecification;
+const EMPTY: FeatureCollection = { type: 'FeatureCollection', features: [] };
+const fc = (features: Feature[]): FeatureCollection => ({ type: 'FeatureCollection', features });
+const point = (lon: number, lat: number, properties: Record<string, unknown>): Feature => ({ type: 'Feature', properties, geometry: { type: 'Point', coordinates: [lon, lat] } });
+function circle([lon, lat]: LngLat, r: number): Feature {
+  const dy = r / 110574, dx = r / (111320 * Math.cos(lat * Math.PI / 180));
+  const ring = Array.from({ length: 65 }, (_, i) => { const a = (i / 64) * 2 * Math.PI; return [lon + dx * Math.cos(a), lat + dy * Math.sin(a)]; });
+  return { type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [ring] } };
 }
-const lighting = new LightingEffect({
-  // low warm sun from the south-west + cool sky fill from the north-east, so every wall orientation gets its own shade
-  ambient: new AmbientLight({ color: [255, 255, 255], intensity: 0.82 }),
-  sun: new DirectionalLight({ color: [255, 240, 220], intensity: 1.25, direction: [1.2, 2.2, -1.6], _shadow: SHADOWS }),
-  sky: new DirectionalLight({ color: [200, 218, 255], intensity: 0.55, direction: [-1.5, -1, -0.8] }),
-});
-const MATERIAL = { ambient: 0.5, diffuse: 0.62, shininess: 20, specularColor: [30, 32, 38] as [number, number, number] };
+/** Run `f(t)` for t in 0..1 over `ms`, once per frame; returns a cancel function. */
+function tween(ms: number, f: (t: number) => void) {
+  if (REDUCED || ms <= 0) { f(1); return () => {}; }
+  let raf = 0; const t0 = performance.now();
+  const step = () => { const t = Math.min(1, (performance.now() - t0) / ms); f(t); if (t < 1) raf = requestAnimationFrame(step); };
+  raf = requestAnimationFrame(step); return () => cancelAnimationFrame(raf);
+}
 const easeOutBack = (x: number) => { const c1 = 1.4, c3 = c1 + 1; return 1 + c3 * (x - 1) ** 3 + c1 * (x - 1) ** 2; };
 const ease = (x: number) => 1 - (1 - x) ** 3;
 const ppsf = (l: Listing) => l.sqft ? l.price / l.sqft : 0;
@@ -55,7 +70,7 @@ const ppsf = (l: Listing) => l.sqft ? l.price / l.sqft : 0;
 export default function App() {
   const mapDiv = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
-  const overlayRef = useRef<MapboxOverlay | null>(null);
+  const [ready, setReady] = useState(false);
   const compassRef = useRef<SVGSVGElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const [buildings, setBuildings] = useState<Building[]>([]);
@@ -95,7 +110,7 @@ export default function App() {
   useEffect(() => {
     const start = REDUCED ? HOME : { ...HOME, zoom: 12.9, pitch: 24, bearing: -12 };
     const map = new maplibregl.Map({ container: mapDiv.current!, style: 'https://tiles.openfreemap.org/styles/positron', ...start, maxPitch: 72, attributionControl: false,
-      maxBounds: [[-74.08, 40.67], [-73.88, 40.80]], canvasContextAttributes: { antialias: true, preserveDrawingBuffer: true } } as maplibregl.MapOptions);
+      maxBounds: [[-74.08, 40.67], [-73.88, 40.80]], pixelRatio: DPR, canvasContextAttributes: GL } as maplibregl.MapOptions);
     mapRef.current = map;
     map.setPadding(padding(false));
     map.on('style.load', () => {
@@ -105,15 +120,42 @@ export default function App() {
       set('park', 'fill-color', '#d7ebd6'); set('park', 'fill-opacity', 1);
       set('landcover_wood', 'fill-color', '#cfe6ce');
       set('water', 'fill-color', '#c3d8f2');
-      // Our deck.gl buildings replace the basemap's. Street, POI and shield labels would float on top of the 3D massing, so keep only water and city names.
+      // Our buildings replace the basemap's. Street, POI and shield labels would float on top of the 3D massing, so keep only water and city names.
       for (const l of map.getStyle().layers) if (l.id.startsWith('building') || (l.type === 'symbol' && !/^(water_name_line|waterway_line|label_(town|city|state|country))/.test(l.id))) map.setLayoutProperty(l.id, 'visibility', 'none');
+      const below = map.getStyle().layers.find(l => l.type === 'symbol' && map.getLayoutProperty(l.id, 'visibility') !== 'none')?.id;
+      // low warm sun from the south-west; intensity sets how much the walls differ from the roofs
+      map.setLight({ anchor: 'map', position: [1.5, 210, 38], color: '#ffffff', intensity: 0.42 });
+      map.addSource('ring', { type: 'geojson', data: EMPTY });
+      map.addLayer({ id: 'ring-fill', type: 'fill', source: 'ring', paint: { 'fill-color': C.accent, 'fill-opacity': 0.08 } }, below);
+      map.addLayer({ id: 'ring-line', type: 'line', source: 'ring', paint: { 'line-color': C.accent, 'line-opacity': 0.6, 'line-width': 1.5 } }, below);
+      map.addSource('city', { type: 'geojson', data: EMPTY, promoteId: 'id' });
+      map.addLayer({ id: 'city', type: 'fill-extrusion', source: 'city', paint: {
+        'fill-extrusion-color': buildingColor(true), 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-base': 0, 'fill-extrusion-vertical-gradient': true } }, below);
+      // Fallback when buildings.json was never generated: the basemap's own building tiles (no stable ids, no listing colours).
+      const th = ['coalesce', ['get', 'render_height'], 10];
+      map.addLayer({ id: 'city-tiles', type: 'fill-extrusion', source: 'openmaptiles', 'source-layer': 'building', minzoom: 13, layout: { visibility: 'none' }, paint: {
+        'fill-extrusion-color': ['interpolate', ['linear'], th, 70, C.base, 260, C.tower] as unknown as maplibregl.ExpressionSpecification,
+        'fill-extrusion-height': th as maplibregl.ExpressionSpecification, 'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0], 'fill-extrusion-vertical-gradient': true } }, below);
+      map.addSource('amen', { type: 'geojson', data: EMPTY });
+      map.addSource('devs', { type: 'geojson', data: EMPTY });
+      const icon: Partial<maplibregl.SymbolLayerSpecification['layout']> = { 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-pitch-alignment': 'viewport' };
+      Promise.all((Object.keys(MARKERS) as IconKey[]).map(k => { const img = new Image(); img.src = MARKERS[k]; return img.decode().then(() => map.addImage(`mk-${k}`, img, { pixelRatio: 2 })); })).then(() => {
+        map.addLayer({ id: 'amen', type: 'symbol', source: 'amen', layout: { ...icon, 'icon-image': ['concat', 'mk-', ['get', 'cat']], 'icon-size': iconSize(1), 'symbol-sort-key': ['get', 'd'] } });
+        map.addLayer({ id: 'devs', type: 'symbol', source: 'devs', layout: { ...icon, 'icon-image': 'mk-development', 'icon-size': 0.7 } });
+        setReady(true);
+      });
     });
+    // hit-testing is CPU-side (MapLibre's feature index): no extra GPU pass per mouse move
+    const pick = (p: maplibregl.PointLike) => map.queryRenderedFeatures(p, { layers: ['amen', 'devs', 'city', 'city-tiles'].filter(l => map.getLayer(l)) })[0];
+    let moveRaf = 0;
+    map.on('mousemove', e => { cancelAnimationFrame(moveRaf); moveRaf = requestAnimationFrame(() => {
+      const f = pick(e.point); map.getCanvas().style.cursor = f ? 'pointer' : '';
+      act.current.hover(f?.layer.id === 'city' ? String(f.properties.id) : f?.layer.id === 'city-tiles' && f.id != null ? `osm-${f.id}` : null);
+    }); });
+    map.getCanvas().addEventListener('mouseleave', () => act.current.hover(null));
+    map.on('click', e => act.current.click(pick(e.point), e.lngLat));
     map.on('rotate', () => { if (compassRef.current) compassRef.current.style.transform = `rotate(${-map.getBearing()}deg)`; });
     map.on('pitchend', () => setIs3D(map.getPitch() > 10));
-    const overlay = new MapboxOverlay({ interleaved: false, // interleaved needs map.transform, which maplibre 6 no longer exposes
-      effects: [lighting], layers: [] });
-    map.addControl(overlay as unknown as maplibregl.IControl);
-    overlayRef.current = overlay;
     (window as unknown as { __map: maplibregl.Map }).__map = map;
     return () => map.remove();
   }, []);
@@ -151,11 +193,9 @@ export default function App() {
   const countBy = (s: string) => s === 'All' ? listings.length : listings.filter(l => l.status === s).length;
 
   // scene geometry
-  const bById = useMemo(() => new Map(buildings.map(b => [b.id, b])), [buildings]);
+  const [tileB, setTileB] = useState(new Map<string, Building>()); // buildings clicked in the tile fallback
+  const bById = useMemo(() => new Map([...buildings.map(b => [b.id, b] as const), ...tileB]), [buildings, tileB]);
   const listingBuildings = useMemo(() => new Set(listings.map(l => l.buildingId).filter(Boolean) as string[]), [listings]);
-  const allParts = useMemo<BuildingPart[]>(() => buildings.flatMap(b => b.parts.map((ring, k) => ({ id: b.id, polygon: b.polys?.[k] ?? ring, height: b.height, minHeight: b.minHeight }))), [buildings]);
-  const parts = useMemo(() => allParts.filter(p => !listingBuildings.has(p.id)), [allParts, listingBuildings]);
-  const listingParts = useMemo(() => allParts.filter(p => listingBuildings.has(p.id)), [allParts, listingBuildings]);
   // simplified mode: a short listing building would hide inside its block, so raise it just above the block roof
   const roof = (id?: string) => { const b = id ? bById.get(id) : undefined; if (!b) return 20; const blk = b.blockId ? bById.get(b.blockId) : undefined; return Math.max(b.height, 6, blk ? blk.height + 4 : 0); };
   const listingOfBuilding = (id: string) => store[id]?.listings?.map(x => byId.get(x)!).filter(Boolean) ?? [];
@@ -177,42 +217,68 @@ export default function App() {
     return out;
   }, [amen, catMode, anchor]);
 
-  const D = REDUCED ? 0 : 1;
-  const buildingLayer = useMemo(() => new SolidPolygonLayer<BuildingPart>({
-    id: 'buildings', data: parts, visible: parts.length > 0, extruded: true, pickable: true, autoHighlight: true, highlightColor: HILITE,
-    getPolygon: d => d.polygon, getElevation: d => Math.max(d.height, 4),
-    getFillColor: d => d.id === selBuildingId ? ACCENT : massing(d.id, d.height),
-    material: MATERIAL, updateTriggers: { getFillColor: selBuildingId },
-    onClick: i => { if (i.object) setSel({ kind: 'building', id: i.object.id }); },
-  }), [parts, selBuildingId]);
-  const selRing = useMemo(() => {
-    const b = selBuildingId ? bById.get(selBuildingId) : undefined; if (!b) return [];
-    const z = listingBuildings.has(b.id) ? roof(b.id) : Math.max(b.height, 4);
-    return b.parts.map(r => ({ path: r.map(([x, y]) => [x, y, z + 0.3]) }));
-  }, [selBuildingId, bById, listingBuildings]);
-
+  // --- scene sync (MapLibre sources + feature-state; nothing here re-uploads geometry except a data change)
   const pickListing = (id?: string) => { if (!id) return; const ls = listingOfBuilding(id); if (ls.length === 1) selectListing(ls[0]); else setSel({ kind: 'building', id }); };
-  const layers = [
-    buildingLayer,
-    new SolidPolygonLayer<BuildingPart>({ id: 'listing-buildings', data: listingParts, visible: listingParts.length > 0, extruded: true, pickable: true,
-      getPolygon: d => d.polygon, getElevation: d => roof(d.id),
-      getFillColor: d => d.id === selBuildingId ? ACCENT : !showTags ? massing(d.id, d.height) : d.id === hoverId ? [255, 128, 92, 255] : listingOfBuilding(d.id).some(l => shownIds.has(l.id)) ? LISTING : LISTING_DIM,
-      material: MATERIAL, updateTriggers: { getFillColor: [selBuildingId, hoverId, shownIds, showTags], getElevation: bById },
-      onHover: i => setHoverId(i.object?.id ?? null), onClick: i => pickListing(i.object?.id) }),
-    new PathLayer<{ path: number[][] }>({ id: 'sel-outline', data: selRing, getPath: d => d.path as never, getColor: [255, 255, 255, 230], getWidth: 2.5, widthUnits: 'pixels', jointRounded: true, parameters: { depthCompare: 'always' } }),
-    new ScatterplotLayer<LngLat>({ id: 'nearby-ring', data: anchor ? [anchor] : [], getPosition: d => [d[0], d[1], 0], radiusUnits: 'meters', getRadius: NEARBY_RADIUS_M,
-      filled: true, getFillColor: [59, 91, 253, 20], stroked: true, getLineColor: [59, 91, 253, 170], lineWidthUnits: 'pixels', getLineWidth: 1.5,
-      transitions: { getRadius: { duration: 700 * D, easing: ease, enter: () => [0] }, getPosition: { duration: 700 * D, easing: ease } }, parameters: { depthWriteEnabled: false } }),
-    ...CATS.map(({ key: c }) => new IconLayer<Amenity & { d: number }>({
-      id: `amen-${c}`, data: amenityData[c], pickable: true, getIcon: () => iconSpec(c), getPosition: d => [d.lon, d.lat, 2], sizeUnits: 'pixels',
-      getSize: d => catMode[c] === 'all' && !(d.d <= NEARBY_RADIUS_M) ? 20 : 28, updateTriggers: { getSize: [catMode[c], anchor] },
-      transitions: { getSize: { duration: 520 * D, easing: easeOutBack, enter: () => [0] } }, parameters: { depthCompare: 'always' },
-      onClick: i => { if (i.object) setSel({ kind: 'amenity', category: c, id: i.object.id }); },
-    })),
-    new IconLayer<Development>({ id: 'devs', data: devs, visible: showDevs, pickable: true, getIcon: () => iconSpec('development'), getPosition: d => [d.lon, d.lat, 2], getSize: 34, sizeUnits: 'pixels', parameters: { depthCompare: 'always' },
-      onClick: i => { if (i.object) { setSel({ kind: 'development', id: i.object.id }); flyTo(i.object.lon, i.object.lat); } } }),
-  ];
-  // Price tags are HTML markers: constant size at any depth, same type and CSS as the UI. deck's TextLayer shrank with distance.
+  const act = useRef({ hover: setHoverId, click: (_f?: maplibregl.MapGeoJSONFeature, _at?: maplibregl.LngLat) => {} });
+  act.current.click = (f, at) => {
+    const id = f && String(f.properties.id);
+    if (!f) setSel(null);
+    else if (f.layer.id === 'city-tiles') {
+      const tid = `osm-${f.id ?? `${at!.lat.toFixed(5)}-${at!.lng.toFixed(5)}`}`;
+      setTileB(m => new Map(m).set(tid, { id: tid, parts: [], height: Number(f.properties.render_height ?? 10), minHeight: 0, colour: null, centroid: [at!.lng, at!.lat], kind: 'building' }));
+      setSel({ kind: 'building', id: tid });
+    }
+    else if (f.layer.id === 'amen') setSel({ kind: 'amenity', category: f.properties.cat, id: id! });
+    else if (f.layer.id === 'devs') { const d = devs.find(x => x.id === id); if (d) { setSel({ kind: 'development', id: d.id }); flyTo(d.lon, d.lat); } }
+    else if (listingBuildings.has(id!)) pickListing(id);
+    else setSel({ kind: 'building', id: id! });
+  };
+  const src = (id: string) => mapRef.current?.getSource(id) as maplibregl.GeoJSONSource | undefined;
+  useEffect(() => {
+    if (!ready) return;
+    src('city')?.setData(fc(buildings.flatMap(b => b.parts.map((ring, k): Feature => ({ type: 'Feature',
+      properties: { id: b.id, h: listingBuildings.has(b.id) ? roof(b.id) : Math.max(b.height, 4), l: listingBuildings.has(b.id) ? 1 : 0 },
+      geometry: { type: 'Polygon', coordinates: b.polys?.[k] ?? [ring] } })))));
+  }, [ready, buildings, listingBuildings]);
+  useEffect(() => { if (ready) mapRef.current!.setPaintProperty('city', 'fill-extrusion-color', buildingColor(showTags)); }, [ready, showTags]);
+  useEffect(() => { if (ready) mapRef.current!.setLayoutProperty('city-tiles', 'visibility', status === 'nocity' ? 'visible' : 'none'); }, [ready, status]);
+  /** Keep exactly one building flagged with `key` in feature-state. */
+  const useFlag = (key: string, id: string | null | undefined) => {
+    const prev = useRef<string | null>(null);
+    useEffect(() => {
+      const map = mapRef.current; if (!ready || !map) return;
+      // tile-fallback ids (osm-*) are shared by many merged footprints, so they are never highlighted
+      if (prev.current && prev.current !== id && !prev.current.startsWith('osm-')) map.setFeatureState({ source: 'city', id: prev.current }, { [key]: false });
+      if (id && !id.startsWith('osm-')) map.setFeatureState({ source: 'city', id }, { [key]: true });
+      prev.current = id ?? null;
+    }, [ready, id, buildings]);
+  };
+  useFlag('sel', selBuildingId);
+  useFlag('hover', hoverId);
+  useEffect(() => { // listing buildings whose listings are all filtered out fade back
+    const map = mapRef.current; if (!ready || !map) return;
+    for (const id of listingBuildings) map.setFeatureState({ source: 'city', id }, { dim: !listingOfBuilding(id).some(l => shownIds.has(l.id)) });
+  }, [ready, shownIds, listingBuildings, buildings]);
+  useEffect(() => { // nearby ring grows out of the selection
+    if (!ready) return;
+    if (!anchor) { src('ring')?.setData(EMPTY); return; }
+    return tween(600, t => src('ring')?.setData(fc([circle(anchor, NEARBY_RADIUS_M * Math.max(0.01, ease(t)))])));
+  }, [ready, anchor]);
+  useEffect(() => {
+    if (!ready) return;
+    src('amen')?.setData(fc(CATS.flatMap(({ key }) => amenityData[key].map(a => point(a.lon, a.lat, { id: a.id, cat: key, d: Math.round(Math.min(a.d, 1e6)), far: a.d <= NEARBY_RADIUS_M ? 0 : 1 })))));
+  }, [ready, amenityData]);
+  useEffect(() => { // pins pop in, staggered only by the spring
+    if (!ready) return;
+    return tween(520, t => mapRef.current?.setLayoutProperty('amen', 'icon-size', iconSize(Math.max(0, easeOutBack(t)))));
+  }, [ready, anchor]);
+  useEffect(() => {
+    if (!ready) return;
+    src('devs')?.setData(fc(devs.map(d => point(d.lon, d.lat, { id: d.id }))));
+    mapRef.current!.setLayoutProperty('devs', 'visibility', showDevs ? 'visible' : 'none');
+  }, [ready, devs, showDevs]);
+
+  // Price tags are HTML markers: constant size at any depth, same type and CSS as the UI.
   const tags = useRef(new Map<string, { m: maplibregl.Marker; el: HTMLButtonElement }>());
   const tagActions = useRef({ select: selectListing, hover: setHoverId }); tagActions.current.select = selectListing;
   useEffect(() => {
@@ -234,7 +300,6 @@ export default function App() {
       el.classList.toggle('sel', on); el.classList.toggle('hover', hov); m.getElement().style.zIndex = on ? '4' : hov ? '3' : '';
     }
   });
-  useEffect(() => { overlayRef.current?.setProps({ layers, onClick: (i: { object?: unknown }) => { if (!i.object) setSel(null); }, getCursor: ({ isHovering }) => (isHovering ? 'pointer' : 'grab') }); });
 
   // market stats (computed from the data, nothing hardcoded)
   const active = listings.filter(l => l.status === 'Active');
@@ -328,7 +393,7 @@ export default function App() {
           </div>
         )}
         <footer className="panel-foot">
-          {status === 'nocity' ? <span className="warn">City geometry missing: generate <code>public/data/buildings.json</code> (see README)</span>
+          {status === 'nocity' ? <span title="Run `npm run data` once for stable building IDs and highlighted listing buildings">Basemap buildings · <code>npm run data</code> for building IDs</span>
             : status === 'loading' ? <span><i className="spinner" />Loading 3D city…</span>
             : <span>{buildings.length.toLocaleString()} {SIMPLE ? 'blocks & buildings' : 'buildings'} · © OpenFreeMap © OpenStreetMap</span>}
         </footer>
@@ -429,7 +494,7 @@ function DetailSheet(p: { sel: NonNullable<Selection>; close: () => void; bById:
   } else if (sel.kind === 'building') {
     const b = p.bById.get(sel.id); const d = p.store[sel.id];
     const ls = (d?.listings ?? []).map(id => p.byId.get(id)!).filter(Boolean);
-    eyebrow = b?.kind === 'block' ? 'City block' : b?.kind === 'landmark' ? 'Landmark' : 'Building'; title = b?.name ?? (ls[0]?.address.split(',')[0] || 'Building');
+    eyebrow = b?.kind === 'block' ? 'City block' : b?.kind === 'landmark' ? 'Landmark' : 'Building'; title = b?.name ?? (ls[0]?.address.split(',')[0] || 'Unnamed building');
     body = <>
       {b && <div className="specs three">
         <div><b>~{Math.round(b.height)}</b><small>m tall</small></div><div><b>~{Math.max(1, Math.round(b.height / 3.3))}</b><small>floors</small></div>

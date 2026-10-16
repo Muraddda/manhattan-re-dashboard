@@ -46,6 +46,3 @@ export type Selection =
   | { kind: 'development'; id: string }
   | { kind: 'amenity'; category: AmenityCategory; id: string }
   | null;
-
-/** Render unit: one footprint ring, carrying its parent building id. */
-export interface BuildingPart { id: string; polygon: LngLat[] | LngLat[][]; height: number; minHeight: number; }
