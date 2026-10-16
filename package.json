@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5173",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && tsc --noEmit -p worker && vite build",
     "preview": "vite preview",
-    "data": "node scripts/extract-tiles.mjs",
-    "data:simple": "node scripts/extract-streets.mjs && python3 scripts/make-blocks.py",
-    "fetch-osm": "node scripts/fetch-osm.mjs"
+    "worker": "npm run build && wrangler dev",
+    "data": "node scripts/build-transit.mjs; node scripts/build-places.mjs; node scripts/build-schools.mjs; node scripts/build-lots.mjs; node scripts/build-dining.mjs",
+    "test": "node scripts/test-sales.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.57.0",
@@ -19,6 +19,7 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261016.1",
     "@mapbox/vector-tile": "^3.0.0",
     "@types/papaparse": "^5.5.2",
     "@types/react": "^19.3.0",
@@ -27,6 +28,7 @@
     "pbf": "^5.1.2",
     "playwright-core": "^1.64.1",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "wrangler": "^4.151.0"
   }
 }
