@@ -22,7 +22,7 @@ export function isStale(checked_at: string, today: string, staleDays: number): b
   return (toDay(today) - toDay(checked_at)) / DAY > staleDays;
 }
 
-export const budgetRent = (l: Pick<Listing, "rent" | "gross_rent">) => l.gross_rent ?? l.rent;
+export const budgetRent = (l: Pick<Listing, "rent" | "gross_rent">) => (l.gross_rent != null && l.gross_rent > 0 ? l.gross_rent : l.rent);
 type Eval = { checklist: ChecklistItem[]; travel: { label: string; minutes: number | null }[]; locked: boolean; out: boolean; noGeo: boolean; bent: Rule[] };
 
 export function evaluate(l: Listing, hr: HardRules, dests: Destination[], today: string): Eval {
@@ -34,7 +34,7 @@ export function evaluate(l: Listing, hr: HardRules, dests: Destination[], today:
 
   // budget: checked on gross_rent when stated (net_effective rows), else rent
   const br = budgetRent(l);
-  const fig = l.gross_rent != null ? `${money(l.gross_rent)} gross (${money(l.rent)} net effective)` : money(l.rent);
+  const fig = l.gross_rent != null && l.gross_rent > 0 ? `${money(l.gross_rent)} gross (${money(l.rent)} net effective)` : money(l.rent);
   const pct = ((br - hr.budget_max) / hr.budget_max) * 100;
   if (br <= hr.budget_max) add("budget", "satisfied", `${fig} vs budget ${money(hr.budget_max)}`);
   else if (br * 100 <= hr.budget_max * (100 + LIMITS.budget_over_pct)) add("budget", "adjusted", `${fig} vs budget ${money(hr.budget_max)} (+${pct.toFixed(1)}%)`);

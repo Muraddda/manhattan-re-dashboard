@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5173",
-    "build": "tsc --noEmit && tsc --noEmit -p worker && vite build",
+    "build": "npm ci --prefix dashboard && npm run build --prefix dashboard",
     "preview": "vite preview",
     "worker": "npm run build && wrangler dev",
     "data": "node scripts/build-transit.mjs; node scripts/build-places.mjs; node scripts/build-schools.mjs; node scripts/build-lots.mjs; node scripts/build-dining.mjs",
-    "test": "node scripts/test-sales.mjs"
+    "test": "npm ci --prefix server && npm test --prefix server",
+    "build:legacy": "tsc --noEmit && tsc --noEmit -p worker && vite build"
   },
   "dependencies": {
     "lucide-react": "^1.57.0",

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { evaluate, runMatch, isStale, haversineKm } from "../src/match";
+import { evaluate, runMatch, isStale, haversineKm, budgetRent } from "../src/match";
 import { grossFromNotes, normalizeAvailability, normalizeOwner, normalizePets, rentBasis, rentBasisFor, sourceFlags } from "../src/normalize";
 import type { Destination, HardRules, Listing } from "../src/types";
 
@@ -207,4 +207,9 @@ describe("normalization", () => {
     expect(rentBasisFor("Bisby (Newport Rentals)")).toBe("base_before_fees"); expect(rentBasisFor("StuyTown / Peter Cooper Village")).toBe("twelve_month");
     expect(rentBasisFor("2 Gold St (TF Cornerstone)")).toBe("listed");
   });
+});
+
+describe("gross_rent 0 is treated as null", () => {
+  it("budgetRent falls back to rent", () => { expect(budgetRent({ rent: 3000, gross_rent: 0 } as any)).toBe(3000); });
+  it("notes with $0 gross give null", () => { expect(grossFromNotes("gross rent $0")).toBeNull(); });
 });

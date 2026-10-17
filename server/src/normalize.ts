@@ -41,7 +41,7 @@ const OWNER_BASIS: Record<string, RentBasis> = { udr: "lowest_term", lefrak: "ba
 /** Gross rent stated in notes ("gross rent $8,075", "gross price $3,505"). Never guessed. */
 export function grossFromNotes(notes: string | null | undefined): number | null {
   const m = (notes ?? "").match(/gross (?:rent|price)\s*(?:of|is|:)?\s*\$([\d,]+)/i);
-  return m ? Number(m[1].replace(/,/g, "")) : null;
+  if (!m) return null; const n = Number(m[1].replace(/,/g, "")); return n > 0 ? n : null; // 0 is never a real gross rent
 }
 /** Owner from a buildings-log owner cell or notes. "Newport Rentals (LeFrak)" -> "LeFrak"; "unknown (...)" -> null. */
 export function normalizeOwner(raw: string | null | undefined, notes?: string | null, buildingName?: string): string | null {

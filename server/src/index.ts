@@ -23,7 +23,7 @@ const LISTING_SQL = `SELECT l.*, b.name AS building_name, b.address, b.city, b.s
   FROM listings l JOIN buildings b ON b.id = l.building_id WHERE l.brokerage_id = ? AND l.removed_at IS NULL`;
 function toListing(r: any, today: string, sd: number): Listing & { amenities: string } {
   return { id: r.id, building_id: r.building_id, building_name: r.building_name, address: r.address, city: r.city, state: r.state, zip: r.zip,
-    lat: r.lat, lng: r.lng, unit: r.unit, rent: r.rent, gross_rent: r.gross_rent ?? null, beds: r.beds, baths: r.baths, sqft: r.sqft, available_date: r.available_date,
+    lat: r.lat, lng: r.lng, unit: r.unit, rent: r.rent, gross_rent: r.gross_rent > 0 ? r.gross_rent : null, beds: r.beds, baths: r.baths, sqft: r.sqft, available_date: r.available_date,
     available_now: !!r.available_now, rent_basis: r.rent_basis, pets_policy: r.pets_policy, fee_info: r.fee_info, leasing_contact: r.leasing_contact,
     source_url: r.source_url, checked_at: r.checked_at, needs_verification: !!r.needs_verification,
     source_flags: [...new Set([...JSON.parse(r.building_flags || "[]"), ...JSON.parse(r.source_flags || "[]")])], owner: r.owner ?? null,
@@ -56,7 +56,7 @@ function validateListing(b: any, partial: boolean) {
   const req = ["building_name", "city", "state", "unit", "rent", "beds", "baths", "source_url", "checked_at"];
   if (!partial) for (const k of req) if (b[k] == null || b[k] === "") throw new HttpError(400, "validation", `${k} is required`);
   const num = (k: string, int = false) => { if (b[k] != null && (typeof b[k] !== "number" || b[k] < 0 || (int && !Number.isInteger(b[k])))) throw new HttpError(400, "validation", `${k} must be a non-negative ${int ? "integer" : "number"}`); };
-  num("rent", true); if (b.gross_rent !== null) num("gross_rent", true); num("beds", true);
+  num("rent", true); if (b.gross_rent !== null) num("gross_rent", true); if (b.gross_rent === 0) b.gross_rent = null; num("beds", true);
   if (b.source_flags != null && (!Array.isArray(b.source_flags) || b.source_flags.some((f: any) => typeof f !== "string"))) throw new HttpError(400, "validation", "source_flags must be a string array"); num("baths"); if (b.sqft !== null) num("sqft", true);
   if (b.state != null && !["NY", "NJ"].includes(b.state)) throw new HttpError(400, "validation", "state must be NY or NJ");
   if (b.pets_policy != null && !["allowed", "cats", "dogs", "none", "unknown"].includes(b.pets_policy)) throw new HttpError(400, "validation", "invalid pets_policy");
